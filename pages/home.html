@@ -5,14 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Davinci</title>
     <style>
-        body
+        body, html
         {
             height: 100vh;
-            background: url(/assets/img/background.png) no-repeat center;
+            position: static;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+
+            background: url('/assets/img/background.png') no-repeat center;
             background-size: cover;
+        }
+
+        #character
+        {
+            height: 70%;
+            position: relative;
+            overflow: hidden;
+        }
+        .animal
+        {
+            width: 35%;
+            position: absolute;
+            bottom: 0%;
+        }
+        #fish
+        {
+            z-index: 1;
+            left: 3%;
+        }
+        #pig
+        {
+            z-index: 1;
+            left: 26%;
+        }
+        #giraffe
+        {
+            z-index: 1;
+            right: 25%;
+        }
+        #bear
+        {
+            z-index: 1;
+            right: 5%;
+        }
+        
+        #log
+        {
+            z-index: 2;
+            height: 30%;
+            margin: 0%;
+            padding: 5%;
+
+            color: aliceblue;
+            background-color: rgba(19, 19, 19, 0.583);
         }
     </style>
 </head>
+
 <body>
+    <div id="character">
+        <img class="animal" id="fish" src="/assets/img/fish.png" alt="초롱아귀">
+        <img class="animal" id="pig" src="/assets/img/pig.png" alt="멧돼지">
+        <img class="animal" id="giraffe" src="/assets/img/giraffe.png" alt="기린">
+        <img class="animal" id="bear" src="/assets/img/bear.png" alt="북극곰">
+    </div>
+    <div id="log">
+        대사
+    </div>
 </body>
 </html>
