@@ -7,21 +7,16 @@
     <style>
         body, html
         {
-            height: 100vh;
-            position: static;
             margin: 0;
             padding: 0;
-            overflow: hidden;
-
-            background: url('/assets/img/background.png') no-repeat center;
-            background-size: cover;
+            height: 100%;
         }
-
         #character
         {
-            height: 70%;
+            background-color: red;
             position: relative;
             overflow: hidden;
+            height: 70%;
         }
         .animal
         {
@@ -31,12 +26,12 @@
         }
         #fish
         {
-            z-index: 1;
+            z-index: 3;
             left: 3%;
         }
         #pig
         {
-            z-index: 1;
+            z-index: 2;
             left: 26%;
         }
         #giraffe
@@ -46,23 +41,18 @@
         }
         #bear
         {
-            z-index: 1;
+            z-index: 0;
             right: 5%;
         }
-        
         #log
         {
-            z-index: 2;
+            background-color: blue;
             height: 30%;
             margin: 0%;
             padding: 5%;
-
-            color: aliceblue;
-            background-color: rgba(19, 19, 19, 0.583);
         }
     </style>
 </head>
-
 <body>
     <div id="character">
         <img class="animal" id="fish" src="/assets/img/fish.png" alt="초롱아귀">
