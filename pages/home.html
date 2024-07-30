@@ -1,9 +1,9 @@
 <!--해야할 일-->
 <!--
+이름표 크기 수정
+https://velog.io/@yijaee/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9%EC%97%90%EC%84%9C-%EC%9A%94%EC%86%8C-%EB%A6%AC%EC%82%AC%EC%9D%B4%EC%A7%95%ED%95%98%EA%B8%B0
 1. 배경 블러
 2. 대사 폰트
-3. 이름표 크기 조정
-4. 이름표에 이름 넣기
 -->
 <!DOCTYPE html>
 <html lang="ko">
@@ -22,6 +22,14 @@
 
             background: url('/assets/img/background.png') no-repeat center;
             background-size: cover;
+        }
+
+        #user
+        {
+            width: 15%;
+            max-width: 90px;
+            position: absolute;
+            padding: 20px;
         }
 
         #character
@@ -83,6 +91,7 @@
         {
             z-index: 102;
             position: absolute;
+            width: 70%;
 
             top: 10%;
         }
@@ -100,10 +109,23 @@
 
             background-color: rgba(19, 19, 19, 0.8);
         }
+
+        #fire
+        {
+            position: absolute;
+            width: 15%;
+            min-width: 100px;
+            right: 1%;
+            bottom: 1%;
+        }
     </style>
 </head>
 
 <body>
+    <div>
+        <img id="user" src="/assets/img/setting_button.png" alt="계정정보">
+    </div>
+
     <div id="character">
         <img class="animal" id="fish" src="/assets/img/fish.png" alt="초롱아귀">
         <img class="animal" id="pig" src="/assets/img/pig.png" alt="멧돼지">
@@ -120,6 +142,7 @@
         <p>
             대사입니다.
         </p>
+        <img id="fire" src="/assets/img/fire_button.png" alt="해고">
     </div>
 </body>
 <script src="/scripts/click.js"></script>
