@@ -15,10 +15,10 @@
         body, html
         {
             height: 100vh;
-            position: static;
+            position: relative;
             margin: 0;
             padding: 0;
-            /*overflow: hidden;*/
+            overflow: hidden;
 
             background: url('/assets/img/background.png') no-repeat center;
             background-size: cover;
@@ -56,24 +56,46 @@
             z-index: 1;
             right: 5%;
         }
-        
-        #log
-        {
-            z-index: 2;
-            height: 30%;
-            margin: 0%;
-            padding: 100px;
 
-            color: aliceblue;
-            background-color: rgba(19, 19, 19, 0.583);
-        }
-        #log_name
+        #name
         {
-            z-index: 2;
             position: absolute;
             top: 65%;
             left: 5%;
             width: 250px;
+        }
+
+        #name_text
+        {
+            z-index: 3;
+            position: relative;
+
+            left: 105px;
+            top: 20px;
+
+            font-size: 2.5em;
+        }
+        
+        #name_log
+        {
+            z-index: 2;
+            position: absolute;
+
+            top: 10%;
+        }
+        
+        #log
+        {
+            z-index: 3;
+            height: 30%;
+            margin: 0%;
+            padding-left: 100px;
+            padding-top: 130px;
+
+            font-size: large;
+            color: aliceblue;
+
+            background-color: rgba(19, 19, 19, 0.8);
         }
     </style>
 </head>
@@ -85,7 +107,12 @@
         <img class="animal" id="giraffe" src="/assets/img/giraffe.png" alt="기린">
         <img class="animal" id="bear" src="/assets/img/bear.png" alt="북극곰">
     </div>
-    <img id="log_name" src="/assets/img/log_name.png" alt="이름표">
+
+    <div id="name">
+        <p id="name_text">이름</p>
+        <img id="name_log" src="/assets/img/log_name.png" alt="이름표">
+    </div>
+
     <div id="log">
         <p>
             대사입니다.
