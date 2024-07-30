@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davinci</title>
+    <style>
+        body, html
+        {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #character
+        {
+            background-color: red;
+            position: relative;
+            overflow: hidden;
+            height: 70%;
+        }
+        .animal
+        {
+            width: 35%;
+            position: absolute;
+            bottom: 0%;
+        }
+        #fish
+        {
+            z-index: 3;
+            left: 3%;
+        }
+        #pig
+        {
+            z-index: 2;
+            left: 26%;
+        }
+        #giraffe
+        {
+            z-index: 1;
+            right: 25%;
+        }
+        #bear
+        {
+            z-index: 0;
+            right: 5%;
+        }
+        #log
+        {
+            background-color: blue;
+            height: 30%;
+            margin: 0%;
+            padding: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div id="character">
+        <img class="animal" id="fish" src="/assets/img/fish.png" alt="초롱아귀">
+        <img class="animal" id="pig" src="/assets/img/pig.png" alt="멧돼지">
+        <img class="animal" id="giraffe" src="/assets/img/giraffe.png" alt="기린">
+        <img class="animal" id="bear" src="/assets/img/bear.png" alt="북극곰">
+    </div>
+    <div id="log">
+        대사
+    </div>
+</body>
+</html>
