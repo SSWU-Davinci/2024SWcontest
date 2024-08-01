@@ -12,6 +12,7 @@ body,html
 
 #user 
 {
+    z-index: 109;
     width: 15%;
     max-width: 90px;
     position: absolute;

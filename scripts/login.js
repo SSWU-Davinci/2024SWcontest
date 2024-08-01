@@ -1,16 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const user = document.querySelectorAll("user");
+    const user = document.getElementById("user");
     const container = document.querySelectorAll(".container");
-    const overlay = document.querySelectorAll(".overlay");
 
-    user.addEventListener("click", function() {
-        container.style.display = "block";
-        overlay.style.display = "block";
+
+    user.addEventListener("click", function() 
+    {
+        // Toggle the display of container
+        if (container.style.display === "none" || container.style.display === "") {
+            container.style.display = "block";
+        } else {
+            container.style.display = "none";
+        }
+
+        // Toggle the display of overlay
+        if (overlay.style.display === "none" || overlay.style.display === "") {
+            overlay.style.display = "block";
+        } else {
+            overlay.style.display = "none";
+        }
     });
 
-    // Overlay 클릭 시 컨테이너 닫기
-    overlay.addEventListener("click", function() {
-        container.style.display = "none";
-        overlay.style.display = "none";
-    });
 });
