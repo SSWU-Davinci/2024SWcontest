@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../assets/img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#character {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 70%;
+    display: relative;
+}
+
+.animal {
+    width: 35%;
+    height: auto;
+    position: absolute;
+    animation: scaleUpDown 2s infinite;
+    /* 동물들 애니메이션 적용 */
+}
+
+/* 동물들 애니메이션 정의 */
+@keyframes scaleUpDown {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#fish {
+    z-index: 1;
+    left: 5%;
+    bottom: 0;
+}
+
+#pig {
+    z-index: 1;
+    left: 25%;
+    bottom: 0;
+}
+
+#giraffe {
+    z-index: 1;
+    right: 25%;
+    bottom: 0;
+}
+
+#bear {
+    z-index: 1;
+    right: 5%;
+    bottom: 0;
+}
+
+/* press key 애니메이션 정의 */
+@keyframes colorBlink {
+    0% {
+        color: red;
+    }
+
+    33% {
+        color: yellow;
+    }
+
+    66% {
+        color: blue;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+h1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    animation: colorBlink 1.5s infinite;
+    /* 애니메이션 적용 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 게임 제목 텍스트 */
+.gameName {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vw;
+    font-weight: bold;
+    color: white;
+    z-index: 10;
+    text-shadow: 3px 3px 20px rgba(0, 0, 0, 1);
+    white-space: nowrap;
+}
