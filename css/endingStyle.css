@@ -7,7 +7,7 @@ body {
     margin: 0;
     background-image: url('../assets/img/background.png');
     background-position: center;
-    background-size: cover; /* 배경 이미지가 요소를 덮도록 조정 */
+    background-size: cover;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 }
@@ -47,5 +47,5 @@ h3 {
 
 .scroll-text {
     margin: 10px 0;
-    color: #ffffff; /* 하양색으로 설정 */
+    color: #ffffff;
 }
