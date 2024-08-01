@@ -43,28 +43,31 @@ body {
     }
 }
 
-#fish {
-    z-index: 1;
-    left: 5%;
-    bottom: 0;
-}
-
 #pig {
     z-index: 1;
     left: 25%;
     bottom: 0;
+    width: 30%;
 }
 
-#giraffe {
+#fish {
     z-index: 1;
-    right: 25%;
     bottom: 0;
+    width: 40%; /* 물고기 크기 증가 */
 }
 
 #bear {
     z-index: 1;
     right: 5%;
     bottom: 0;
+    width: 40%;
+}
+
+#giraffe {
+    z-index: 1;
+    right: 30%;
+    bottom: 0;
+    width: 25%;
 }
 
 /* press key 애니메이션 정의 */
