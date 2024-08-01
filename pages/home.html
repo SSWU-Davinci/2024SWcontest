@@ -13,10 +13,8 @@
 
     <div class="overlay"></div>
     <div class="container">
-        <h2>Longin</h2>
-        <form action="signup.html" method="get">
-            <label for="nickname">닉네임</label>
-            <input type="text" id="nickname" name="nickname" required>
+        <h2>Davinci</h2>
+        <form action="../submit" method="post">
 
             <label for="id">ID</label>
             <input type="text" id="id" name="id" required>
@@ -24,7 +22,10 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
 
-            <button type="submit">회원가입</button>
+            <div class="loginButton">
+                <button type="submit" class="login">Login</button>
+                <a href="signup.html" class="signUp">Sign Up</a>
+            </div>
         </form>
     </div>
 
