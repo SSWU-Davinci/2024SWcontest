@@ -85,17 +85,33 @@ input
     border-radius: 4px;
 }
 
-button
+.loginButton
 {
-    padding: 10px;
-    background-color: #2f2523;
-    color: #fff;
+    display: flex;
+    gap: 5%;
+    margin-top: 15px;
+}
+
+.login, .signUp
+{
+    display: inline-block;
+    width: 47.5%;
+    height: 40px;
+    line-height: 40px; /* 텍스트 수직 정렬 */
+    padding: 0 10px;
+
     border: none;
     border-radius: 4px;
     cursor: pointer;
+
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+
+    background-color: #2f2523;
 }
 
-button:hover
+.login:hover, .signUp:hover 
 {
     background-color: #ff0101;
 }
