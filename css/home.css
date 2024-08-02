@@ -99,7 +99,7 @@ input
     height: 40px;
     line-height: 40px; /* 텍스트 수직 정렬 */
     padding: 0 10px;
-
+    font-size: medium ;
     border: none;
     border-radius: 4px;
     cursor: pointer;
