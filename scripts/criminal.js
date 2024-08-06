@@ -6,25 +6,25 @@ document.addEventListener("DOMContentLoaded", function() {
     prisonImage.addEventListener('animationend', function() {
         firedText.style.opacity = 1;
     });
-});
 
-// 인벤토리로 이동하기
-const homeButton = document.getElementById('home');
+    // 인벤토리로 이동하기
+    const homeButton = document.getElementById('home');
     homeButton.addEventListener('click', function() {
         window.location.href = 'inventory.html';
     });
 
-// 다음 스테이지로 이동하기
-const stageButton = document.getElementById('stage');
-stageButton.addEventListener('click', function() {
-    window.location.href = 'home.html';
-});
+    // 다음 스테이지로 이동하기
+    const nextStageButton = document.getElementById('nextstage');
+    nextStageButton.addEventListener('click', function() {
+        window.location.href = 'home.html';
+    });
 
-// 엔딩으로 이동하기
-function handleKeyPress(event) {
-    if (event.code === 'Space' || event.code === 'Enter') {
-        // 엔터키와 스페이스바 누르면 홈 화면으로 이동하기
-        window.location.href = 'ending.html';
+    // 엔딩으로 이동하기
+    function handleKeyPress(event) {
+        if (event.code === 'Space' || event.code === 'Enter') {
+            // 엔터키와 스페이스바 누르면 엔딩 화면으로 이동하기
+            window.location.href = 'ending.html';
+        }
     }
-}
-document.addEventListener('keydown', handleKeyPress);
+    document.addEventListener('keydown', handleKeyPress);
+});
