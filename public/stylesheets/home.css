@@ -61,6 +61,7 @@ body,html
 
 h2
 {
+    font-family: 'CookieRunBold', sans-serif;
     text-align: center;
     margin-bottom: 20px;
     color: #ffffff;
@@ -68,12 +69,14 @@ h2
 
 form
 {
+    font-family: 'CookieRunBold', sans-serif;
     display: flex;
     flex-direction: column;
 }
 
 label
 {
+    font-family: 'CookieRunBold', sans-serif;
     margin-bottom: 5px;
     font-weight: bold;
     color: #ffffff;
@@ -81,6 +84,7 @@ label
 
 input
 {
+    font-family: sans-serif;
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -96,6 +100,7 @@ input
 
 .login, .signUp
 {
+    font-family: 'CookieRunBold', sans-serif;
     display: inline-block;
     width: 47.5%;
     height: 40px;
@@ -200,6 +205,7 @@ input
 
     font-size: large;
     color: aliceblue;
+    font-family: 'CookieRunBold', sans-serif;
 
     background-color: rgba(19, 19, 19, 0.8);
 }

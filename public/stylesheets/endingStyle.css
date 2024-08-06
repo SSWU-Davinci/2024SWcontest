@@ -1,3 +1,5 @@
+@import url('font.css');
+
 body {
     display: flex;
     flex-direction: column;
@@ -8,12 +10,13 @@ body {
     background-image: url('../img/background.png');
     background-position: center;
     background-size: cover;
-    font-family: Arial, sans-serif;
+    font-family: 'CookieRunBold', sans-serif;
     overflow-x: hidden;
 }
 
 
 .container {
+    font-family: 'CookieRunBold', sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;

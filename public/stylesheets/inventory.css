@@ -1,3 +1,4 @@
+@import url('font.css');
 
 body {
     margin: 0;
@@ -39,11 +40,12 @@ body {
 }
 
 .title {
+    font-family: 'CookieRunBold', sans-serif;
     margin-bottom: 15px;
     font-size: 64px;
     font-weight: bold;
     font-style: normal;
-    color: #1a1a1a;
+    color: white;
     letter-spacing: 12px;
 }
 
