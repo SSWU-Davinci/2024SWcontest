@@ -1,3 +1,5 @@
+@import url('font.css');
+
 body {
     font-family: Arial, sans-serif;
     background-image: url('../img/background.png');
@@ -73,19 +75,19 @@ body {
 /* press key 애니메이션 정의 */
 @keyframes colorBlink {
     0% {
-        color: red;
+        color: rgb(104, 83, 72);
     }
 
     33% {
-        color: yellow;
+        color: rgb(255, 255, 255);
     }
 
     66% {
-        color: blue;
+        color: rgb(104, 83, 72);
     }
 
     100% {
-        color: red;
+        color: rgb(255, 255, 255);
     }
 }
 
@@ -97,6 +99,7 @@ h2 {
     /* 애니메이션 적용 */
     margin: 0;
     padding: 0;
+    font-family: 'CookieRunBold', sans-serif;
 }
 
 /* 게임 제목 텍스트 */
