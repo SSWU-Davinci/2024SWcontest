@@ -1,25 +1,3 @@
-// const express = require('express');
-// const router = express.Router();
-// const userProvider = require('./userProvider');
-//
-// router.get('./user/login',(req,res)=> {
-//     res.render('login',{title:'Login'});
-// });
-//
-// router.post('./login',async(req,res) => {
-//     const id = req.body.id;
-//     const password = req.body.password;
-//
-//     const loginResponse = await userProvider.loginCheck(id,password);
-//
-//     if (loginResponse.success) {
-//         res.send('Login successful!');
-//     } else {
-//         res.send(loginResponse.message);
-//     }
-// })
-//
-// module.exports = router;
 const userProvider = require('../User/userProvider');
 
 // 로그인
@@ -38,6 +16,7 @@ exports.login = async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 };
+
 
 //회원가입
 exports.join = async (req, res) => {
