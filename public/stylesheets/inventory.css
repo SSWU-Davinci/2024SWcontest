@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'CookieRun', sans-serif;
-    background: url('../assets/img/background.png') no-repeat center center fixed;
+    background: url('../public/img/background.png') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -21,14 +21,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../assets/img/background.png') no-repeat center center fixed;
+    background: url('../public/img/background.png') no-repeat center center fixed;
     background-size: cover;
     filter: blur(10px);
     z-index: -1;
 }
 
 .panel {
-    background: url('../assets/img/panel.png') no-repeat center center;
+    background: url('../public/img/panel.png') no-repeat center center;
     background-size: contain;
     width: 1105px;
     height: 161px;
@@ -109,22 +109,22 @@ body {
 }
 
 .clip1 {
-    background: url('../assets/img/clip1.png') no-repeat center center;
+    background: url('../public/img/clip1.png') no-repeat center center;
     background-size: contain;
 }
 
 .clip2 {
-    background: url('../assets/img/clip2.png') no-repeat center center;
+    background: url('../public/img/clip2.png') no-repeat center center;
     background-size: contain;
 }
 
 .clip3 {
-    background: url('../assets/img/clip3.png') no-repeat center center;
+    background: url('../public/img/clip3.png') no-repeat center center;
     background-size: contain;
 }
 
 .clip4 {
-    background: url('../assets/img/clip4.png') no-repeat center center;
+    background: url('../public/img/clip4.png') no-repeat center center;
     background-size: contain;
 }
 
