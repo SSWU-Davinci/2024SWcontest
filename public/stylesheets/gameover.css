@@ -1,4 +1,7 @@
+@import url('font.css');
+
 body {
+    font-family: 'CookieRunBold', sans-serif;
     margin: 0;
     padding: 0;
     height: 100vh;
