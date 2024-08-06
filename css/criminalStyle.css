@@ -93,3 +93,32 @@ body {
         transform: translateX(-50%) scale(1); /* 원래 크기로 돌아옴 */
     }
 }
+
+/* press key */
+@keyframes colorBlink {
+    0% {
+        color: red;
+    }
+
+    33% {
+        color: yellow;
+    }
+
+    66% {
+        color: blue;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+h2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    animation: colorBlink 1.5s infinite;
+    /* 애니메이션 적용 */
+    margin: 0;
+    padding: 0;
+}
