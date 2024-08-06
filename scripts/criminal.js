@@ -8,7 +8,17 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// 디렉토리로 이동하기
+// 인벤토리로 이동하기
+const homeButton = document.getElementById('home');
+    homeButton.addEventListener('click', function() {
+        window.location.href = 'inventory.html';
+    });
+
+// 다음 스테이지로 이동하기
+const stageButton = document.getElementById('stage');
+stageButton.addEventListener('click', function() {
+    window.location.href = 'home.html';
+});
 
 // 엔딩으로 이동하기
 function handleKeyPress(event) {
