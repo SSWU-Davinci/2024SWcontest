@@ -1,0 +1,66 @@
+@import url('font.css');
+
+body {
+    font-family: 'CookieRunBold', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-over-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.game-over-text {
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    z-index: 1; /* 텍스트가 버튼 위에 표시되도록 설정 */
+}
+
+#home {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer; /* 클릭할 수 있는 커서로 변경 */
+}
+
+.game-over-text span {
+    opacity: 0;
+    animation: appear 0.5s forwards;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 글자가 하나씩 나타나도록 설정 */
+.game-over-text span:nth-child(1) { animation-delay: 0.2s; }
+.game-over-text span:nth-child(2) { animation-delay: 0.4s; }
+.game-over-text span:nth-child(3) { animation-delay: 0.6s; }
+.game-over-text span:nth-child(4) { animation-delay: 0.8s; }
+.game-over-text span:nth-child(5) { animation-delay: 1s; }
+.game-over-text span:nth-child(6) { animation-delay: 1.2s; }
+.game-over-text span:nth-child(7) { animation-delay: 1.4s; }
+.game-over-text span:nth-child(8) { animation-delay: 1.6s; }
+.game-over-text span:nth-child(9) { animation-delay: 1.8s; }
+.game-over-text span:nth-child(10) { animation-delay: 2s; }

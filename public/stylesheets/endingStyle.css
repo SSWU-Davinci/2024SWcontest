@@ -1,0 +1,54 @@
+@import url('font.css');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200vh; /* 충분한 높이 확보 */
+    margin: 0;
+    background-image: url('../img/background.png');
+    background-position: center;
+    background-size: cover;
+    font-family: 'CookieRunBold', sans-serif;
+    overflow-x: hidden;
+}
+
+
+.container {
+    font-family: 'CookieRunBold', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.teddybear {
+    max-width: 100%;
+    height: auto;
+}
+
+.highlighted {
+    text-decoration: underline;
+}
+
+h3 {
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.scroll-content {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    display: none;
+}
+
+.scroll-text {
+    margin: 10px 0;
+    color: #ffffff;
+}
