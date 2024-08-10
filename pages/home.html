@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../public/stylesheets/home.css">
 </head>
 
-<body>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div id="gameStart">GAME START!</div>
     <audio src="../public/assets/main bgm.mp3" autoplay loop></audio>
     <img id="user" src="../public/img/setting_button.png" alt="계정정보">
@@ -42,7 +42,7 @@
         <img id="name_log" src="../public/img/log_name.png" alt="이름표">
     </div>
 
-    <div id="log">
+    <div id="dialogue">
         <p>
             대사입니다.
         </p>
@@ -54,5 +54,6 @@
 <script src="../scripts/click.js"></script>
 <script src="../scripts/music.js"></script>
 <script src="../scripts/gamestart.js"></script>
-<script src="../routes/user.js"></script>
+<script src="../routes/user.js"></script> <!--나중에 필요한지 확인-->
+<script src="../public/log/logLoad.js"></script>
 </html>
