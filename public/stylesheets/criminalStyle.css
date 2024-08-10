@@ -80,6 +80,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     color: red;
+    -webkit-text-stroke: 5px white;
     font-size: 9rem;
     font-weight: bold;
     opacity: 0; /* 처음에는 숨겨짐 */
