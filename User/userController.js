@@ -17,6 +17,7 @@ exports.login = async (req, res) => {
     }
 };
 
+
 //회원가입
 exports.join = async (req, res) => {
     const {name, id, password} = req.body;
