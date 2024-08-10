@@ -195,19 +195,47 @@ input
     top: 10%;
 }
 
-#dialogue
+#log
 {
     z-index: 103;
     height: 30%;
     margin: 0%;
-    padding-left: 100px;
-    padding-top: 130px;
+    padding-left: 10%;
+    padding-top: 90px;
 
-    font-size: large;
+    font-size: 2vw;
     color: aliceblue;
     font-family: 'CookieRunBold', sans-serif;
 
     background-color: rgba(19, 19, 19, 0.8);
+}
+
+#dialogue
+{
+    width: 80%;
+    padding: 0%;
+    margin: 0%;
+}
+
+/* 모바일 화면용 - 화면 너비가 768px 이하일 때 */
+@media only screen and (max-width: 768px) {
+    #log {
+        font-size: 3vw; /* 작은 화면에서는 폰트 크기를 더 크게 설정 */
+
+        padding-top: 90px;
+    }
+
+    #dialogue
+    {
+        width: 70%;
+    }
+}
+
+/* 더 작은 화면 (예: 480px 이하)용 */
+@media only screen and (max-width: 480px) {
+    #log {
+        font-size: 3.7vw; /* 매우 작은 화면에서는 폰트 크기를 더 크게 설정 */
+    }
 }
 
 #fire
