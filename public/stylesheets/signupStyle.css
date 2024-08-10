@@ -1,5 +1,7 @@
+@import url('font.css');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'CookieRunBold', sans-serif;
     background-image: url('../img/background.png');
     background-size: cover;
     background-position: center;
@@ -59,6 +61,7 @@ input {
 }
 
 button {
+    font-family: 'CookieRunBold', sans-serif;
     padding: 10px;
     background-color: #2f2523;
     color: #fff;
