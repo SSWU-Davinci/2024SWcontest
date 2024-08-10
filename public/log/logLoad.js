@@ -3,7 +3,7 @@
         .then(response => response.json())
         .then(data => {
             // theme_number가 1이고 criminal이 1인 대사 필터링
-            const dialogue = data.find(item => item.theme_number === 1 && item.criminal === 1);
+            const dialogue = data.find(item => item.theme_number === 1 && item.set_number === 0);
             
             // 해당 대사가 있는 경우 "대사입니다." 부분에 대사 삽입
             if (dialogue) {
@@ -11,12 +11,3 @@
             }
         })
         .catch(error => console.error('Error loading JSON:', error));
-
-/*
-fetch('log.json')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data); // 데이터를 활용
-            })
-            .catch(error => console.error('Error loading JSON:', error));
-*/
