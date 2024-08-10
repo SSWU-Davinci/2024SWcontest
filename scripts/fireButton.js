@@ -2,31 +2,43 @@ document.addEventListener("DOMContentLoaded", function() {
     const animals = document.querySelectorAll(".animal");
     const fireButton = document.getElementById('fire');
 
-    // 범인과 범인 아닌 것의 여부 데이터 (임의로 하드코딩)
-    /* const animalData = {
-        'fish': false,
-        'pig': false,
-        'giraffe': false,
-        'bear': true
-    }; */
+    let animalData = [];
 
-    if (fireButton) {
-        fireButton.addEventListener('click', function() {
-            console.log("Fire button clicked");
+    // JSON 데이터를 불러오기
+    fetch('../public/log/log.json')
+        .then(response => response.json())
+        .then(data => {
+            animalData = data;
 
-            // 선택된 동물 확인
-            const selectedAnimal = Array.from(animals).find(animal => animal.dataset.selected);
+            if (fireButton) {
+                fireButton.addEventListener('click', function() {
+                    console.log("Fire button clicked");
 
-            if (selectedAnimal && animalData[selectedAnimal.id]) {
-                // 범인 선택 시 loading.html --> criminal.html로 이동
-                window.location.href = 'loading.html';
+                    // 선택된 동물 확인
+                    const selectedAnimal = Array.from(animals).find(animal => animal.dataset.selected);
+
+                    if (selectedAnimal) {
+                        // JSON 데이터에서 선택된 동물의 범인 여부 찾기
+                        const animalInfo = animalData.find(item => item.id === selectedAnimal.id);
+                        const isCriminal = animalInfo ? animalInfo.isCriminal : false;
+
+                        if (isCriminal) {
+                            // 범인 선택 시 loading.html --> criminal.html로 이동
+                            window.location.href = 'loading.html';
+                        } 
+                        else {
+                            // 잘못된 동물 선택 시 gameover.html로 이동
+                            window.location.href = 'gameover.html';
+                        }
+                    } 
+                    else {
+                        console.log("No animal selected");
+                    }
+                });
             } 
             else {
-                // 잘못된 동물 선택 시 gameover.html로 이동
-                window.location.href = 'gameover.html';
+                console.error("Fire button not found");
             }
-        });
-    } else {
-        console.error("Fire button not found");
-    }
+        })
+        .catch(error => console.error('Error loading JSON:', error));
 });
