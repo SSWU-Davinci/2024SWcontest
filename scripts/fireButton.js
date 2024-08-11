@@ -1,4 +1,7 @@
-document.addEventListener("DOMContentLoaded", function() {
+
+
+
+/*document.addEventListener("DOMContentLoaded", function() {
 
 const animals = document.querySelectorAll(".animal");
 const fireButton = document.getElementById('fire');
@@ -43,3 +46,4 @@ fetch('../public/log/log.json')
     })
     .catch(error => console.error('Error loading JSON:', error));
 });
+*/
