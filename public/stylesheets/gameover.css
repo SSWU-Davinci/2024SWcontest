@@ -13,7 +13,7 @@ body {
 }
 
 .game-over-container {
-    display: flex;
+    display: contents;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -22,6 +22,7 @@ body {
 }
 
 .game-over-text {
+    display: block;
     color: white;
     font-size: 5rem;
     font-weight: bold;
