@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             // theme_number로 데이터 선택
-            logData = data.data[0];
+            logData = data.data[0]; // 현재 테마에 맞는 데이터를 가져옵니다.
         })
         .catch(error => console.error('Error loading JSON:', error));
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let currentLog = logData[currentIndex];
                 let exceptions = Array.isArray(currentLog.exception) ? currentLog.exception : [currentLog.exception];
                 let n = currentIndex;
-            
+
                 // 동물 ID에 해당하는 한국어 이름 설정
                 name_text.textContent = animalNames[animal.id] || animal.id;
 
@@ -78,8 +78,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 a.style.transform = "";
                 a.style.zIndex = "1";
 
-                name_text.textContent = "햄부장"
-                dialogue.textContent = "신중하게 고민해뵤...";
+                if (currentIndex >= logData.length-1) {
+                    name_text.textContent = "햄부장"
+                    dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
+                    console.log("index", currentIndex);
+                }
+                else {
+                    console.log("index", currentIndex);
+                    name_text.textContent = "햄부장"
+                    dialogue.textContent = "신중하게 고민해뵤...";
+                }
             });
         }
     });

@@ -43,14 +43,7 @@ function getNextAvailableTheme(completedThemes) {
 // DOMContentLoaded 이벤트에서 초기화
 document.addEventListener('DOMContentLoaded', () => {
     // 게임 초기화
->>>>>>> 93ba1d6f40205a8d80ace2c1e2d57d42b4787d8c
     localStorage.removeItem('themesCompleted');  // 이전 데이터 제거
     localStorage.setItem('currentTheme', '1');  // 처음 테마로 설정
     themaNumCnt();  // 테마 확인 및 업데이트
 });
-=======
-    localStorage.removeItem('themesCompleted');                     // 이전 데이터 제거
-    localStorage.setItem('currentTheme', '1');                      // 처음 테마로 설정
-    loadDialogues();
-});
->>>>>>> 96094dbe2300d00cbf52cf834a69dccf46db6fb0
