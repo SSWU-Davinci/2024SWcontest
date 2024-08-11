@@ -1,3 +1,7 @@
+/*
+<잠깐 뭐 좀 알아보고 다시 주석 풀게요,, - 이안>
+
+
 async function loadDialogues() {
     try {
         const response = await fetch('../public/log/log.json');
@@ -85,3 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('currentTheme', '1');                      // 처음 테마로 설정
     loadDialogues();
 });
+
+
+
+*/
