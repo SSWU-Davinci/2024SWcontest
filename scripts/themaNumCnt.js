@@ -2,7 +2,7 @@
 <잠깐 뭐 좀 알아보고 다시 주석 풀게요,, - 이안>
 
 
-async function loadDialogues() {
+async function themaNumCnt() {
     try {
         const response = await fetch('../public/log/log.json');
         const data = await response.json();
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 게임 초기화
     localStorage.removeItem('themesCompleted');                     // 이전 데이터 제거
     localStorage.setItem('currentTheme', '1');                      // 처음 테마로 설정
-    loadDialogues();
+    themaNumCnt();
 });
 
 
