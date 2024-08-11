@@ -1,49 +1,51 @@
-async function themaNumCnt() {
-    try {
-        // 테마 상태
-        let currentTheme = parseInt(localStorage.getItem('currentTheme') || '1');       // 현재 테마 (기본값 1)
-        let themesCompleted = JSON.parse(localStorage.getItem('themesCompleted') || '[]');      // 완료된 테마
-
-        // 모든 테마가 완료된 경우
-        if (themesCompleted.length === 3) {
-            document.getElementById('dialogue').textContent = '준비된 모든 테마가 소진되었습니다!';
-            return;
-        }
-
-        // 현재 테마가 완료된 테마 리스트에 추가
-        if (!themesCompleted.includes(currentTheme)) {
-            themesCompleted.push(currentTheme);
-            localStorage.setItem('themesCompleted', JSON.stringify(themesCompleted));  // // stringify: JavaScript 값이나 객체를 JSON 문자열로 변환하는 데 사용
-        }
-
-        // 다음 테마로 이동
-        const nextTheme = getNextAvailableTheme(themesCompleted);
-        if (nextTheme === null) {
-            document.getElementById('dialogue').textContent = '준비된 모든 테마가 소진되었습니다!';
-            return;
-        }
-
-        localStorage.setItem('currentTheme', nextTheme);
-
-    } catch (error) {
-        console.error('Error processing themes:', error);
-    }
+// 테마 번호를 가져오거나 초기값을 설정
+function getThemeNumber() {
+    return parseInt(localStorage.getItem('themeNumber')) || 1;
 }
 
-// 사용 가능한 다음 테마를 반환하는 함수
-function getNextAvailableTheme(completedThemes) {
-    for (let i = 1; i <= 3; i++) {
-        if (!completedThemes.includes(i)) {
-            return i;
-        }
+// 테마 번호를 증가시키고 저장
+function incrementThemeNumber() {
+    let themeNumber = getThemeNumber();
+    if (themeNumber >= 4) {  // 테마 번호가 4에 도달하면 리셋
+        themeNumber = 1;
+    } else {
+        themeNumber += 1;
     }
-    return null;  // 모든 테마가 완료된 경우
+    localStorage.setItem('themeNumber', themeNumber);
 }
+
+// 테마 번호를 로컬 스토리지에 저장된 값으로 설정
+function setThemeNumber(number) {
+    localStorage.setItem('themeNumber', number);
+}
+
+// 테마 번호를 콘솔에 출력하는 함수 (디버깅 용도)
+function logCurrentThemeNumber() {
+    console.log('Current theme number:', getThemeNumber());
+}
+
+// 외부에서 사용할 수 있도록 함수들을 export
+export { getThemeNumber, incrementThemeNumber, setThemeNumber, logCurrentThemeNumber };
 
 // DOMContentLoaded 이벤트에서 초기화
 document.addEventListener('DOMContentLoaded', () => {
-    // 게임 초기화
+    // 페이지가 로드될 때 로컬 스토리지에 테마 번호가 설정되지 않았으면 초기화
+    if (!localStorage.getItem('themeNumber')) {
+        localStorage.setItem('themeNumber', '1');
+    }
+
+    // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
+    logCurrentThemeNumber();
+});
+
+// DOMContentLoaded 이벤트에서 초기화
+document.addEventListener('DOMContentLoaded', () => {
+    // 초기화
     localStorage.removeItem('themesCompleted');  // 이전 데이터 제거
-    localStorage.setItem('currentTheme', '1');  // 처음 테마로 설정
-    themaNumCnt();  // 테마 확인 및 업데이트
+    if (!localStorage.getItem('themeNumber')) {  // 테마 번호가 없을 경우만 설정
+        localStorage.setItem('themeNumber', '1');  // 처음 테마로 설정
+    }
+
+    // 현재 테마 번호를 로그에 출력
+    logCurrentThemeNumber();
 });
