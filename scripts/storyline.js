@@ -16,25 +16,34 @@ var swiper = new Swiper(".mySwiper", {
   loop: false,
 });
 
-swiper.on('slideChange', function () {
-  if (swiper.isEnd) {
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Enter') {
-        window.location.href = 'startmain.html';
-      }
-    });
-  } else {
-    document.querySelector('.swiper-button-next').removeEventListener('click', handleRedirect);
-    document.removeEventListener('keydown', handleEnterKey);
-  }
-});
-
+// Function to handle redirection
 function handleRedirect() {
-  window.location.href = 'startmain.html';
+  window.location.href = 'startmain.html'; // Redirect to startmain.html
 }
 
+// Function to handle Enter key press
 function handleEnterKey(event) {
   if (event.key === 'Enter') {
-    window.location.href = 'startmain.html';
+    handleRedirect();
   }
 }
+
+// Function to handle click anywhere on the last slide
+function handleSlideClick() {
+  handleRedirect();
+}
+
+// Check if the current slide is the last one
+swiper.on('slideChange', function () {
+  if (swiper.isEnd) {
+    // Add event listener for Enter key press
+    document.addEventListener('keydown', handleEnterKey);
+
+    // Add event listener for click anywhere on the slide container
+    document.querySelector('.swiper').addEventListener('click', handleSlideClick);
+  } else {
+    // Remove event listeners when not on the last slide
+    document.removeEventListener('keydown', handleEnterKey);
+    document.querySelector('.swiper').removeEventListener('click', handleSlideClick);
+  }
+});
