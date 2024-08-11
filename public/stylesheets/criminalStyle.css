@@ -85,6 +85,8 @@ body {
     font-weight: bold;
     opacity: 0; /* 처음에는 숨겨짐 */
     animation: appear 1s 2s forwards; /* 애니메이션 적용, 2초 후 시작 */
+    white-space: nowrap;
+    
 }
 
 @keyframes appear {
@@ -132,4 +134,29 @@ h1 {
     height: 75px;
     bottom: 20px;
     right: 20px;
+}
+
+/* 모바일 화면에서 폰트와 이미지 크기 조절 */
+@media (max-width: 768px) {
+    .fish {
+        width: 100%; /* 모바일에서 동물 이미지 크기 조정 */
+    }
+
+    .fired {
+        font-size: 4rem; /* 모바일에서 텍스트 크기 조정 */
+    }
+
+    h1 {
+        font-size: 0.9rem; /* 모바일에서 텍스트 크기 조정 */
+    }
+
+    #home {
+        width: 60px; /* 모바일에서 버튼 크기 조정 */
+        height: 60px; /* 모바일에서 버튼 크기 조정 */
+    }
+
+    #nextstage {
+        width: 120px; /* 모바일에서 버튼 크기 조정 */
+        height: 50px; /* 모바일에서 버튼 크기 조정 */
+    }
 }
