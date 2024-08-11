@@ -1,4 +1,4 @@
-import { getCriminal, getFire } from './logLoad.js';
+import { getCriminal, getFire } from './criminal.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     const fireButton = document.getElementById('fire');
