@@ -3,12 +3,13 @@ import { getThemeNumber } from './themaNumCnt.js';
 document.addEventListener("DOMContentLoaded", function () {
     const animals = document.querySelectorAll(".animal");
     const dialogue = document.getElementById("dialogue");
-    const nameText = document.getElementById("name_text");
+    const name_text = document.getElementById("name_text");
 
     let logData = []; // 데이터를 저장할 배열
     let currentIndex = 0; // 클릭할 때마다 증가시킬 인덱스
     let animalsClicked = new Set(); // 클릭된 동물들을 저장할 Set
     let allAnimalsClicked = false; // 모든 동물이 클릭되었는지 확인
+    let finalClickRequired = false; // 모든 대사를 확인한 후 클릭 필요 여부
 
     // 동물 ID와 한국어 이름의 매핑
     const animalNames = {
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             // theme_number로 데이터 선택
             const themeNumber = getThemeNumber(); 
-            logData = data.data[themeNumber-1]; // 현재 테마에 맞는 데이터를 가져옵니다.
+            logData = data.data[themeNumber - 1]; // 현재 테마에 맞는 데이터를 가져옵니다.
         })
         .catch(error => console.error('Error loading JSON:', error));
 
@@ -33,10 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("animal ID:", animal.id); // 클릭된 동물의 ID
             console.log("index", currentIndex); // 현재 인덱스
 
-            if (allAnimalsClicked) {
-                // 모든 동물이 클릭된 후의 추가 클릭 시
-                resetAnimalStyles(); // 동물 크기 및 위치 리셋
-                nameText.textContent = "햄부장";
+            if (finalClickRequired) {
+                // 모든 대사를 확인한 후 클릭했을 때
+                resetAnimalStyles();
+                name_text.textContent = "햄부장";
                 dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
                 setFire(1);
                 return;
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let n = currentIndex;
 
                 // 동물 ID에 해당하는 한국어 이름 설정
-                nameText.textContent = animalNames[animal.id] || animal.id;
+                name_text.textContent = animalNames[animal.id] || animal.id;
 
                 if (exceptions.includes(animal.id)) {
                     // 예외 동물인 경우
@@ -76,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // 모든 동물이 클릭되었는지 확인
                 if (animalsClicked.size === animals.length) {
                     allAnimalsClicked = true;
+                    finalClickRequired = true;
                 }
             }
 
@@ -95,29 +97,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 화면 클릭 시 동물 스타일 리셋
     document.addEventListener("click", function (event) {
-        if (!event.target.classList.contains("animal") && allAnimalsClicked) {
-            // 모든 동물이 클릭된 후, 화면의 다른 곳을 클릭했을 때
-            resetAnimalStyles(); // 동물 크기 및 위치 리셋
-            nameText.textContent = "햄부장";
-            dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
-            setFire(1);
-        } else if (!event.target.classList.contains("animal")) {
-            // 클릭된 곳이 동물이 아닌 경우에만 스타일 리셋
-            animals.forEach(a => {
-                a.style.transform = "";
-                a.style.zIndex = "1";
+        if (!event.target.classList.contains("animal")) {
+            if (finalClickRequired) {
+                // 모든 대사를 확인한 후, 화면의 다른 곳을 클릭했을 때
+                resetAnimalStyles();
+                name_text.textContent = "햄부장";
+                dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
+                setFire(1);
+            } else if (allAnimalsClicked) {
+                // 모든 동물이 클릭되었지만, 아직 추가 클릭이 필요 없는 경우
+                resetAnimalStyles();
+                name_text.textContent = "햄부장";
+                dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
+                setFire(1);
+            } else {
+                // 클릭된 곳이 동물이 아닌 경우에만 스타일 리셋
+                animals.forEach(a => {
+                    a.style.transform = "";
+                    a.style.zIndex = "1";
+                });
 
-                if (currentIndex >= logData.length) {
-                    nameText.textContent = "햄부장";
-                    dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
-                    console.log("index", currentIndex);
-                    setFire(1);
-                } else {
-                    console.log("index", currentIndex);
-                    nameText.textContent = "햄부장";
+                if (currentIndex < logData.length) {
+                    name_text.textContent = "햄부장";
                     dialogue.textContent = "신중하게 고민해뵤...";
                 }
-            });
+            }
         }
     });
 
@@ -130,10 +134,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// criminal.js
+
 let criminal = null;
 let fire = null;
 
+//범죄자 여부 확인
 function setCriminal(value) {
     criminal = value;
 }
@@ -142,6 +147,7 @@ function getCriminal() {
     return criminal;
 }
 
+//모든 직원의 대사를 봤는지
 function setFire(value) {
     fire = value;
 }
