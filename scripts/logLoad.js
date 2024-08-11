@@ -1,4 +1,5 @@
 import { getThemeNumber } from './themaNumCnt.js';
+import { setCriminal, getCriminal, setFire, getFire } from './criminal.js';
 
 document.addEventListener("DOMContentLoaded", function () {
     const animals = document.querySelectorAll(".animal");
@@ -132,28 +133,18 @@ document.addEventListener("DOMContentLoaded", function () {
             a.style.zIndex = "1";
         });
     }
+
+    // 범죄자 동물을 화면에 띄우기 위한 함수
+    function displayCriminal() {
+        const criminal = getCriminal();
+        if (criminal) {
+            const criminalImage = document.querySelector(`.background img.${criminal}`);
+            if (criminalImage) {
+                criminalImage.style.display = 'block';
+            }
+        }
+    }
+
+    // 모든 로딩 및 초기화 후 범죄자 동물 표시
+    displayCriminal();
 });
-
-
-let criminal = null;
-let fire = null;
-
-//범죄자 여부 확인
-function setCriminal(value) {
-    criminal = value;
-}
-
-function getCriminal() {
-    return criminal;
-}
-
-//모든 직원의 대사를 봤는지
-function setFire(value) {
-    fire = value;
-}
-
-function getFire() {
-    return fire;
-}
-
-export { setCriminal, getCriminal, setFire, getFire };
