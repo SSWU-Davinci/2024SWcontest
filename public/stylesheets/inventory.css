@@ -26,7 +26,7 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: url('../assets/img/background.png') no-repeat center center fixed;
+    background: url('../img/background.png') no-repeat center center fixed;
     background-size: cover;
     z-index: -1;
 }
@@ -52,7 +52,7 @@ html, body {
 
 /* Panel Styles */
 .panel {
-    background: url('../assets/img/panel.png') no-repeat center center;
+    background: url('../img/panel.png') no-repeat center center;
     background-size: contain;
     width: 1100px;
     height: 150px;
@@ -75,7 +75,7 @@ html, body {
 /* Whiteboard Styles */
 .whiteboard {
     background-color: #d9d9d9;
-    background: url('../assets/img/board.png') no-repeat center center;
+    background: url('../img/board.png') no-repeat center center;
     background-size: 105% 110%;
     width: 1100px;
     height: 510px;
@@ -140,10 +140,10 @@ html, body {
     height: 76.53px;
 }
 
-.clip1 { background: url('../assets/img/clip1.png') no-repeat center center; background-size: contain; }
-.clip2 { background: url('../assets/img/clip2.png') no-repeat center center; background-size: contain; }
-.clip3 { background: url('../assets/img/clip3.png') no-repeat center center; background-size: contain; }
-.clip4 { background: url('../assets/img/clip4.png') no-repeat center center; background-size: contain; }
+.clip1 { background: url('../img/clip1.png') no-repeat center center; background-size: contain; }
+.clip2 { background: url('../img/clip2.png') no-repeat center center; background-size: contain; }
+.clip3 { background: url('../img/clip3.png') no-repeat center center; background-size: contain; }
+.clip4 { background: url('../img/clip4.png') no-repeat center center; background-size: contain; }
 
 /* Speech Bubble Styles */
 .speech-bubble {
