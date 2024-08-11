@@ -24,9 +24,6 @@ function logCurrentThemeNumber() {
     console.log('Current theme number:', getThemeNumber());
 }
 
-// 외부에서 사용할 수 있도록 함수들을 export
-export { getThemeNumber, incrementThemeNumber, setThemeNumber, logCurrentThemeNumber };
-
 // DOMContentLoaded 이벤트에서 초기화
 document.addEventListener('DOMContentLoaded', () => {
     // 페이지가 로드될 때 로컬 스토리지에 테마 번호가 설정되지 않았으면 초기화
@@ -49,3 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 현재 테마 번호를 로그에 출력
     logCurrentThemeNumber();
 });
+
+// 외부에서 사용할 수 있도록 함수들을 export
+export { getThemeNumber };

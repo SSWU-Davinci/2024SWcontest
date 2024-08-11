@@ -1,5 +1,18 @@
+import { getCriminal } from './logLoad.js';
 
+document.addEventListener('DOMContentLoaded', function () {
+    const fireButton = document.getElementById('fire');
 
+    fireButton.addEventListener('click', function() {
+        const criminal = getCriminal();
+
+        if (criminal === 0) {
+            window.location.href = 'gameover.html';
+        } else if (criminal === 1) {
+            window.location.href = 'loading.html';
+        }
+    });
+});
 
 /*document.addEventListener("DOMContentLoaded", function() {
 

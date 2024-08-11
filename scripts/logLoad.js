@@ -1,3 +1,5 @@
+import { getThemeNumber } from './themaNumCnt.js';
+
 document.addEventListener("DOMContentLoaded", function () {
     const animals = document.querySelectorAll(".animal");
     const dialogue = document.getElementById("dialogue");
@@ -18,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             // theme_number로 데이터 선택
-            logData = data.data[0]; // 현재 테마에 맞는 데이터를 가져옵니다.
+            const themeNumber = getThemeNumber(); 
+            logData = data.data[themeNumber-1]; // 현재 테마에 맞는 데이터를 가져옵니다.
         })
         .catch(error => console.error('Error loading JSON:', error));
 
@@ -47,13 +50,16 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
 
                         dialogue.textContent = currentLog.line;
+                        setCriminal(currentLog.criminal); // criminal 값을 설정
                     }
                 }
                 else {
                     dialogue.textContent = currentLog.line;
+                    setCriminal(currentLog.criminal); // criminal 값을 설정
                     // 다음 인덱스로 이동
                     currentIndex++;
                 }
+                
             }
 
             // 동물 앞으로 나오게
@@ -92,3 +98,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// criminal.js
+let criminal = null;
+
+function setCriminal(value) {
+    criminal = value;
+}
+
+function getCriminal() {
+    return criminal;
+}
+
+export { setCriminal, getCriminal };
