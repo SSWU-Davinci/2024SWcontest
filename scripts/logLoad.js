@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             // theme_number로 데이터 선택
-            logData = data.data[0];
+            logData = data.data[0]; // 현재 테마에 맞는 데이터를 가져옵니다.
         })
         .catch(error => console.error('Error loading JSON:', error));
 
@@ -80,6 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 name_text.textContent = "햄부장"
                 dialogue.textContent = "신중하게 고민해뵤...";
+
+                if(currentIndex === 3)
+                    {
+                        name_text.textContent = "햄부장"
+                        dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
+                    }
             });
         }
     });
