@@ -1,3 +1,5 @@
+@import url('font.css');
+
 html, body {
   position: relative;
   height: 100vh;
@@ -36,7 +38,7 @@ body {
 }
 
 .swiper .swiper-pagination-bullet {
-    background-color: #010101 !important;
+    background-color: #fff !important;
 }
 
 @media (max-width: 900px) {

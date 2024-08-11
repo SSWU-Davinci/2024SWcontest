@@ -28,22 +28,18 @@ function handleEnterKey(event) {
   }
 }
 
-// Function to handle click anywhere on the last slide
-function handleSlideClick() {
-  handleRedirect();
-}
+// Check the current slide's ID when the transition ends
+swiper.on('transitionEnd', function () {
+  var currentSlideId = swiper.slides[swiper.activeIndex].id;
 
-// Check if the current slide is the last one
-swiper.on('slideChange', function () {
-  if (swiper.isEnd) {
-    // Add event listener for Enter key press
+  if (currentSlideId === 'slide_08') { // Check if the current slide is the last one
+    document.querySelector('.swiper-button-next').addEventListener('click', handleRedirect);
     document.addEventListener('keydown', handleEnterKey);
-
-    // Add event listener for click anywhere on the slide container
-    document.querySelector('.swiper').addEventListener('click', handleSlideClick);
+    document.querySelector('.swiper').addEventListener('click', handleRedirect);
   } else {
-    // Remove event listeners when not on the last slide
+    // Remove all existing event listeners if not on the last slide
+    document.querySelector('.swiper-button-next').removeEventListener('click', handleRedirect);
     document.removeEventListener('keydown', handleEnterKey);
-    document.querySelector('.swiper').removeEventListener('click', handleSlideClick);
+    document.querySelector('.swiper').removeEventListener('click', handleRedirect);
   }
 });
