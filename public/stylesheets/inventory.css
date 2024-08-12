@@ -146,7 +146,7 @@ html, body {
 .clip4 { background: url('../img/clip4.png') no-repeat center center; background-size: contain; }
 
 /* Speech Bubble Styles */
-.speech-bubble {
+/* .speech-bubble {
     position: absolute;
     bottom: 120%;
     left: 50%;
@@ -172,7 +172,7 @@ html, body {
     border-width: 10px;
     border-style: solid;
     border-color: #fff transparent transparent transparent;
-}
+} */
 
 /* Photo Background Styles */
 .photo-background {
@@ -253,7 +253,7 @@ html, body {
 
     }
 
-    .speech-bubble {
+    /* .speech-bubble {
         width: 200px;
         padding: 15px;
         font-size: 16px;
@@ -262,5 +262,5 @@ html, body {
     .speech-bubble::after {
         bottom: -15px;
         border-width: 8px;
-    }
+    } */
 }
