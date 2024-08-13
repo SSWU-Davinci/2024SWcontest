@@ -6,20 +6,23 @@
     <title>Davinci</title>
     <link rel="stylesheet" href="../public/stylesheets/criminalStyle.css">
 </head>
-<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+<body>
     <div class="background">
-        <!-- 동물 어떤 거 나올지 모름 -->
-        <img src="../public/img/fish.png" alt="fish" class="fish" style="display:none;">
-        <img src="../public/img/bear.png" alt="bear" class="bear" style="display:none;">
-        <img src="../public/img/pig.png" alt="pig" class="pig" style="display:none;">
-        <img src="../public/img/giraffe.png" alt="giraffe" class="giraffe" style="display:none;">
-        
+        <!-- 범인 동물만 표시하기 -->
+        <img src="../public/img/fish.png" alt="fish" class="fish">
+        <img src="../public/img/bear.png" alt="bear" class="bear">
+        <img src="../public/img/pig.png" alt="pig" class="pig">
+        <img src="../public/img/giraffe.png" alt="giraffe" class="giraffe">
+
+
         <img src="../public/img/prison02.png" alt="prison" class="prison">
         <img id="home" src="../public/img/home_button.png" alt="인벤토리로고">
         <img id="nextstage" src="../public/img/nextStage_button.png" alt="다음스테이지">
         <h2 class="fired">해고 완료!!</h2>
     </div>
-    <h1>Press space bar or enter key to view ending screen...</h1>
-    <script type="module" src="../scripts/criminal.js"></script>
+    <h1>스페이스 바나 엔터 키를 눌러서 엔딩 화면을 보세요...</h1>
 </body>
+<script type="module" src="../scripts/criminal.js"></script>
+<script type="module" src="../scripts/logLoad.js"></script>
+<script type="module" src="../scripts/criminalImg.js"></script> 
 </html>
