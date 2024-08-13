@@ -39,29 +39,32 @@
 
 // 범인 캐릭터에 따라 CSS 클래스 설정하는 함수
 function applyCriminalStyles(criminal) {
-    const animalElements = document.querySelectorAll('.animal');
+    const animalElements = document.querySelectorAll('.animal img');
 
     animalElements.forEach(animal => {
-        // 기본 클래스 제거
-        animal.classList.remove('photo-box', 'big-photo-box', 'large-photo-box');
+        // 부모 요소(photo-box, big-photo-box, large-photo-box) 초기화
+        const photoBox = animal.closest('.photo-box, .big-photo-box, .large-photo-box');
+        if (photoBox) {
+            photoBox.classList.remove('photo-box', 'big-photo-box', 'large-photo-box');
+        }
 
         // 범인 캐릭터에 맞는 CSS 클래스 추가
         if (criminal === 'fish' || criminal === 'pig') {
-            animal.classList.add('photo-box');
+            animal.closest('.photo-box').classList.add('photo-box');
         } else if (criminal === 'giraffe') {
-            animal.classList.add('big-photo-box');
+            animal.closest('.big-photo-box').classList.add('big-photo-box');
         } else if (criminal === 'bear') {
-            animal.classList.add('large-photo-box');
+            animal.closest('.large-photo-box').classList.add('large-photo-box');
         }
     });
 }
 
 // 범죄자 동물을 화면에 띄우기 위한 함수
 function displayCriminal() {
-    const criminal = getCriminal();
+    const criminal = getCriminal(); // 서버에서 범인 ID를 받아오는 함수
     if (criminal) {
         applyCriminalStyles(criminal); // CSS 클래스 설정
-        const criminalImage = document.querySelector(`.background img.${criminal}`);
+        const criminalImage = document.querySelector(`img[alt="${criminal.charAt(0).toUpperCase() + criminal.slice(1)}"]`);
         if (criminalImage) {
             criminalImage.style.display = 'block';
         }
