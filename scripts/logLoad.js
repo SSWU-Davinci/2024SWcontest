@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.style.zIndex = "10";
 
             // 2번 클릭 못하도록
-            this.removeEventListener("click", handler);
+            //this.removeEventListener("click", handler);
         });
     });
 
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (currentIndex < logData.length) {
                     name_text.textContent = "햄부장";
-                    dialogue.textContent = "신중하게 고민해뵤...";
+                    dialogue.textContent = "신중하게 모든 직원을 확인해뵤...";
                 }
             }
         }
@@ -133,18 +133,4 @@ document.addEventListener("DOMContentLoaded", function () {
             a.style.zIndex = "1";
         });
     }
-
-    // 범죄자 동물을 화면에 띄우기 위한 함수
-    function displayCriminal() {
-        const criminal = getCriminal();
-        if (criminal) {
-            const criminalImage = document.querySelector(`.background img.${criminal}`);
-            if (criminalImage) {
-                criminalImage.style.display = 'block';
-            }
-        }
-    }
-
-    // 모든 로딩 및 초기화 후 범죄자 동물 표시
-    displayCriminal();
 });
