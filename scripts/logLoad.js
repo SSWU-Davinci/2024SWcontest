@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 resetAnimalStyles();
                 name_text.textContent = "햄부장";
                 dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
+                selectAnimalStyles();
                 setFire(1);
                 return;
             }
@@ -92,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.style.zIndex = "10";
 
             // 2번 클릭 못하도록
-            //this.removeEventListener("click", handler);
+            this.removeEventListener("click", handler);
         });
     });
 
@@ -104,12 +105,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 resetAnimalStyles();
                 name_text.textContent = "햄부장";
                 dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
+                selectAnimalStyles();
                 setFire(1);
             } else if (allAnimalsClicked) {
                 // 모든 동물이 클릭되었지만, 아직 추가 클릭이 필요 없는 경우
                 resetAnimalStyles();
                 name_text.textContent = "햄부장";
                 dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
+                selectAnimalStyles();
                 setFire(1);
             } else {
                 // 클릭된 곳이 동물이 아닌 경우에만 스타일 리셋
@@ -133,4 +136,53 @@ document.addEventListener("DOMContentLoaded", function () {
             a.style.zIndex = "1";
         });
     }
+
+    function selectAnimalStyles() {
+        // 모든 동물들에게 커졌다 작아졌다 하는 애니메이션 적용
+        animals.forEach(a => {
+            a.style.transition = "transform 0.3s ease-in-out";
+            a.style.animation = "bounce 1s infinite";
+    
+            // 커졌다 작아졌다 하는 keyframes 애니메이션 정의
+            a.style.animationName = "grow-shrink";
+            a.style.animationDuration = "1s";
+            a.style.animationTimingFunction = "ease-in-out";
+            a.style.animationIterationCount = "infinite";
+        });
+    
+        // 클릭된 동물에게는 커졌다 작아졌다 하는 애니메이션 적용
+        animalsClicked.forEach(clickedAnimalId => {
+            const clickedAnimal = document.getElementById(clickedAnimalId);
+    
+            if (clickedAnimal) {
+                clickedAnimal.style.animationName = "grow-shrink-clicked";
+                clickedAnimal.style.animationDuration = "1s";
+                clickedAnimal.style.animationTimingFunction = "ease-in-out";
+                clickedAnimal.style.animationIterationCount = "infinite";
+            }
+        });
+    }
+    
+    // keyframes 정의 (스타일 시트에 추가해야 함)
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes grow-shrink {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    
+        @keyframes grow-shrink-clicked {
+            0%, 100% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1.3);
+            }
+        }
+    `;
+    document.head.appendChild(style);    
 });
