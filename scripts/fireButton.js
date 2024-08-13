@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error("criminal 값 예외 오류", criminal);
             }
         } else {
-            console.error("fire 값이 1이 아닙니다.");
+            console.error("fire 값이 1이 아닙니다.", fire);
         }
     });
 });
