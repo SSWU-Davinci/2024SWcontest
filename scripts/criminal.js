@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function() {
     logCurrentThemeNumber(); // 페이지 로드 시 현재 테마 번호를 콘솔에 출력
 });
 
-
 // criminal.js
 let criminal = null;
 let fire = null;
