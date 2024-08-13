@@ -10,6 +10,11 @@ var criminalRouter = require('./routes/criminal');
 var scriptRouter = require('./routes/script');
 
 var app = express();
+const PORT = 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
