@@ -12,14 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let allAnimalsClicked = false; // 모든 동물이 클릭되었는지 확인  
     let finalClickRequired = false; // 모든 대사를 확인한 후 클릭 필요 여부
     let animalCriminals = {}; // 동물 ID와 criminal 값을 저장할 객체
-  
-   // 동물 ID와 CSS 선택자 매핑
-    const animalSelectors = {
-        fish: '.fish',
-        pig: '.pig',
-        giraffe: '.giraffe',
-        bear: '.bear'
-    };
 
     // 동물 ID와 한국어 이름의 매핑
     const animalNames = {
@@ -82,11 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     // 다음 인덱스로 이동
                     currentIndex++;
                 }
-
-                // 선택한 동물의 CSS 선택자 및 한국어 이름과 범죄 여부를 콘솔에 출력!!!!!!!!!!!!
-                const selector = animalSelectors[animal.id] || `.${animal.id}`;
-                const koreanName = animalNames[animal.id] || animal.id;
-                console.log(`동물 ID: ${selector} (${koreanName}), 범죄 여부: ${currentLog.criminal}`);
 
                 // 클릭된 동물을 Set에 추가
                 animalsClicked.add(animal.id);
@@ -154,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     name_text.textContent = "햄부장";
                     dialogue.textContent = "신중하게 모든 직원을 확인해뵤...";
                 }
-            });
+            };
         }
     });
 
@@ -229,15 +216,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     logSelectedAnimals();
-  
-  // 범인 동물의 ID를 localStorage에 저장하는 함수
-    function saveCriminalData() {
-        const criminals = [];
-        logData.forEach(log => {
-            if (log.criminal === 1) {
-                criminals.push(log.animalId); // 동물 ID를 저장
-            }
-        });
-        localStorage.setItem('criminals', JSON.stringify(criminals));
-    }
+
 });
