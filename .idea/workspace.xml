@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a927c231-4d80-4212-828b-42ff20e5c422" name="Changes" comment="">
-
-      <change beforePath="$PROJECT_DIR$/pages/criminal.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/criminal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/inventory.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/inventory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/loading.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/loading.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/startmain.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/startmain.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/storyline.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/storyline.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/criminalStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/criminalStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/criminalImg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/logLoad.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/logLoad.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/storyline.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/storyline.js" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/join.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/join.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,24 +32,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.home.html.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.bin\\www.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ian&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lg/Documents/GitHub/2024SWcontest&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.home.html.executor": "Run",
+    "Node.js.bin\\www.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Yeeun",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/lg/Documents/GitHub/2024SWcontest",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
