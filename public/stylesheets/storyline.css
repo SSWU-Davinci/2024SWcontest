@@ -1,11 +1,12 @@
+@import url('font.css');
+
 html, body {
   position: relative;
   height: 100vh;
-  background-color: #000;
 }
 
 body {
-  background: #fff;
+  background: #000;
   color: #000;
   margin: 0;
   padding: 0;
@@ -19,7 +20,7 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +38,7 @@ body {
 }
 
 .swiper .swiper-pagination-bullet {
-    background-color: #010101 !important;
+    background-color: #fff !important;
 }
 
 @media (max-width: 900px) {

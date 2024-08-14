@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="utf-8" />
   <title>Davinci</title>
@@ -8,33 +7,33 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="../public/stylesheets/storyline.css" />
 </head>
-
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+  <audio src="../public/assets/storyline.mp3" autoplay loop></audio>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
+      <div class="swiper-slide" id="slide_01">
         <img src="../public/img/story_01.png" alt="">
       </div>
-      <div class="swiper-slide">
+      <div class="swiper-slide" id="slide_02">
         <img src="../public/img/story_02.png" alt="">
       </div>
-      <div class="swiper-slide">
+      <div class="swiper-slide" id="slide_03">
         <img src="../public/img/story_03.png" alt="">
       </div>
-      <div class="swiper-slide">
+      <div class="swiper-slide" id="slide_04">
         <img src="../public/img/story_04.png" alt="">
       </div>
-      <div class="swiper-slide">
+      <div class="swiper-slide" id="slide_05">
         <img src="../public/img/story_05.png" alt="">
       </div>
-      <div class="swiper-slide">
+      <div class="swiper-slide" id="slide_06">
         <img src="../public/img/story_06.png" alt="">
       </div>
-      <div class="swiper-slide">
+      <div class="swiper-slide" id="slide_07">
         <img src="../public/img/story_07.png" alt="">
       </div>
-      <div class="swiper-slide">
-        <img src="../public/img/story_08.png" alt="">
+      <div class="swiper-slide" id="slide_08">
+        <img src="../public/img/story_08-2.png" alt="">
       </div>
     </div>
     <div class="swiper-button-next"></div>
@@ -44,6 +43,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../scripts/storyline.js"></script>
+  <script src="../scripts/music.js"></script>
 </body>
-
 </html>
