@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "start": "node ./bin/www"
+=======
+    "start": "node bin/www"
+>>>>>>> Chaeyeon
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
