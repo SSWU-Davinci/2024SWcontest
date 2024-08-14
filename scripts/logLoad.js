@@ -39,10 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("animal ID:", animal.id);
         // 현재 인덱스 콘솔에 출력
         console.log("index", index);
-
-        // 모든 대사를 확인한 후 클릭
-        // 이게 없으면 마지막 동물 대사는 범인 선택해도 나옴, 있으면 마지막 동물 대사가 안나옴...
-        //!!!!!!수정 필요!!!!!!!!
         
         if (finalClick) {
             resetAnimalStyles();
@@ -56,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (logData.length > 0 && index < logData.length) {
             let currentLog = logData[index]; // 내보낼 대사
+            let criminalValue = currentLog.criminal; // criminal 값은 logData에 있다
             // exception이 배열인 경우 체크해서 저장
             let exception = Array.isArray(currentLog.exception) ? currentLog.exception : [currentLog.exception];
             let n = index; // 범인은 index 카운트에서 제외하기 위한 임시 변수
@@ -70,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (n < logData.length) {
                         n++; // 예외 대사라면 그 다음 대사로 업데이트
                         currentLog = logData[n];
+                        criminalValue = currentLog.criminal; // 범인 값도 같이 업데이트
                         exception = Array.isArray(currentLog.exception) ? currentLog.exception : [currentLog.exception];
                     } else {
                         break; // 마지막 대사까지 도달
@@ -80,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 dialogue.textContent = currentLog.line;
                 index++; // 다음 인덱스로 이동
             }
-            addAnimalData(animal.id, animal.criminal); // 클릭된 동물 데이터 저장
+            addAnimalData(animal.id, criminalValue); // 클릭된 동물 데이터 저장
         }
 
         // 클릭된 동물을 set에 추가
@@ -152,10 +150,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // 객체를 배열에 추가
         animalData.push(animalCriminal);
-        console.log("배열에 저장된 동물의 정보: ", animalId, criminalValue);
+        // 배열에 제대로 추가되었는지 확인
+        console.log("동물의 정보: ", animalId, animalCriminal);
+        console.log("현재 animalData 배열 상태:", animalData);
     }
 
-    // 동물의 범죄 여부를 받아온다
+    // 동물의 범죄 값을 받아온다
     function criminalData(id) {
         const animal = animalData.find(animal => animal.id === id);
         return animal ? animal.criminal : null;
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
         animalClass.forEach(animal => {
             animal.addEventListener("click", () => {
                 const criminalValue = criminalData(animal.id);
-                console.log('객체를 저장한 배열에 저장된 범인 값', criminalData(animal.id));
+                console.log('범인 값', criminalValue);
                 if (!(criminalValue === null)) {
                     console.log(`동물 ID: ${animal.id}, Criminal: ${criminalValue}`);
                     setCriminal(criminalValue);
