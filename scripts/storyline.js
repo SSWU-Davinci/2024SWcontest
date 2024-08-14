@@ -4,7 +4,9 @@ var swiper = new Swiper(".mySwiper", {
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
+    stopOnLastSlide: true,
   },
+  // loop: false,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -13,15 +15,12 @@ var swiper = new Swiper(".mySwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  loop: false,
 });
 
-// Function to handle redirection
 function handleRedirect() {
-  window.location.href = 'startmain.html'; // Redirect to startmain.html
+  window.location.href = 'startmain.html';
 }
 
-// Function to handle Enter key press
 function handleEnterKey(event) {
   if (event.key === 'Enter') {
     handleRedirect();
