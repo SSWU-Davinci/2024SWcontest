@@ -5,7 +5,6 @@ const userController = require('../User/userController'); // userControllerë¥¼ ê
 /* User listing. */
 router.post('/login', userController.login);
 router.post('/join', userController.join);
-router.post('/checkName', userController.nameCheck);
 router.post('/checkId', userController.idCheck);
 
 router.get('/join', (req, res) => {

@@ -24,6 +24,13 @@ exports.joinCheck = async function(name, id, password){
     try{
         const connection = await pool.getConnection(async(conn)=> conn);
 
+        const idExist = await userDao.idCheck(connection, id);
+
+        if(idExist) {
+            connection.release();
+            return { success: false, message: 'id already exists' }
+        }
+
         const joinUser = await userDao.userJoin(connection, name, id, password);
 
         connection.release();
@@ -35,21 +42,6 @@ exports.joinCheck = async function(name, id, password){
         }
     } catch (err) {
         console.error(`Error in Join: ${err.message}`);
-        return { success: false, message: 'Database query error' };
-    }
-}
-
-exports.nameCheck = async function(name){
-    try{
-        const connection = await pool.getConnection(async(conn)=> conn);
-
-        const nameExist = await userDao.nameCheck(connection, name);
-
-        connection.release();
-
-        return { success: true, exists: nameExist };
-    } catch (err) {
-        console.error(`Error in nameCheck: ${err.message}`);
         return { success: false, message: 'Database query error' };
     }
 }

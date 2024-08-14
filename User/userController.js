@@ -24,8 +24,10 @@ exports.join = async (req, res) => {
 
     try {
         const user = await userProvider.joinCheck(name, id, password);
-        if (user) {
+        if (user.success) {
             res.status(200).json({ message: 'Join successful', user });
+        } else if (user.message === 'id already exists') {
+            res.status(409).json({ message: 'ID already exists' });
         } else {
             res.status(401).json({ message: 'Invalid credentials' });
         }
@@ -35,27 +37,7 @@ exports.join = async (req, res) => {
     }
 }
 
-// id 중복 체크 , name 중복 체크
-exports.nameCheck = async (req, res) => {
-    const {name} = req.body;
-
-    try {
-        const user = await userProvider.nameCheck(name);
-        if(user.success){
-            if (user.exists) {
-                res.status(200).json({ success: false, message: 'Name already exist', user });
-            } else {
-                res.status(200).json({ success: true, message: 'Name is available' });
-            }
-        } else {
-            res.status(401).json(user);
-        }
-    } catch (error) {
-        console.error('Error during name check:', error);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
-
+// id 중복 체크
 exports.idCheck = async (req, res) => {
     const {id} = req.body;
 

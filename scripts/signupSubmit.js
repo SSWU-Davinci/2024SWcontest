@@ -6,7 +6,7 @@ document.getElementById('joinForm').addEventListener('submit', async (event) => 
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch('/user/join', {
+        const response = await fetch('http://localhost:3000/user/join', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ document.getElementById('joinForm').addEventListener('submit', async (event) => 
             messageDiv.innerHTML = `<p>${result.message}</p>`;
             setTimeout(() => {
                 window.location.href = '../pages/inventory.html'; // 성공 시 리디렉션
-            }, 2000); // 2초 후 리디렉션
+            }); // 2초 후 리디렉션
         }
         else {
             messageDiv.innerHTML = `<p style="color: red;">${result.message}</p>`;

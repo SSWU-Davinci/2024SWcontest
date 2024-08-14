@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davinci</title>
+    <link rel="stylesheet" href="../public/stylesheets/signupStyle.css">
+</head>
+<body>
+<div class="wrapper">
+    <img src="../public/img/animals4cut.png" alt="Animals" class="animalsImage">
+    <div class="container">
+        <h2>Join Us!</h2>
+        <form id="joinForm" action="/submit" method="post">
+            <label for="name">Nickname</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="message"></div> <!-- 메시지를 표시할 부분 추가 -->
+    </div>
+</div>
+<script>
+    document.getElementById('joinForm').addEventListener('submit', async (event) => {
+        event.preventDefault(); // 폼 제출 기본 동작 방지
+
+        const name = document.getElementById('name').value;
+        const id = document.getElementById('id').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const response = await fetch('/user/join', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, id, password })
+            });
+
+            const result = await response.json();
+            const messageDiv = document.querySelector('.message');
+
+            if (result.success) {
+                messageDiv.innerHTML = `<p>${result.message}</p>`;
+            } else {
+                messageDiv.innerHTML = `<p style="color: red;">${result.message}</p>`;
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            document.querySelector('.message').innerHTML = '<p style="color: red;">An error occurred during registration.</p>';
+        }
+    });
+</script>
+</body>
+</html>
