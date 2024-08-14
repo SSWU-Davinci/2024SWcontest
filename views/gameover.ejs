@@ -22,6 +22,18 @@
         </h1>
         <img id="home" src="../public/img/home_button.png" alt="홈 버튼">
     </div>
-    <script type="module" src="../scripts/gameover.js"></script>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const homeButton = document.getElementById('home');
+    if (homeButton) {
+        homeButton.addEventListener('click', function() {
+            window.location.href = 'inventory';
+        });
+    } else {
+        console.error('Home button not found');
+    }
+});
+
+</script>
 </html>

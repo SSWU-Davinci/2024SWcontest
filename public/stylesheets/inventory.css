@@ -1,65 +1,94 @@
 @import url('font.css');
 
-body {
+* {
     margin: 0;
     padding: 0;
-    font-family: 'CookieRun', sans-serif;
-    background: url('../img/background.png') no-repeat center center fixed;
-    background-size: cover;
+    box-sizing: border-box;
 }
 
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'CookieRun';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Backgrounds */
+.background {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url('../img/background.png') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    /* top: 0; */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+/* Inventory Container */
 .inventory {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
-.inventory::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../img/background.png') no-repeat center center fixed;
-    background-size: cover;
-    filter: blur(10px);
-    z-index: -1;
-}
-
+/* Panel Styles */
 .panel {
     background: url('../img/panel.png') no-repeat center center;
     background-size: contain;
-    width: 1105px;
-    height: 161px;
+    width: 1100px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 85px;
+    z-index: 1;
+    /* margin-top: 85px; */
 }
 
+/* Title Styles */
 .title {
-    font-family: 'CookieRunBold', sans-serif;
     margin-bottom: 15px;
     font-size: 64px;
     font-weight: bold;
-    font-style: normal;
-    color: white;
+    color: #1a1a1a;
     letter-spacing: 12px;
 }
 
+/* Whiteboard Styles */
 .whiteboard {
     background-color: #d9d9d9;
-    width: 1200px;
-    height: 600px;
+    background: url('../img/board.png') no-repeat center center;
+    background-size: 105% 110%;
+    width: 1100px;
+    height: 510px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     padding: 20px;
-    margin-top: 54.7px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
 }
 
+/* Photo Box Styles */
 .photo-box, .big-photo-box, .large-photo-box {
     position: relative;
     background-color: #f5f5f5;
@@ -103,6 +132,7 @@ body {
     margin-bottom: -40px;
 }
 
+/* Clipper Styles */
 .clip {
     position: absolute;
     top: -20px;
@@ -110,27 +140,13 @@ body {
     height: 76.53px;
 }
 
-.clip1 {
-    background: url('../img/clip1.png') no-repeat center center;
-    background-size: contain;
-}
+.clip1 { background: url('../img/clip1.png') no-repeat center center; background-size: contain; }
+.clip2 { background: url('../img/clip2.png') no-repeat center center; background-size: contain; }
+.clip3 { background: url('../img/clip3.png') no-repeat center center; background-size: contain; }
+.clip4 { background: url('../img/clip4.png') no-repeat center center; background-size: contain; }
 
-.clip2 {
-    background: url('../img/clip2.png') no-repeat center center;
-    background-size: contain;
-}
-
-.clip3 {
-    background: url('../img/clip3.png') no-repeat center center;
-    background-size: contain;
-}
-
-.clip4 {
-    background: url('../img/clip4.png') no-repeat center center;
-    background-size: contain;
-}
-
-.speech-bubble {
+/* Speech Bubble Styles */
+/* .speech-bubble {
     position: absolute;
     bottom: 120%;
     left: 50%;
@@ -142,7 +158,7 @@ body {
     padding: 20px;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
     font-family: 'pretendard';
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     pointer-events: none;
 }
@@ -150,14 +166,15 @@ body {
 .speech-bubble::after {
     content: '';
     position: absolute;
-    bottom: -20px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
     border-width: 10px;
     border-style: solid;
     border-color: #fff transparent transparent transparent;
-}
+} */
 
+/* Photo Background Styles */
 .photo-background {
     background: #fff;
     padding: 10px;
@@ -169,5 +186,81 @@ body {
 .photo-background img {
     padding: 40px 10px 0px 10px;
     background: rgba(252, 86, 89, 0.25);
-    /* background: linear-gradient(180deg, rgba(35,60,101,25) 0%, rgba(50,78,119,1) 16%, rgba(94,114,133,1) 37%, rgba(154,136,118,1) 63%, rgba(255,230,138,0.6551412801448704) 89%, rgba(255,230,138,0) 100%); */
+}
+
+/* Media Query */
+@media (max-width: 900px) {
+    .panel {
+        width: 100%;
+        height: auto;
+        /* margin-top: 20px; */
+    }
+
+    .title {
+        font-size: 30px;
+        letter-spacing: 6px;
+        margin-bottom: 5px;
+    }
+
+    .whiteboard {
+        width: 90%;
+        height: auto;
+        background-size: 100% 110%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+        margin-top: 30px;
+        align-items: start;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .photo-box, .big-photo-box, .large-photo-box {
+        width: 100%;
+        height: auto;
+        /* margin-bottom: 10px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .photo-background img {
+        padding: 0;
+    }
+
+    .photo-background {
+        margin: 0;
+    }
+
+    .photo-box img, .large-photo-box img {
+        width: 100%;
+        height: auto;
+        margin: 30px 10px 0 10px;
+    }
+
+    .big-photo-box img {
+        width: 80%;
+        height: auto;
+        /* margin: 30px 10px 0 10px; */
+        padding: 8px 10px 0 10px;
+    }
+
+    .clip {
+        top: -25px;
+        width: 8vw;
+        /* height: auto; */
+
+    }
+
+    /* .speech-bubble {
+        width: 200px;
+        padding: 15px;
+        font-size: 16px;
+    }
+    
+    .speech-bubble::after {
+        bottom: -15px;
+        border-width: 8px;
+    } */
 }

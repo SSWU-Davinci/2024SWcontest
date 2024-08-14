@@ -7,28 +7,28 @@
                 "set_number": 1,
                 "line": "아무래도 인공지능 개발자인데 환경문제가 생기는 걸 무시할 수는 없을 것 같아. 해결 방법을 찾아보자. 전력분야 연구원들이 탄소 배출을 줄이는 방법을 찾도록 지원하는 건 어때?",
                 "criminal": 0,
-                "exception": null
+                "exception": "bear"
             },
             {
                 "theme_number": 1,
                 "set_number": 1,
                 "line": "다들 힘내보자! 우리가 그 영화 속 세상을 만드는 거야! 진짜 우리 회사에서 엄청난 기술을 개발하면 지구상에서 제일 유명한 회사가 될지도 몰라!!",
                 "criminal": 0,
-                "exception": null
+                "exception": "bear"
             },
             {
                 "theme_number": 1,
                 "set_number": 1,
                 "line": "AI 개발 이대로 계속해도 되는 거 맞아? 찾아보니까 학습시킬 때 전력이 생각보다 많이 들더라고. 그래서 전력 생산에 필요한 탄소 배출도 굉장할 것 같아. 지금도 충분히 인공지능 덕을 보고 있으니까 개발은 여기서 멈추는 게…",
                 "criminal": 1,
-                "exception": "bear"
+                "exception": ["fish", "pig", "giraffe"]
             },
             {
                 "theme_number": 1,
                 "set_number": 1,
                 "line": "AI 기술이 지금보다 더 많이 발전되면 어떨 것 같아? 나는 미래가 너무 기대돼! 다들 SF 영화에서 본 세상을 상상해 본 적 있지 않아? 빨리 그런 세상이 오면 좋겠다~",
                 "criminal": 0,
-                "exception": null
+                "exception": "bear"
             }
         ],
         [

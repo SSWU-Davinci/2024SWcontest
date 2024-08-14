@@ -1,4 +1,94 @@
-import { getThemeNumber } from './themaNumCnt.js';
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davinci</title>
+    <link rel="stylesheet" href="../public/stylesheets/criminalStyle.css">
+</head>
+<body>
+    <div class="background">
+        <div id="animation-container">
+        </div>
+
+        <img src="../public/img/prison02.png" alt="prison" class="prison">
+        <img id="home" src="../public/img/home_button.png" alt="인벤토리로고">
+        <img id="nextstage" src="../public/img/nextStage_button.png" alt="다음스테이지">
+        <h2 class="fired">해고 완료!!</h2>
+    </div>
+    <h1>스페이스 바나 엔터 키를 눌러서 엔딩 화면을 보세요...</h1>
+</body>
+<script>
+    import { incrementThemeNumber, getThemeNumber, logCurrentThemeNumber } from './themaNumCnt.js';
+
+document.addEventListener("DOMContentLoaded", function() {
+    const prisonImage = document.querySelector('.prison');
+    const firedText = document.querySelector('.fired');
+
+    if (prisonImage && firedText) {
+            prisonImage.addEventListener('animationend', function() {
+            firedText.style.opacity = 1;
+        });
+    }
+
+    const homeButton = document.getElementById('home');
+    if (homeButton) {
+        homeButton.addEventListener('click', function() {
+            incrementThemeNumber();         // 테마번호
+            window.location.href = 'inventory';            // 인벤토리 페이지로 이동
+        });
+    }
+
+    const nextStageButton = document.getElementById('nextstage');
+    if (nextStageButton) {
+        nextStageButton.addEventListener('click', function() {
+            incrementThemeNumber();         // 테마 번호 증가
+
+            // 테마 번호가 4이면 inventory.html로 이동, 그렇지 않으면 home.html로 이동
+            if (getThemeNumber() === 4) {
+                nextstage.style.display = "none";
+            } 
+            else {
+                window.location.href = 'home';
+            }
+        });
+    }
+
+    function handleKeyPress(event) {
+        if (event.code === 'Space' || event.code === 'Enter') {
+            window.location.href = 'ending'; // 엔딩 페이지로 이동
+        }
+    }
+    document.addEventListener('keydown', handleKeyPress);
+
+    logCurrentThemeNumber(); // 페이지 로드 시 현재 테마 번호를 콘솔에 출력
+});
+
+// criminal.js
+let criminal = null;
+let fire = null;
+
+function setCriminal(value) {
+    criminal = value;
+}
+
+function getCriminal() {
+    return criminal;
+}
+
+function setFire(value) {
+    fire = value;
+}
+
+function getFire() {
+    return fire;
+}
+
+export { setCriminal, getCriminal, setFire, getFire };
+</script>
+
+<script>
+    import { getThemeNumber } from './themaNumCnt.js';
 import { setCriminal, setFire } from './criminal.js';
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -227,3 +317,5 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
     document.head.appendChild(style);
 });
+</script>
+</html>

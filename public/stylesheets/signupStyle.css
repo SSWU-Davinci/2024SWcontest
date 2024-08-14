@@ -73,3 +73,21 @@ button {
 button:hover {
     background-color: #ff0101;
 }
+
+/* 모바일 화면에서 스타일 조정 */
+@media only screen and (max-width: 767px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .animalsImage {
+        display: none; /* 모바일 화면에서 이미지 숨기기 */
+    }
+
+    .container {
+        width: 80%; /* 모바일 화면에서 컨테이너의 너비를 더 좁게 조정 */
+        max-width: none;
+        padding: 10px;
+    }
+}

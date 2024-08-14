@@ -1,0 +1,51 @@
+@import url('font.css');
+
+html, body {
+  position: relative;
+  height: 100vh;
+}
+
+body {
+  background: #000;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: auto;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #010101;
+}
+
+.swiper .swiper-pagination-bullet {
+    background-color: #fff !important;
+}
+
+@media (max-width: 900px) {
+    .swiper-slide img {
+        display: block;
+        width: 100vw;
+        height: auto;
+        object-fit: cover;
+      }
+}

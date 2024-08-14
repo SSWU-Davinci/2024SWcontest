@@ -1,30 +1,66 @@
+import { incrementThemeNumber, getThemeNumber, logCurrentThemeNumber } from './themaNumCnt.js';
+
 document.addEventListener("DOMContentLoaded", function() {
     const prisonImage = document.querySelector('.prison');
     const firedText = document.querySelector('.fired');
 
-    // 애니메이션 완료 후 "FIRED!!" 텍스트를 나타나게 하기
-    prisonImage.addEventListener('animationend', function() {
-        firedText.style.opacity = 1;
-    });
+    if (prisonImage && firedText) {
+            prisonImage.addEventListener('animationend', function() {
+            firedText.style.opacity = 1;
+        });
+    }
 
-    // 인벤토리로 이동하기
     const homeButton = document.getElementById('home');
-    homeButton.addEventListener('click', function() {
-        window.location.href = 'inventory.html';
-    });
+    if (homeButton) {
+        homeButton.addEventListener('click', function() {
+            incrementThemeNumber();         // 테마번호
+            window.location.href = 'inventory.html';            // 인벤토리 페이지로 이동
+        });
+    }
 
-    // 다음 스테이지로 이동하기
     const nextStageButton = document.getElementById('nextstage');
-    nextStageButton.addEventListener('click', function() {
-        window.location.href = 'home.html';
-    });
+    if (nextStageButton) {
+        nextStageButton.addEventListener('click', function() {
+            incrementThemeNumber();         // 테마 번호 증가
 
-    // 엔딩으로 이동하기
+            // 테마 번호가 4이면 inventory.html로 이동, 그렇지 않으면 home.html로 이동
+            if (getThemeNumber() === 4) {
+                nextstage.style.display = "none";
+            } 
+            else {
+                window.location.href = 'home.html';
+            }
+        });
+    }
+
     function handleKeyPress(event) {
         if (event.code === 'Space' || event.code === 'Enter') {
-            // 엔터키와 스페이스바 누르면 엔딩 화면으로 이동하기
-            window.location.href = 'ending.html';
+            window.location.href = 'ending.html'; // 엔딩 페이지로 이동
         }
     }
     document.addEventListener('keydown', handleKeyPress);
+
+    logCurrentThemeNumber(); // 페이지 로드 시 현재 테마 번호를 콘솔에 출력
 });
+
+// criminal.js
+let criminal = null;
+let fire = null;
+
+function setCriminal(value) {
+    criminal = value;
+}
+
+function getCriminal() {
+    return criminal;
+}
+
+function setFire(value) {
+    fire = value;
+}
+
+function getFire() {
+    return fire;
+}
+
+export { setCriminal, getCriminal, setFire, getFire };

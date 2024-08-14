@@ -1,45 +1,26 @@
-document.addEventListener("DOMContentLoaded", function() {
+import { getCriminal, getFire } from './criminal.js';
 
-const animals = document.querySelectorAll(".animal");
-const fireButton = document.getElementById('fire');
+document.addEventListener('DOMContentLoaded', function () {
+    const fireButton = document.getElementById('fire');
+    let criminal = getCriminal();
 
-let animalData = [];
+    fireButton.addEventListener('click', function () {
+        const fire = getFire();
 
-// JSON 데이터를 불러오기
-fetch('../public/log/log.json')
-    .then(response => response.json())
-    .then(data => {
-        animalData = data;
-
-        if (fireButton) {
-            fireButton.addEventListener('click', function() {
-                console.log("Fire button clicked");
-
-                // 선택된 동물 확인
-                const selectedAnimal = Array.from(animals).find(animal => animal.dataset.selected);
-
-                if (selectedAnimal) {
-                    // JSON 데이터에서 선택된 동물의 범인 여부 찾기
-                    const animalInfo = animalData.find(item => item.id === selectedAnimal.id);
-                    const isCriminal = animalInfo ? animalInfo.isCriminal : false;
-
-                    if (isCriminal) {
-                        // 범인 선택 시 loading.html --> criminal.html로 이동
-                        window.location.href = 'loading.html';
-                    } 
-                    else {
-                        // 잘못된 동물 선택 시 gameover.html로 이동
-                        window.location.href = 'gameover.html';
-                    }
-                } 
-                else {
-                    console.log("No animal selected");
-                }
-            });
-        } 
-        else {
-            console.error("Fire button not found");
+        if (fire === 1) {
+            criminal = getCriminal();
+            console.log("해고 버튼에 넘어가는 범인 여부", criminal);
+            // criminal 값에 따라 페이지 이동
+            if (criminal === 0) {
+                window.location.href = 'gameover.html';
+            } else if (criminal === 1) {
+                window.location.href = 'loading.html';
+            } else {
+                console.error("criminal 값 예외 오류", criminal);
+                window.location.href = 'loading.html';
+            }
+        } else {
+            console.error("fire 값 예외 오류.", fire);
         }
-    })
-    .catch(error => console.error('Error loading JSON:', error));
+    });
 });

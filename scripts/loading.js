@@ -3,4 +3,5 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         window.location.href = "criminal.html";
     }, 3000);
+
 });
