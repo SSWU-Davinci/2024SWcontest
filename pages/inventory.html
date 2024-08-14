@@ -3,67 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davinci</title>
-    <link rel="stylesheet" href="../public/stylesheets/inventory.css">
+    <title>Davinci Swiper</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../public/stylesheets/inventory.css">
 </head>
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <audio src="../public/assets/alltime.mp3" autoplay loop></audio>
     <div class="inventory">
-
         <div class="background"></div>
-        
         <div class="panel">
             <span class="title">이달의 퇴사 직원</span>
         </div>
-
         <div class="overlay"></div>
-        <div class="whiteboard swiper">
-            <div class="photo-box photo-background swiper-wrapper animal" data-id="1">
-                <div class="clip clip1"></div>
-                <img class="swiper-slide" src="../public/img/fish.png" alt="Fish">
-            </div>
-            <div class="photo-box photo-background swiper-wrapper animal" data-id="2">
-                <div class="clip clip2"></div>
-                <img class="swiper-slide" src="../public/img/pig.png" alt="Pig">
-            </div>
-            <div class="big-photo-box photo-background swiper-wrapper animal" data-id="3">
-                <div class="clip clip3 swiper-slide"></div>
-                <img class="swiper-slide" src="../public/img/giraffe.png" alt="Giraffe">
-            </div>
-            <div class="large-photo-box photo-background swiper-wrapper animal" data-id="4">
-                <div class="clip clip4 swiper-slide"></div>
-                <img class="swiper-slide" src="../public/img/bear.png" alt="Bear">
+        <div class="whiteboard">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide photo-box photo-background" data-id="1">
+                        <div class="clip clip1"></div>
+                        <img src="../public/img/fish.png" alt="Fish">
+                    </div>
+                    <div class="swiper-slide photo-box photo-background" data-id="2">
+                        <div class="clip clip2"></div>
+                        <img src="../public/img/pig.png" alt="Pig">
+                    </div>
+                    <div class="swiper-slide big-photo-box photo-background" data-id="3">
+                        <div class="clip clip3"></div>
+                        <img src="../public/img/giraffe.png" alt="Giraffe">
+                    </div>
+                    <div class="swiper-slide large-photo-box photo-background" data-id="4">
+                        <div class="clip clip4"></div>
+                        <img src="../public/img/bear.png" alt="Bear">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <!-- <div class="swiper-pagination"></div> -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../scripts/inventoryLoad.js"></script>
-    <!-- <script src="../scripts/inventoryspeech.js"></script> -->
-
+    <script src="../scripts/music.js"></script>
     <script>
-    const swiper = new Swiper('.swiper', {
+      var swiper = new Swiper(".mySwiper", {
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      speed: 700,
       slidesPerView: 3,
-      centeredSlides: true,
       spaceBetween: 30,
+      grabCursor: true,
+      freeMode: true,
       pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      virtual: {
-        slides: (function () {
-          const slides = [];
-          for (var i = 0; i < 12; i += 1) {
-            slides.push('Slide ' + (i + 1));
-          }
-          return slides;
-        })(),
+        el: ".swiper-pagination",
+        clickable: true,
       },
     });
     </script>
