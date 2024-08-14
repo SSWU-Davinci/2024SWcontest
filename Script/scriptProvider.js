@@ -32,5 +32,9 @@ exports.getRandomScripts = async function() {
         console.error('Error getting scripts for themes:', error);
         throw error;
     }
+<<<<<<< HEAD
 };
 
+=======
+};
+>>>>>>> Chaeyeon
