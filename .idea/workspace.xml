@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a927c231-4d80-4212-828b-42ff20e5c422" name="Changes" comment="">
+
       <change beforePath="$PROJECT_DIR$/pages/criminal.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/criminal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/inventory.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/inventory.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/loading.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/loading.html" afterDir="false" />
@@ -15,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/scripts/criminalImg.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/logLoad.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/logLoad.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/storyline.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/storyline.js" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +41,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;JavaScript Debug.home.html.executor&quot;: &quot;Run&quot;,
