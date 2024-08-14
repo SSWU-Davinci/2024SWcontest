@@ -1,14 +1,14 @@
 const criminalProvider = require('../Criminal/criminalProvider');
 
-exports.addCriminalToUserCatalog = async (req, res) => {
-    const { user_number, script_number, animal_number } = req.body;
+exports.addAnimalToUserCatalog = async (req, res) => {
+    const { user_number, floor, position } = req.body;
 
-    if (!user_number || !script_number || !animal_number) {
-        return res.status(400).json({ error: 'user_number, script_number, and animal_number are required' });
+    if (!user_number || !floor || !position) {
+        return res.status(400).json({ error: 'user_number, floor, position are required' });
     }
 
     try {
-        const result = await criminalProvider.addAnimalToUserCatalog(user_number, script_number, animal_number);
+        const result = await criminalProvider.addAnimalToUserCatalog(user_number, floor, position);
         if (result.success) {
             res.status(200).json({ message: result.message });
         } else {
