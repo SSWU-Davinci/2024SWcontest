@@ -11,4 +11,10 @@ router.get('/join', (req, res) => {
     res.render('join'); // join.ejs 파일을 렌더링
 });
 
+/*
+router.get('/login', (req, res) => {
+    res.render('home'); // home.ejs 파일을 렌더링
+});
+*/
+
 module.exports = router;

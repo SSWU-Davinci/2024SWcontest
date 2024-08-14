@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Davinci</title>
-    <link rel="stylesheet" href="../public/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
 </head>
 
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div id="gameStart">GAME START!</div>
-    <audio src="../public/assets/main bgm.mp3" autoplay loop></audio>
-    <img id="user" src="../public/img/setting_button.png" alt="계정정보">
+    <audio src="/assets/main bgm.mp3" autoplay loop></audio>
+    <img id="user" src="/img/setting_button.png" alt="계정정보">
 
     <div class="overlay"></div>
     <div class="container">
         <h2>Davinci</h2>
-        <form action="/login" method="post">
+        <form action="/user/login" method="post">
             <label for="id">ID</label>
             <input type="text" id="id" name="id" required>
 
@@ -24,28 +24,28 @@
 
             <div class="loginButton">
                 <button type="submit" class="login">Log In</button>
-                <a href="join.ejs" class="signUp">Sign Up</a>
+                <a href='/user/join' class="signUp">Sign Up</a>
             </div>
         </form>
     </div>
 
     <div id="character">
-        <img class="animal" id="fish" src="../public/img/fish.png" alt="초롱아귀">
-        <img class="animal" id="pig" src="../public/img/pig.png" alt="멧돼지">
-        <img class="animal" id="giraffe" src="../public/img/giraffe.png" alt="기린">
-        <img class="animal" id="bear" src="../public/img/bear.png" alt="북극곰">
+        <img class="animal" id="fish" src="/img/fish.png" alt="초롱아귀">
+        <img class="animal" id="pig" src="/img/pig.png" alt="멧돼지">
+        <img class="animal" id="giraffe" src="/img/giraffe.png" alt="기린">
+        <img class="animal" id="bear" src="/img/bear.png" alt="북극곰">
     </div>
 
     <div id="name">
         <p id="name_text">햄부장</p>
-        <img id="name_log" src="../public/img/log_name.png" alt="이름표">
+        <img id="name_log" src="/img/log_name.png" alt="이름표">
     </div>
 
     <div id="log">
         <p id="dialogue">
             나를 도와서 문제 직원을 찾아줘~!
         </p>
-        <img id="fire" src="../public/img/fire_button.png" alt="해고">
+        <img id="fire" src="/img/fire_button.png" alt="해고">
     </div>
 </body>
 <script>
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // JSON 파일을 불러온다
-    fetch('../public/log/log.json')
+    fetch('/log/log.json')
         .then(response => response.json())
         .then(data => {
             // logData = 스테이지에 맞는 theme_number의 대사 묶음

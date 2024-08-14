@@ -7,9 +7,14 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var scriptRouter = require('./routes/script');
+var gameHomeRouter = require('./routes/gameHome');
 var criminalRouter = require('./routes/criminal');
 
+
 var app = express();
+
+//추가
+app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/user', userRouter);
 app.use('/', scriptRouter);
+app.use('/home', gameHomeRouter);
 app.use('/criminal', criminalRouter);
 
 // catch 404 and forward to error handler
