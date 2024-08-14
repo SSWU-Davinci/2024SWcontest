@@ -7,25 +7,26 @@
     <link rel="stylesheet" href="../public/stylesheets/signupStyle.css">
 </head>
 <body>
-<div class="wrapper">
-    <img src="../public/img/animals4cut.png" alt="Animals" class="animalsImage">
-    <div class="container">
-        <h2>Join Us!</h2>
-        <form id="joinForm" action="/submit" method="post">
-            <label for="name">Nickname</label>
-            <input type="text" id="name" name="name" required>
 
-            <label for="id">ID</label>
-            <input type="text" id="id" name="id" required>
+    <div class="wrapper">
+        <img src="../public/img/animals4cut.png" alt="Animals" class="animalsImage">
+        <div class="container">
+            <h2>Join Us!</h2>
+            <form id="joinForm" action="/submit" method="post">
+                <label for="name">Nickname</label>
+                <input type="text" id="name" name="name" required>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+                <label for="id">ID</label>
+                <input type="text" id="id" name="id" required>
 
-            <button type="submit">Sign Up</button>
-        </form>
-        <div class="message"></div> <!-- 메시지를 표시할 부분 추가 -->
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
     </div>
-</div>
+</body>
+
 <script>
     document.getElementById('joinForm').addEventListener('submit', async (event) => {
         event.preventDefault(); // 폼 제출 기본 동작 방지
@@ -57,5 +58,5 @@
         }
     });
 </script>
-</body>
 </html>
+
