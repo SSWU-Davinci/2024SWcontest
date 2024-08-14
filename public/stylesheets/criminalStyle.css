@@ -7,6 +7,7 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    position: relative;
 }
 
 .background {
@@ -86,6 +87,7 @@ body {
     opacity: 0; /* 처음에는 숨겨짐 */
     animation: appear 1s 2s forwards; /* 애니메이션 적용, 2초 후 시작 */
     white-space: nowrap;
+    z-index: 3;
     
 }
 
@@ -139,24 +141,48 @@ h1 {
 /* 모바일 화면에서 폰트와 이미지 크기 조절 */
 @media (max-width: 768px) {
     .fish {
-        width: 100%; /* 모바일에서 동물 이미지 크기 조정 */
+        width: 100%; 
     }
 
     .fired {
-        font-size: 4rem; /* 모바일에서 텍스트 크기 조정 */
+        font-size: 4rem;
+        z-index: 3;
     }
 
     h1 {
-        font-size: 0.9rem; /* 모바일에서 텍스트 크기 조정 */
+        font-size: 0.9rem; 
     }
 
     #home {
-        width: 60px; /* 모바일에서 버튼 크기 조정 */
-        height: 60px; /* 모바일에서 버튼 크기 조정 */
+        width: 60px; 
+        height: 60px;
     }
 
     #nextstage {
-        width: 120px; /* 모바일에서 버튼 크기 조정 */
-        height: 50px; /* 모바일에서 버튼 크기 조정 */
+        width: 120px; 
+        height: 50px; 
     }
+
+    #animation-container {
+        width: 500px !important; 
+        height: 500px !important; 
+    }
+}
+
+#animation-container {
+    width: 900px;
+    height: 900px;
+    background-image: url('davinci1.png');
+    background-size: cover;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 2;
+    animation: changeImage 1s steps(2) infinite;
+}
+
+@keyframes changeImage {
+    0% { background-image: url('../img/davinci1.png'); }
+    100% { background-image: url('../img/davinci2.png'); }
 }
