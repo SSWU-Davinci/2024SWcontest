@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (fire === 1) {
             criminal = getCriminal();
-            console.log(criminal);
+            console.log("해고 버튼에 넘어가는 범인 여부", criminal);
             // criminal 값에 따라 페이지 이동
             if (criminal === 0) {
                 window.location.href = 'gameover.html';
@@ -17,9 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location.href = 'loading.html';
             } else {
                 console.error("criminal 값 예외 오류", criminal);
+                window.location.href = 'loading.html';
             }
         } else {
-            console.error("fire 값이 1이 아닙니다.", fire);
+            console.error("fire 값 예외 오류.", fire);
         }
     });
 });
