@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davinci</title>
+    <link rel="stylesheet" href="../public/stylesheets/endingStyle.css">
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <div class="container">
+        <img class="teddybear" id="bear" src="../public/img/teddybear.png" alt="테디베어">
+        <h3>거대한 <span class="highlighted">곰인형 눈알</span> 붙이기 사업</h3>
+    </div>
+
+    <div class="scroll-content">
+        <p class="scroll-text">데이터 라벨링 노동자</p>
+        <p class="scroll-text">질문 한번에 500ml 물 사용</p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p class="scroll-text">제작자 | 조이삼김</p>
+        <p class="scroll-text">조  선</p>
+        <p class="scroll-text">조효림</p>
+        <p class="scroll-text">김이안</p>
+        <p class="scroll-text">김예은</p>
+        <p class="scroll-text">김채연</p>
+        <p class="scroll-text">The End</p>
+        <p class="scroll-text">감사합니다</p>
+    </div>
+</body>
+<script>
+    document.addEventListener('scroll', function() {
+    const scrollContent = document.querySelector('.scroll-content');
+    const scrollPosition = window.scrollY;
+    const maxScroll = 500;      // 배경을 완전 검정으로
+
+    // .scroll-content 스크롤 점점 할수록 생기게 하기
+    if (scrollPosition > 600)  scrollContent.style.display = 'block';
+    else scrollContent.style.display = 'none';
+
+    // 스크롤 위치에 따라 배경 투명도 변하기
+    const backgroundOpacity = Math.min(scrollPosition / maxScroll, 1);
+    const backgroundColor = `rgba(0, 0, 0, ${backgroundOpacity})`
+    document.body.style.backgroundColor = backgroundColor; // 배경이 점점 검정색으로
+    document.body.style.backgroundBlendMode = 'overlay';
+});
+</script>
+</html>
