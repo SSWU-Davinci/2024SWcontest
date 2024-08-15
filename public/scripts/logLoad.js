@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // JSON 파일을 불러온다
-    fetch('../public/log/log.json')
+    fetch('./log/log.json')
         .then(response => response.json())
         .then(data => {
             // logData = 스테이지에 맞는 theme_number의 대사 묶음

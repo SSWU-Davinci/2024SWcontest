@@ -20,7 +20,7 @@ document.getElementById('joinForm').addEventListener('submit', async (event) => 
         if (result.success) {
             messageDiv.innerHTML = `<p>${result.message}</p>`;
             setTimeout(() => {
-                window.location.href = '../pages/inventory.html'; // 성공 시 리디렉션
+                window.location.href = './pages/inventory.html'; // 성공 시 리디렉션
             }, 2000); // 2초 후 리디렉션
         }
         else {
