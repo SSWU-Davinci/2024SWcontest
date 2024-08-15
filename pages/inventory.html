@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davinci Swiper</title>
+    <title>Davinci</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../public/stylesheets/inventory.css">
 </head>
@@ -16,6 +16,7 @@
         </div>
         <div class="overlay"></div>
         <div class="whiteboard">
+            <!-- Swiper Container -->
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide photo-box photo-background" data-id="1">
@@ -35,41 +36,46 @@
                         <img src="../public/img/bear.png" alt="Bear">
                     </div>
                 </div>
+                <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
+    <a id="gamestart" href="home.html">
+        <img src="../public/img/gamestart.png" alt="Game Start">
+    </a>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../scripts/music.js"></script>
     <script src="../scripts/inventoryLoad.js"></script>
     <script>
-    var swiper = new Swiper(".mySwiper", {
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-      },
-      speed: 700,
-      grabCursor: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      loop: false,
-      freeMode: false,
-      slidesPerGroup: 1,
-      loopAdditionalSlides: 11,
-      breakpoints: {
-        900: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-          centeredSlides: false,
-        },
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 40,
-          centeredSlides: true, 
-        }
-      }
+    document.addEventListener("DOMContentLoaded", function() {
+        var swiper = new Swiper(".mySwiper", {
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            speed: 700,
+            grabCursor: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            loop: false,
+            freeMode: false,
+            slidesPerGroup: 1,
+            breakpoints: {
+                900: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    centeredSlides: false,
+                },
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 40,
+                    centeredSlides: true,
+                }
+            }
+        });
     });
     </script>
 </body>

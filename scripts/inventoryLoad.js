@@ -53,7 +53,7 @@ function updateInventory(animal_name) {
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
-    const userNumber = 'user123'; // 실제 사용자 번호로 교체
+    const user_number = 'user123'; // 실제 사용자 번호로 교체
     const animals = await fetchAnimals(user_number);
     if (animals) {
         updateInventory(animals);

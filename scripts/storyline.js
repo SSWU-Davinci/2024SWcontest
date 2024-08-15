@@ -4,9 +4,7 @@ var swiper = new Swiper(".mySwiper", {
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
-    stopOnLastSlide: true,
   },
-  // loop: false,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -15,17 +13,22 @@ var swiper = new Swiper(".mySwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  loop: false,
 });
 
-function handleRedirect() {
-  window.location.href = 'startmain.html';
-}
-
-function handleEnterKey(event) {
-  if (event.key === 'Enter') {
-    handleRedirect();
+function handleKeyPress(event) {
+  if (event.code === 'Space' || event.code === 'Enter') {
+      // 엔터키와 스페이스바 누르면 startmain 화면으로 이동하기
+      window.location.href = 'startmain.html';
   }
 }
+document.addEventListener('keydown', handleKeyPress);
+
+function handleScreenClick() {
+  // 화면을 클릭하면 startmain 화면으로 이동하기
+  window.location.href = 'startmain.html';
+}
+document.addEventListener('click', handleScreenClick);
 
 // Check the current slide's ID when the transition ends
 swiper.on('transitionEnd', function () {

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davinci</title>
+    <link rel="stylesheet" href="/stylesheets/startmainStyle.css">
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <audio src="/assets/alltime.mp3" autoplay loop></audio>
+    <div class="gameName">
+        <span>D A V I N C I</span>
+    </div>
+    <div id="character">
+        <img class="animal" id="fish" src="/img/fish.png" alt="초롱아귀">
+        <img class="animal" id="pig" src="/img/pig.png" alt="멧돼지">
+        <img class="animal" id="giraffe" src="/img/giraffe.png" alt="기린">
+        <img class="animal" id="bear" src="/img/bear.png" alt="북극곰">
+    </div>
+    <h2>화면을 클릭하면 시작합니다...</h2>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const music = document.querySelector("audio");
+
+    // 음악을 재생하려고 시도
+    function attemptPlayMusic() {
+        music.play().catch(error => {
+            console.log('자동 재생 실패. 사용자 상호작용 필요:', error);
+        });
+    }
+    // 페이지가 로드될 때 음악 재생 시도
+    attemptPlayMusic();
+});
+</script>
+<script>
+    function handleScreenClick() {
+    // 화면을 클릭하면 홈 화면으로 이동하기
+    window.location.href = '/home';
+}
+document.addEventListener('click', handleScreenClick);
+
+function handleKeyPress(event) {
+    if (event.code === 'Space' || event.code === 'Enter') {
+        // 엔터키와 스페이스바 누르면 홈 화면으로 이동하기
+        window.location.href = '/home';
+    }
+}
+document.addEventListener('keydown', handleKeyPress);
+</script>
+</html>
