@@ -15,8 +15,4 @@ async function getScript(connection, theme_number, set_number) {
 module.exports = {
     getRandomSet,
     getScript
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> Chaeyeon
