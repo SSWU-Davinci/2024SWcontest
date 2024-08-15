@@ -4,9 +4,9 @@ document.getElementById('joinForm').addEventListener('submit', async (event) => 
     const name = document.getElementById('name').value;
     const id = document.getElementById('id').value;
     const password = document.getElementById('password').value;
-
+    
     try {
-        const response = await fetch('http://localhost:3000/user/join', {
+        const response = await fetch('/user/join', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

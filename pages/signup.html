@@ -15,9 +15,12 @@
             <form id="joinForm" action="../pages/inventory.html" method="post">
                 <label for="name">Nickname</label>
                 <input type="text" id="name" name="name" required>
-
                 <label for="id">ID</label>
-                <input type="text" id="id" name="id" required>
+                <div class="id-box">
+                    <input type="text" id="id" name="id" class="id-input" required>
+                    <button type="button" id="checkIdButton">중복 검사</button>
+                </div>
+                <div class="duplicated-message"></div>
 
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
@@ -30,6 +33,7 @@
     </div>
 
     <script src="../scripts/signupSubmit.js"></script>
+    <script src="../scripts/duplicatedID.js"></script>
     <script src="../scripts/music.js"></script>
 </body>
 </html>

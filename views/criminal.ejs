@@ -18,6 +18,7 @@
     </div>
     <h1>스페이스 바나 엔터 키를 눌러서 엔딩 화면을 보세요...</h1>
 </body>
+
 <script type="module">
     import { incrementThemeNumber, getThemeNumber, logCurrentThemeNumber } from './themaNumCnt.js';
 
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (homeButton) {
         homeButton.addEventListener('click', function() {
             incrementThemeNumber();         // 테마번호
-            window.location.href = 'inventory';            // 인벤토리 페이지로 이동
+            window.location.href = '/davinci/home/inventory';            // 인벤토리 페이지로 이동
         });
     }
 
@@ -49,14 +50,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 nextstage.style.display = "none";
             } 
             else {
-                window.location.href = 'home';
+                window.location.href = '/davinci/home';
             }
         });
     }
 
     function handleKeyPress(event) {
         if (event.code === 'Space' || event.code === 'Enter') {
-            window.location.href = 'ending'; // 엔딩 페이지로 이동
+            window.location.href = '/ending'; // 엔딩 페이지로 이동
         }
     }
     document.addEventListener('keydown', handleKeyPress);
