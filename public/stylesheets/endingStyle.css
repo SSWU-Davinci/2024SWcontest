@@ -39,16 +39,33 @@ h3 {
     color: #ffffff;
 }
 
+
 .scroll-content {
     position: fixed;
-    top: 100px;
-    width: 100%;
+    top: 10px;;
     color: #ffffff;
     text-align: center;
     display: none;
+    z-index: 10; /* 다른 요소 위에 표시되도록 */
+    transition: opacity 0.5s ease; /* 부드러운 투명도 전환 */
 }
+
 
 .scroll-text {
     margin: 10px 0;
     color: #ffffff;
+}
+
+.one {
+    color: aqua;
+    font-size: larger;
+}
+
+.two {
+    color: chocolate;
+    font-size: small;
+}
+
+.three {
+    color: chocolate;
 }

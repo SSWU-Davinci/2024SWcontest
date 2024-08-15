@@ -5,35 +5,35 @@
   <title>Davinci</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="../public/stylesheets/storyline.css" />
+  <link rel="stylesheet" href="/stylesheets/storyline.css" />
 </head>
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
-  <audio src="../public/assets/storyline.mp3" autoplay loop></audio>
+  <audio src="/assets/storyline.mp3" autoplay loop></audio>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide" id="slide_01">
-        <img src="../public/img/story_01.png" alt="">
+        <img src="/img/story_01.png" alt="">
       </div>
       <div class="swiper-slide" id="slide_02">
-        <img src="../public/img/story_02.png" alt="">
+        <img src="/img/story_02.png" alt="">
       </div>
       <div class="swiper-slide" id="slide_03">
-        <img src="../public/img/story_03.png" alt="">
+        <img src="/img/story_03.png" alt="">
       </div>
       <div class="swiper-slide" id="slide_04">
-        <img src="../public/img/story_04.png" alt="">
+        <img src="/img/story_04.png" alt="">
       </div>
       <div class="swiper-slide" id="slide_05">
-        <img src="../public/img/story_05.png" alt="">
+        <img src="/img/story_05.png" alt="">
       </div>
       <div class="swiper-slide" id="slide_06">
-        <img src="../public/img/story_06.png" alt="">
+        <img src="/img/story_06.png" alt="">
       </div>
       <div class="swiper-slide" id="slide_07">
-        <img src="../public/img/story_07.png" alt="">
+        <img src="/img/story_07.png" alt="">
       </div>
       <div class="swiper-slide" id="slide_08">
-        <img src="../public/img/story_08-2.png" alt="">
+        <img src="/img/story_08-2.png" alt="">
       </div>
     </div>
     <div class="swiper-button-next"></div>
@@ -77,14 +77,14 @@
 function handleKeyPress(event) {
   if (event.code === 'Space' || event.code === 'Enter') {
       // 엔터키와 스페이스바 누르면 startmain 화면으로 이동하기
-      window.location.href = 'startmain';
+      window.location.href = '/startmain';
   }
 }
 document.addEventListener('keydown', handleKeyPress);
 
 function handleScreenClick() {
   // 화면을 클릭하면 startmain 화면으로 이동하기
-  window.location.href = 'startmain';
+  window.location.href = '/startmain';
 }
 document.addEventListener('click', handleScreenClick);
 

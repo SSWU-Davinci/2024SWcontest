@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Davinci</title>
-    <link rel="stylesheet" href="/stylesheets/inventory.css">
+    <link rel="stylesheet" href="../stylesheets/inventory.css">
 </head>
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
-    <audio src="/assets/alltime.mp3" autoplay loop></audio>
+    <audio src="../assets/alltime.mp3" autoplay loop></audio>
     <div class="inventory">
 
         <div class="background"></div>
@@ -20,45 +20,23 @@
         <div class="whiteboard">
             <div class="photo-box photo-background" data-id="1">
                 <div class="clip clip1"></div>
-                <img src="/img/fish.png" alt="Fish">
+                <img src="../img/fish.png" alt="Fish">
             </div>
             <div class="photo-box photo-background" data-id="2">
                 <div class="clip clip2"></div>
-                <img src="/img/pig.png" alt="Pig">
+                <img src="../img/pig.png" alt="Pig">
             </div>
             <div class="big-photo-box photo-background" data-id="3">
                 <div class="clip clip3"></div>
-                <img src="/img/giraffe.png" alt="Giraffe">
+                <img src="../img/giraffe.png" alt="Giraffe">
             </div>
             <div class="large-photo-box photo-background" data-id="4">
                 <div class="clip clip4"></div>
-                <img src="/img/bear.png" alt="Bear">
+                <img src="../img/bear.png" alt="Bear">
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-    <a id="gamestart" href="/home">
-        <img src="/img/gamestart.png" alt="Game Start">
-    </a>
-=======
-
->>>>>>> 64ddc8cbd5c6a4060aa2295f6362c6048dfb07b2
+    <!-- <script src="../scripts/inventoryspeech.js"></script> -->
+    <script src="../scripts/music.js"></script>
 </body>
-</html>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const music = document.querySelector("audio");
-
-    // 음악을 재생하려고 시도
-    function attemptPlayMusic() {
-        music.play().catch(error => {
-            console.log('자동 재생 실패. 사용자 상호작용 필요:', error);
-        });
-    }
-    // 페이지가 로드될 때 음악 재생 시도
-    attemptPlayMusic();
-});
-
-</script>
 </html>

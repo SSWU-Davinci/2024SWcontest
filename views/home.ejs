@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Davinci</title>
-    <link rel="stylesheet" href="../public/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
 </head>
 
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div id="gameStart">GAME START!</div>
-    <audio src="../public/assets/main bgm.mp3" autoplay loop></audio>
-    <img id="user" src="../public/img/setting_button.png" alt="계정정보">
+    <audio src="/assets/main bgm.mp3" autoplay loop></audio>
+    <img id="user" src="/img/setting_button.png" alt="계정정보">
 
     <div class="overlay"></div>
     <div class="container">
         <h2>Davinci</h2>
-        <form action="/login" method="post">
+        <form action="/user/login" method="post">
             <label for="id">ID</label>
             <input type="text" id="id" name="id" required>
 
@@ -24,30 +24,39 @@
 
             <div class="loginButton">
                 <button type="submit" class="login">Log In</button>
-                <a href="join.ejs" class="signUp">Sign Up</a>
+<<<<<<< HEAD
+                <a href="/user/join" class="signUp">Sign Up</a>
+=======
+                <a href='/user/join' class="signUp">Sign Up</a>
+>>>>>>> 64ddc8cbd5c6a4060aa2295f6362c6048dfb07b2
             </div>
         </form>
     </div>
 
     <div id="character">
-        <img class="animal" id="fish" src="../public/img/fish.png" alt="초롱아귀">
-        <img class="animal" id="pig" src="../public/img/pig.png" alt="멧돼지">
-        <img class="animal" id="giraffe" src="../public/img/giraffe.png" alt="기린">
-        <img class="animal" id="bear" src="../public/img/bear.png" alt="북극곰">
+        <img class="animal" id="fish" src="/img/fish.png" alt="초롱아귀">
+        <img class="animal" id="pig" src="/img/pig.png" alt="멧돼지">
+        <img class="animal" id="giraffe" src="/img/giraffe.png" alt="기린">
+        <img class="animal" id="bear" src="/img/bear.png" alt="북극곰">
     </div>
 
     <div id="name">
         <p id="name_text">햄부장</p>
-        <img id="name_log" src="../public/img/log_name.png" alt="이름표">
+        <img id="name_log" src="/img/log_name.png" alt="이름표">
     </div>
 
     <div id="log">
         <p id="dialogue">
             나를 도와서 문제 직원을 찾아줘~!
         </p>
-        <img id="fire" src="../public/img/fire_button.png" alt="해고">
+        <img id="fire" src="/img/fire_button.png" alt="해고">
     </div>
 </body>
+<<<<<<< HEAD
+<script type="module">// 테마 번호를 가져오거나 초기값을 설정
+    function getThemeNumber() {
+        return parseInt(localStorage.getItem('themeNumber')) || 1;
+=======
 <script>
     import { getThemeNumber } from './themaNumCnt.js';
 import { setCriminal, setFire } from './criminal.js';
@@ -74,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // JSON 파일을 불러온다
-    fetch('../public/log/log.json')
+    fetch('/log/log.json')
         .then(response => response.json())
         .then(data => {
             // logData = 스테이지에 맞는 theme_number의 대사 묶음
@@ -156,287 +165,381 @@ document.addEventListener("DOMContentLoaded", function () {
             // 4명 다 확인 안하면 2번 클릭 못하도록
             animal.removeEventListener("click", main);
         }
+>>>>>>> 64ddc8cbd5c6a4060aa2295f6362c6048dfb07b2
     }
-
-    // 배경 클릭 시 동물 크기 리셋
-    document.addEventListener("click", function (event) {
-        if (!event.target.classList.contains("animal")) {
-            if (finalClick || allAnimalClicked) {
-                // 모든 대사를 확인한 후 배경을 클릭했을 때
+    
+    // 테마 번호를 증가시키고 저장
+    function incrementThemeNumber() {
+        let themeNumber = getThemeNumber();
+        if (themeNumber >= 4) {  // 테마 번호가 4에 도달하면 리셋
+            themeNumber = 1;
+        } else {
+            themeNumber += 1;
+        }
+        localStorage.setItem('themeNumber', themeNumber);
+    }
+    
+    // 테마 번호를 로컬 스토리지에 저장된 값으로 설정
+    function setThemeNumber(number) {
+        localStorage.setItem('themeNumber', number);
+    }
+    
+    // 테마 번호를 콘솔에 출력하는 함수 (디버깅 용도)
+    function logCurrentThemeNumber() {
+        console.log('Current theme number:', getThemeNumber());
+    }
+    
+    // DOMContentLoaded 이벤트에서 초기화
+    document.addEventListener('DOMContentLoaded', () => {
+        // 페이지가 로드될 때 로컬 스토리지에 테마 번호가 설정되지 않았으면 초기화
+        if (!localStorage.getItem('themeNumber')) {
+            localStorage.setItem('themeNumber', '1');
+        }
+    
+        // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
+        logCurrentThemeNumber();
+    });
+    
+    // DOMContentLoaded 이벤트에서 초기화
+    document.addEventListener('DOMContentLoaded', () => {
+        // 페이지가 로드될 때 로컬 스토리지에 테마 번호가 설정되지 않았으면 초기화
+        if (!localStorage.getItem('themeNumber')) {
+            localStorage.setItem('themeNumber', '1');
+        }
+    
+        // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
+        logCurrentThemeNumber();
+    });
+    
+    // DOMContentLoaded 이벤트에서 초기화
+    document.addEventListener('DOMContentLoaded', () => {
+        // 초기화
+        localStorage.removeItem('themesCompleted');  // 이전 데이터 제거
+        if (!localStorage.getItem('themeNumber')) {  // 테마 번호가 없을 경우만 설정
+            localStorage.setItem('themeNumber', '1');  // 처음 테마로 설정
+        }
+    
+        // 현재 테마 번호를 로그에 출력
+        logCurrentThemeNumber();
+    });
+    
+    // 외부에서 사용할 수 있도록 함수들을 export
+    export { getThemeNumber, incrementThemeNumber, setThemeNumber, logCurrentThemeNumber };
+</script>
+<script type="module">import { getThemeNumber } from './themaNumCnt.js';
+    import { setCriminal, setFire } from './criminal.js';
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        const animalClass = document.querySelectorAll(".animal");
+        const dialogue = document.getElementById("dialogue");
+        const name_text = document.getElementById("name_text");
+    
+        let logData = []; // 데이터를 저장할 배
+        let animalData = []; // 동물 데이터 저장할 배열 
+    
+        let index = 0; // 클릭할 때마다 증가시킬 인덱스
+        let animalClicked = new Set(); // 클릭된 동물들을 저장
+        let allAnimalClicked = false; // 모든 동물이 클릭되었는지 확인
+        let finalClick = false; // 모든 대사를 확인한 후 클릭 필요 여부
+    
+        // 동물 ID와 한국어 이름의 매칭
+        const animalName = {
+            fish: '물고기',
+            pig: '멧돼지',
+            giraffe: '기린',
+            bear: '북극곰'
+        };
+    
+        // JSON 파일을 불러온다
+        fetch('/random-scripts')
+            .then(response => response.json())
+            .then(data => {
+                // logData = 스테이지에 맞는 theme_number의 대사 묶음
+                const themeNumber = getThemeNumber();
+                logData = data.data[themeNumber - 1];
+            })
+            .catch(error => console.error('json loading error:', error));
+    
+        function main(event) {
+            const animal = event.currentTarget;
+    
+            // 클릭된 동물의 ID 콘솔에 출력
+            console.log("animal ID:", animal.id);
+            // 현재 인덱스 콘솔에 출력
+            console.log("index", index);
+            
+            if (finalClick) {
                 resetAnimalStyles();
                 selectAnimalStyle();
                 name_text.textContent = "햄부장";
                 dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
                 chooseCriminal();
-                setFire(1);
-            } else {
-                // 클릭된 곳이 동물이 아닌 경우에 스타일 리셋
-                animalClass.forEach(a => {
-                    a.style.transform = "";
-                    a.style.zIndex = "1";
-                });
-                // 아직 모든 대사를 보지 않았음
-                if (index < logData.length) {
-                    name_text.textContent = "햄부장";
-                    dialogue.textContent = "신중하게 모든 직원을 확인해뵤...";
-                }
+                setFire(1);            
+                return
             }
-        }
-    });
-
-
-    ////////////////////////////////// 함수 //////////////////////////////////
-
-    animalClass.forEach(animal => {
-        animal.addEventListener("click", main);
-    });
-
-    // 동물 데이터를 배열에 저장
-    function addAnimalData(animalId, criminalValue) {
-        // 데이터 저장을 위한 구조체
-        const animalCriminal = {
-            id: animalId,
-            criminal: criminalValue
-        };
-
-        // 객체를 배열에 추가
-        animalData.push(animalCriminal);
-        // 배열에 제대로 추가되었는지 확인
-        console.log("동물의 정보: ", animalId, animalCriminal);
-        console.log("현재 animalData 배열 상태:", animalData);
-    }
-
-    // 동물의 범죄 값을 받아온다
-    function criminalData(id) {
-        const animal = animalData.find(animal => animal.id === id);
-        return animal ? animal.criminal : null;
-    }
     
-    // 범인을 고르면 범죄 여부를 받아온다
-    function chooseCriminal() {
-        animalClass.forEach(animal => {
-            animal.addEventListener("click", () => {
-                const criminalValue = criminalData(animal.id);
-                console.log('범인 값', criminalValue);
-                if (!(criminalValue === null)) {
-                    console.log(`동물 ID: ${animal.id}, Criminal: ${criminalValue}`);
-                    setCriminal(criminalValue);
+            if (logData.length > 0 && index < logData.length) {
+                let currentLog = logData[index]; // 내보낼 대사
+                let criminalValue = currentLog.criminal; // criminal 값은 logData에 있다
+                // exception이 배열인 경우 체크해서 저장
+                let exception = Array.isArray(currentLog.exception) ? currentLog.exception : [currentLog.exception];
+                let n = index; // 범인은 index 카운트에서 제외하기 위한 임시 변수
+    
+                // 동물 ID에 해당하는 한국어 이름 설정
+                name_text.textContent = animalName[animal.id] || animal.id;
+    
+                // 클릭 된 동물 대사 출력
+                if (exception.includes(animal.id)) {
+                    // 예외 동물인 경우
+                    while (exception.includes(animal.id)) {
+                        if (n < logData.length) {
+                            n++; // 예외 대사라면 그 다음 대사로 업데이트
+                            currentLog = logData[n];
+                            criminalValue = currentLog.criminal; // 범인 값도 같이 업데이트
+                            exception = Array.isArray(currentLog.exception) ? currentLog.exception : [currentLog.exception];
+                        } else {
+                            break; // 마지막 대사까지 도달
+                        }
+                    }
+                    dialogue.textContent = currentLog.line;
                 } else {
-                    console.log(`동물 ID: ${animal.id}에 해당하는 Criminal 값을 찾을 수 없습니다.`);
+                    dialogue.textContent = currentLog.line;
+                    index++; // 다음 인덱스로 이동
                 }
+                addAnimalData(animal.id, criminalValue); // 클릭된 동물 데이터 저장
+            }
+    
+            // 클릭된 동물을 set에 추가
+            animalClicked.add(animal.id);
+    
+            // 모든 동물이 클릭되었다면
+            if (animalClicked.size === animalClass.length) {
+                allAnimalClicked = true;
+                finalClick = 1;
+                setFire(1);
+            }
+                
+    
+            // 동물 앞으로 나오게
+            animalClass.forEach(a => {
+                a.style.transform = "";
+                a.style.zIndex = "1";
             });
+    
+            animal.style.transform = "translate(0px, -35%) scale(1.7)";
+            animal.style.zIndex = "10";
+    
+            if (!allAnimalClicked) {
+                // 4명 다 확인 안하면 2번 클릭 못하도록
+                animal.removeEventListener("click", main);
+            }
+        }
+    
+        // 배경 클릭 시 동물 크기 리셋
+        document.addEventListener("click", function (event) {
+            if (!event.target.classList.contains("animal")) {
+                if (finalClick || allAnimalClicked) {
+                    // 모든 대사를 확인한 후 배경을 클릭했을 때
+                    resetAnimalStyles();
+                    selectAnimalStyle();
+                    name_text.textContent = "햄부장";
+                    dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
+                    chooseCriminal();
+                    setFire(1);
+                } else {
+                    // 클릭된 곳이 동물이 아닌 경우에 스타일 리셋
+                    animalClass.forEach(a => {
+                        a.style.transform = "";
+                        a.style.zIndex = "1";
+                    });
+                    // 아직 모든 대사를 보지 않았음
+                    if (index < logData.length) {
+                        name_text.textContent = "햄부장";
+                        dialogue.textContent = "신중하게 모든 직원을 확인해뵤...";
+                    }
+                }
+            }
         });
-    }
-
-
-    // 동물들의 크기 및 위치를 초기 상태로 되돌리는 함수
-    function resetAnimalStyles() {
-        animalClass.forEach(a => {
-            a.style.transform = "";
-            a.style.zIndex = "1";
-            a.style.animation = "";
-        });
-    }
-
-    // 동물을 선택하게 유도하는 애니메이션
-    function selectAnimalStyle() {
-        // 클릭된 동물에게 커졌다 작아졌다 하는 애니메이션 적용
+    
+    
+        ////////////////////////////////// 함수 //////////////////////////////////
+    
         animalClass.forEach(animal => {
-            animal.addEventListener("click", function () {
-                animal.style.animationName = "bounceClick";
-                animal.style.animationDuration = "1s";
-                animal.style.animationTimingFunction = "ease-in-out";
-                animal.style.animationIterationCount = "1";
-                animal.style.zIndex = "2";
-            });
+            animal.addEventListener("click", main);
         });
-    }
-
-
     
-    ////////////////////////////////// 애니메이션 //////////////////////////////////
-
-    const style = document.createElement('style');
-    style.innerHTML = `
-        @keyframes bounce {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
+        // 동물 데이터를 배열에 저장
+        function addAnimalData(animalId, criminalValue) {
+            // 데이터 저장을 위한 구조체
+            const animalCriminal = {
+                id: animalId,
+                criminal: criminalValue
+            };
+    
+            // 객체를 배열에 추가
+            animalData.push(animalCriminal);
+            // 배열에 제대로 추가되었는지 확인
+            console.log("동물의 정보: ", animalId, animalCriminal);
+            console.log("현재 animalData 배열 상태:", animalData);
         }
     
-        @keyframes bounceClick {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.3);
-            }
+        // 동물의 범죄 값을 받아온다
+        function criminalData(id) {
+            const animal = animalData.find(animal => animal.id === id);
+            return animal ? animal.criminal : null;
         }
-    `;
-    document.head.appendChild(style);
+        
+        // 범인을 고르면 범죄 여부를 받아온다
+        function chooseCriminal() {
+            animalClass.forEach(animal => {
+                animal.addEventListener("click", () => {
+                    const criminalValue = criminalData(animal.id);
+                    console.log('범인 값', criminalValue);
+                    if (!(criminalValue === null)) {
+                        console.log(`동물 ID: ${animal.id}, Criminal: ${criminalValue}`);
+                        setCriminal(criminalValue);
+                    } else {
+                        console.log(`동물 ID: ${animal.id}에 해당하는 Criminal 값을 찾을 수 없습니다.`);
+                    }
+                });
+            });
+        }
+    
+    
+        // 동물들의 크기 및 위치를 초기 상태로 되돌리는 함수
+        function resetAnimalStyles() {
+            animalClass.forEach(a => {
+                a.style.transform = "";
+                a.style.zIndex = "1";
+                a.style.animation = "";
+            });
+        }
+    
+        // 동물을 선택하게 유도하는 애니메이션
+        function selectAnimalStyle() {
+            // 클릭된 동물에게 커졌다 작아졌다 하는 애니메이션 적용
+            animalClass.forEach(animal => {
+                animal.addEventListener("click", function () {
+                    animal.style.animationName = "bounceClick";
+                    animal.style.animationDuration = "1s";
+                    animal.style.animationTimingFunction = "ease-in-out";
+                    animal.style.animationIterationCount = "1";
+                    animal.style.zIndex = "2";
+                });
+            });
+        }
+    
+    
+        
+        ////////////////////////////////// 애니메이션 //////////////////////////////////
+    
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes bounce {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.1);
+                }
+            }
+        
+            @keyframes bounceClick {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.3);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    });</script>
+<script type="module">import { getCriminal, getFire } from './criminal.js';
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const fireButton = document.getElementById('fire');
+        let criminal = getCriminal();
+    
+        fireButton.addEventListener('click', function () {
+            const fire = getFire();
+    
+            if (fire === 1) {
+                criminal = getCriminal();
+                console.log("해고 버튼에 넘어가는 범인 여부", criminal);
+                // criminal 값에 따라 페이지 이동
+                if (criminal === 0) {
+                    window.location.href = '/gameover';
+                } else if (criminal === 1) {
+                    window.location.href = '/loading';
+                } else {
+                    console.error("criminal 값 예외 오류", criminal);
+                    window.location.href = '/loading';
+                }
+            } else {
+                console.error("fire 값 예외 오류.", fire);
+            }
+        });
+    });
+    </script>
+<script>document.addEventListener('DOMContentLoaded', function() {
+    var gameStart = document.getElementById('gameStart');
+    
+    // 애니메이션이 3초 동안 지속
+    setTimeout(function() {
+        gameStart.style.display = 'none';
+    }, 2000); //
 });
 </script>
-<script>
-    var express = require('express');
+<script>document.addEventListener("DOMContentLoaded", function() {
+    const music = document.querySelector("audio");
+
+    // 음악을 재생하려고 시도
+    function attemptPlayMusic() {
+        music.play().catch(error => {
+            console.log('자동 재생 실패. 사용자 상호작용 필요:', error);
+        });
+    }
+    // 페이지가 로드될 때 음악 재생 시도
+    attemptPlayMusic();
+});
+</script>
+<script>document.addEventListener("DOMContentLoaded", function() {
+    const user = document.getElementById("user");
+    const container = document.querySelector(".container");
+    const overlay = document.querySelector(".overlay");
+
+    /*버튼을 두 번 눌러야 떠서 none 추가*/
+    container.style.display = "none";
+    overlay.style.display = "none";
+
+    user.addEventListener("click", function() {
+        if (container.style.display === "none") {
+            container.style.display = "block";
+        } else {
+            container.style.display = "none";
+        }
+
+        if (overlay.style.display === "none") {
+            overlay.style.display = "block";
+        } else {
+            overlay.style.display = "none";
+        }
+    });
+});
+</script>
+<script>var express = require('express');
     var router = express.Router();
     const userController = require('../User/userController'); // userController를 가져옴
-
+    
     /* User listing. */
     router.post('/login', userController.login);
     router.post('/join', userController.join);
-    router.post('/checkName', userController.nameCheck);
     router.post('/checkId', userController.idCheck);
-
+    
     router.get('/join', (req, res) => {
         res.render('join'); // join.ejs 파일을 렌더링
     });
-
+    
     module.exports = router;
-
-</script>
-<script>
-    import { getCriminal, getFire } from './criminal.js';
-
-document.addEventListener('DOMContentLoaded', function () {
-    const fireButton = document.getElementById('fire');
-    let criminal = getCriminal();
-
-    fireButton.addEventListener('click', function () {
-        const fire = getFire();
-
-        if (fire === 1) {
-            criminal = getCriminal();
-            console.log(criminal);
-            // criminal 값에 따라 페이지 이동
-            if (criminal === 0) {
-                window.location.href = 'gameover';
-            } else if (criminal === 1) {
-                window.location.href = 'loading';
-            } else {
-                console.error("criminal 값 예외 오류", criminal);
-            }
-        } else {
-            console.error("fire 값이 1이 아닙니다.", fire);
-        }
-    });
-});
-
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var gameStart = document.getElementById('gameStart');
-        
-        // 애니메이션이 3초 동안 지속
-        setTimeout(function() {
-            gameStart.style.display = 'none';
-        }, 2000); //
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const music = document.querySelector("audio");
-
-        // 음악을 재생하려고 시도
-        function attemptPlayMusic() {
-            music.play().catch(error => {
-                console.log('자동 재생 실패. 사용자 상호작용 필요:', error);
-            });
-        }
-        // 페이지가 로드될 때 음악 재생 시도
-        attemptPlayMusic();
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const user = document.getElementById("user");
-        const container = document.querySelector(".container");
-        const overlay = document.querySelector(".overlay");
-
-        /*버튼을 두 번 눌러야 떠서 none 추가*/
-        container.style.display = "none";
-        overlay.style.display = "none";
-
-        user.addEventListener("click", function() {
-            if (container.style.display === "none") {
-                container.style.display = "block";
-            } else {
-                container.style.display = "none";
-            }
-
-            if (overlay.style.display === "none") {
-                overlay.style.display = "block";
-            } else {
-                overlay.style.display = "none";
-            }
-        });
-    });
-</script>
-<script>
-    // 테마 번호를 가져오거나 초기값을 설정
-function getThemeNumber() {
-    return parseInt(localStorage.getItem('themeNumber')) || 1;
-}
-
-// 테마 번호를 증가시키고 저장
-function incrementThemeNumber() {
-    let themeNumber = getThemeNumber();
-    if (themeNumber >= 4) {  // 테마 번호가 4에 도달하면 리셋
-        themeNumber = 1;
-    } else {
-        themeNumber += 1;
-    }
-    localStorage.setItem('themeNumber', themeNumber);
-}
-
-// 테마 번호를 로컬 스토리지에 저장된 값으로 설정
-function setThemeNumber(number) {
-    localStorage.setItem('themeNumber', number);
-}
-
-// 테마 번호를 콘솔에 출력하는 함수 (디버깅 용도)
-function logCurrentThemeNumber() {
-    console.log('Current theme number:', getThemeNumber());
-}
-
-// DOMContentLoaded 이벤트에서 초기화
-document.addEventListener('DOMContentLoaded', () => {
-    // 페이지가 로드될 때 로컬 스토리지에 테마 번호가 설정되지 않았으면 초기화
-    if (!localStorage.getItem('themeNumber')) {
-        localStorage.setItem('themeNumber', '1');
-    }
-
-    // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
-    logCurrentThemeNumber();
-});
-
-// DOMContentLoaded 이벤트에서 초기화
-document.addEventListener('DOMContentLoaded', () => {
-    // 페이지가 로드될 때 로컬 스토리지에 테마 번호가 설정되지 않았으면 초기화
-    if (!localStorage.getItem('themeNumber')) {
-        localStorage.setItem('themeNumber', '1');
-    }
-
-    // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
-    logCurrentThemeNumber();
-});
-
-// DOMContentLoaded 이벤트에서 초기화
-document.addEventListener('DOMContentLoaded', () => {
-    // 초기화
-    localStorage.removeItem('themesCompleted');  // 이전 데이터 제거
-    if (!localStorage.getItem('themeNumber')) {  // 테마 번호가 없을 경우만 설정
-        localStorage.setItem('themeNumber', '1');  // 처음 테마로 설정
-    }
-
-    // 현재 테마 번호를 로그에 출력
-    logCurrentThemeNumber();
-});
-
-// 외부에서 사용할 수 있도록 함수들을 export
-export { getThemeNumber, incrementThemeNumber, setThemeNumber, logCurrentThemeNumber };
-
-</script>
-</html>
+    </script>
