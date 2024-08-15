@@ -24,11 +24,7 @@
 
             <div class="loginButton">
                 <button type="submit" class="login">Log In</button>
-<<<<<<< HEAD
-                <a href="/user/join" class="signUp">Sign Up</a>
-=======
                 <a href='/user/join' class="signUp">Sign Up</a>
->>>>>>> 64ddc8cbd5c6a4060aa2295f6362c6048dfb07b2
             </div>
         </form>
     </div>
@@ -52,120 +48,9 @@
         <img id="fire" src="/img/fire_button.png" alt="해고">
     </div>
 </body>
-<<<<<<< HEAD
 <script type="module">// 테마 번호를 가져오거나 초기값을 설정
     function getThemeNumber() {
         return parseInt(localStorage.getItem('themeNumber')) || 1;
-=======
-<script>
-    import { getThemeNumber } from './themaNumCnt.js';
-import { setCriminal, setFire } from './criminal.js';
-
-document.addEventListener("DOMContentLoaded", function () {
-    const animalClass = document.querySelectorAll(".animal");
-    const dialogue = document.getElementById("dialogue");
-    const name_text = document.getElementById("name_text");
-
-    let logData = []; // 데이터를 저장할 배
-    let animalData = []; // 동물 데이터 저장할 배열 
-
-    let index = 0; // 클릭할 때마다 증가시킬 인덱스
-    let animalClicked = new Set(); // 클릭된 동물들을 저장
-    let allAnimalClicked = false; // 모든 동물이 클릭되었는지 확인
-    let finalClick = false; // 모든 대사를 확인한 후 클릭 필요 여부
-
-    // 동물 ID와 한국어 이름의 매칭
-    const animalName = {
-        fish: '물고기',
-        pig: '멧돼지',
-        giraffe: '기린',
-        bear: '북극곰'
-    };
-
-    // JSON 파일을 불러온다
-    fetch('/log/log.json')
-        .then(response => response.json())
-        .then(data => {
-            // logData = 스테이지에 맞는 theme_number의 대사 묶음
-            const themeNumber = getThemeNumber();
-            logData = data.data[themeNumber - 1];
-        })
-        .catch(error => console.error('json loading error:', error));
-
-    function main(event) {
-        const animal = event.currentTarget;
-
-        // 클릭된 동물의 ID 콘솔에 출력
-        console.log("animal ID:", animal.id);
-        // 현재 인덱스 콘솔에 출력
-        console.log("index", index);
-        
-        if (finalClick) {
-            resetAnimalStyles();
-            selectAnimalStyle();
-            name_text.textContent = "햄부장";
-            dialogue.textContent = "모든 직원을 확인했뵤! 해고할 직원을 골라뵤~~";
-            chooseCriminal();
-            setFire(1);            
-            return
-        }
-
-        if (logData.length > 0 && index < logData.length) {
-            let currentLog = logData[index]; // 내보낼 대사
-            let criminalValue = currentLog.criminal; // criminal 값은 logData에 있다
-            // exception이 배열인 경우 체크해서 저장
-            let exception = Array.isArray(currentLog.exception) ? currentLog.exception : [currentLog.exception];
-            let n = index; // 범인은 index 카운트에서 제외하기 위한 임시 변수
-
-            // 동물 ID에 해당하는 한국어 이름 설정
-            name_text.textContent = animalName[animal.id] || animal.id;
-
-            // 클릭 된 동물 대사 출력
-            if (exception.includes(animal.id)) {
-                // 예외 동물인 경우
-                while (exception.includes(animal.id)) {
-                    if (n < logData.length) {
-                        n++; // 예외 대사라면 그 다음 대사로 업데이트
-                        currentLog = logData[n];
-                        criminalValue = currentLog.criminal; // 범인 값도 같이 업데이트
-                        exception = Array.isArray(currentLog.exception) ? currentLog.exception : [currentLog.exception];
-                    } else {
-                        break; // 마지막 대사까지 도달
-                    }
-                }
-                dialogue.textContent = currentLog.line;
-            } else {
-                dialogue.textContent = currentLog.line;
-                index++; // 다음 인덱스로 이동
-            }
-            addAnimalData(animal.id, criminalValue); // 클릭된 동물 데이터 저장
-        }
-
-        // 클릭된 동물을 set에 추가
-        animalClicked.add(animal.id);
-
-        // 모든 동물이 클릭되었다면
-        if (animalClicked.size === animalClass.length) {
-            allAnimalClicked = true;
-            finalClick = 1;
-            setFire(1);
-        }
-            
-
-        // 동물 앞으로 나오게
-        animalClass.forEach(a => {
-            a.style.transform = "";
-            a.style.zIndex = "1";
-        });
-
-        animal.style.transform = "translate(0px, -35%) scale(1.7)";
-        animal.style.zIndex = "10";
-
-        if (!allAnimalClicked) {
-            // 4명 다 확인 안하면 2번 클릭 못하도록
-            animal.removeEventListener("click", main);
-        }
->>>>>>> 64ddc8cbd5c6a4060aa2295f6362c6048dfb07b2
     }
     
     // 테마 번호를 증가시키고 저장
