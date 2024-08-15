@@ -33,4 +33,3 @@ exports.getRandomScripts = async function() {
         throw error;
     }
 };
-

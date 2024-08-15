@@ -44,7 +44,7 @@ html, body {
     overflow: hidden;
     background: url('../img/background.png') no-repeat center center fixed;
     background-size: cover;
-    z-index: -1;
+    z-index: 1;
 }
 
 .overlay {
@@ -274,4 +274,17 @@ html, body {
         top: -25px;
         width: 8vw;
     }
+}
+
+#gamestart {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3;
+}
+
+#gamestart img {
+    width: 140px;
+    height: 80px;
+    display: block;
 }

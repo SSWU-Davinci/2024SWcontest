@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>Davinci</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/stylesheets/storyline.css" />
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+  <audio src="/assets/storyline.mp3" autoplay loop></audio>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" id="slide_01">
+        <img src="/img/story_01.png" alt="">
+      </div>
+      <div class="swiper-slide" id="slide_02">
+        <img src="/img/story_02.png" alt="">
+      </div>
+      <div class="swiper-slide" id="slide_03">
+        <img src="/img/story_03.png" alt="">
+      </div>
+      <div class="swiper-slide" id="slide_04">
+        <img src="/img/story_04.png" alt="">
+      </div>
+      <div class="swiper-slide" id="slide_05">
+        <img src="/img/story_05.png" alt="">
+      </div>
+      <div class="swiper-slide" id="slide_06">
+        <img src="/img/story_06.png" alt="">
+      </div>
+      <div class="swiper-slide" id="slide_07">
+        <img src="/img/story_07.png" alt="">
+      </div>
+      <div class="swiper-slide" id="slide_08">
+        <img src="/img/story_08-2.png" alt="">
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const music = document.querySelector("audio");
+
+    // 음악을 재생하려고 시도
+    function attemptPlayMusic() {
+        music.play().catch(error => {
+            console.log('자동 재생 실패. 사용자 상호작용 필요:', error);
+        });
+    }
+    // 페이지가 로드될 때 음악 재생 시도
+    attemptPlayMusic();
+});
+</script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  loop: false,
+});
+
+function handleKeyPress(event) {
+  if (event.code === 'Space' || event.code === 'Enter') {
+      // 엔터키와 스페이스바 누르면 startmain 화면으로 이동하기
+      window.location.href = '/startmain';
+  }
+}
+document.addEventListener('keydown', handleKeyPress);
+
+function handleScreenClick() {
+  // 화면을 클릭하면 startmain 화면으로 이동하기
+  window.location.href = '/startmain';
+}
+document.addEventListener('click', handleScreenClick);
+
+// Check the current slide's ID when the transition ends
+swiper.on('transitionEnd', function () {
+  var currentSlideId = swiper.slides[swiper.activeIndex].id;
+
+  if (currentSlideId === 'slide_08') { // Check if the current slide is the last one
+    document.querySelector('.swiper-button-next').addEventListener('click', handleRedirect);
+    document.addEventListener('keydown', handleEnterKey);
+    document.querySelector('.swiper').addEventListener('click', handleRedirect);
+  } else {
+    // Remove all existing event listeners if not on the last slide
+    document.querySelector('.swiper-button-next').removeEventListener('click', handleRedirect);
+    document.removeEventListener('keydown', handleEnterKey);
+    document.querySelector('.swiper').removeEventListener('click', handleRedirect);
+  }
+});
+</script>
+</html>
