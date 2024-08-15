@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Davinci</title>
-    <link rel="stylesheet" href="../public/stylesheets/gameover.css">
+    <link rel="stylesheet" href="/stylesheets/gameover.css">
 </head>
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div class="game-over-container">
@@ -20,10 +20,10 @@
             <span>R</span>
             <span>!</span>
         </h1>
-        <img id="home" src="../public/img/home_button.png" alt="홈 버튼">
+        <img id="home" src="/img/home_button.png" alt="홈 버튼">
     </div>
 </body>
-<script>
+<script type="module">
     document.addEventListener("DOMContentLoaded", function() {
     const homeButton = document.getElementById('home');
     if (homeButton) {
