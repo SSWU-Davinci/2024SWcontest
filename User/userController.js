@@ -7,8 +7,12 @@ exports.login = async (req, res) => {
     try {
         const user = await userProvider.loginCheck(id, password);
         if (user) {
+<<<<<<< HEAD
             res.status(200).json({ message: 'Login successful', user });
             res.redirect('/criminal/catalog/:user_number');         // 로그인 성공 시 inventory 페이지로 리다이렉트
+=======
+            res.redirect('/home/inventory');         // 로그인 성공 시 inventory 페이지로 리다이렉트
+>>>>>>> 64ddc8cbd5c6a4060aa2295f6362c6048dfb07b2
         } else {
             res.status(401).json({ message: 'Invalid credentials' });
         }
@@ -26,8 +30,12 @@ exports.join = async (req, res) => {
     try {
         const user = await userProvider.joinCheck(name, id, password);
         if (user.success) {
+<<<<<<< HEAD
             res.status(200).json({ message: 'Join successful! Go to Log in', user });
             res.redirect('home');         // 회원가입 성공 시 home 페이지로 리다이렉트
+=======
+            res.redirect('/home');         // 회원가입 성공 시 home 페이지로 리다이렉트
+>>>>>>> 64ddc8cbd5c6a4060aa2295f6362c6048dfb07b2
         } else if (user.message === 'id already exists') {
             res.status(409).json({ message: 'ID already exists' });
         } else {
