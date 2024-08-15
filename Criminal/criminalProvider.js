@@ -1,41 +1,42 @@
 const pool = require('../config/dbConfig');
 const criminalDao = require('./criminalDao');
-
-exports.addAnimalToUserCatalog = async function(user_number, floor, position) {
+// 사용자 번호와 위치 정보를 사용하여 도감에 동물을 추가하는 서비스 함수
+exports.addAnimal = async function(user_number, floor, position) {
     let connection;
     try {
+        // 데이터베이스 연결을 가져옴
         connection = await pool.getConnection();
-        // DAO 함수 호출 및 결과 저장
-        const result = await criminalDao.addAnimalToUserCatalog(connection, user_number, floor, position);
-
-        // DAO 함수의 결과에 따라 응답 설정
+        // DAO 함수 호출 및 결과를 받아옴
+        const result = await criminalDao.addAnimal(connection, user_number, floor, position);
+        // DAO 함수의 결과에 따라 응답을 설정
         if (!result.success) {
-            // 실패한 경우 결과에 따라 응답을 반환
             return { success: false, message: result.message };
         }
-
-        // 성공한 경우
-        return result; // 성공적인 결과를 반환
+        return result;
     } catch (error) {
         console.error(`Error adding animal to user catalog: ${error.message}`);
         return { success: false, message: 'Database query error' };
     } finally {
+        // 데이터베이스 연결을 반환
         if (connection) {
             connection.release();
         }
     }
 };
-exports.getUserCatalog = async function(user_number) {
+// 사용자 번호를 사용하여 도감에 있는 동물 목록을 가져오는 서비스 함수
+exports.getAnimal = async function(user_number) {
     let connection;
     try {
+        // 데이터베이스 연결을 가져옴
         connection = await pool.getConnection();
-        // Assumes script_number should be passed or is defined somewhere in context
-        const userAnimals = await criminalDao.getUserCatalog(connection, user_number);
+        // DAO 함수 호출 및 결과를 받아옴
+        const userAnimals = await criminalDao.getAnimal(connection, user_number);
         return { success: true, userAnimals };
     } catch (error) {
         console.error(`Error in getUserCatalog: ${error.message}`);
         return { success: false, message: 'Database query error' };
     } finally {
+        // 데이터베이스 연결을 반환
         if (connection) {
             connection.release();
         }

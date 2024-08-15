@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davinci</title>
+    <link rel="stylesheet" href="../stylesheets/home.css">
+</head>
+
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <div id="gameStart">GAME START!</div>
+    <audio src="../assets/main bgm.mp3" autoplay loop></audio>
+    <img id="user" src="../img/setting_button.png" alt="계정정보">
+
+    <div class="overlay"></div>
+    <div class="container">
+        <h2>Davinci</h2>
+        <form action="../pages/inventory.html" method="post">
+
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="loginButton">
+                <button type="submit" class="login">Log In</button>
+                <a href="signup.html" class="signUp">Sign Up</a>
+            </div>
+        </form>
+    </div>
+
+    <div id="character">
+        <img class="animal" id="fish" src="../img/fish.png" alt="초롱아귀">
+        <img class="animal" id="pig" src="../img/pig.png" alt="멧돼지">
+        <img class="animal" id="giraffe" src="../img/giraffe.png" alt="기린">
+        <img class="animal" id="bear" src="../img/bear.png" alt="북극곰">
+    </div>
+
+    <div id="name">
+        <p id="name_text">햄부장</p>
+        <img id="name_log" src="../img/log_name.png" alt="이름표">
+    </div>
+
+    <div id="log">
+        <p id="dialogue">
+            나를 도와서 문제 직원을 찾아줘~!
+        </p>
+        <img id="fire" src="../img/fire_button.png" alt="해고">
+    </div>
+</body>
+<script src="../scripts/gamestart.js"></script>
+<script src="../scripts/music.js"></script>
+<script src="../scripts/login.js"></script>
+
+<script type="module" src="../scripts/themaNumCnt.js"></script>
+<script type="module" src="../scripts/logLoad.js"></script>
+<script type="module" src="../scripts/fireButton.js"></script>
+<script type="module" src="../scripts/criminalImg.js"></script>
+</html>
