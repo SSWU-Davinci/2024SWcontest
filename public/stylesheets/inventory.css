@@ -145,35 +145,6 @@ html, body {
 .clip3 { background: url('../img/clip3.png') no-repeat center center; background-size: contain; }
 .clip4 { background: url('../img/clip4.png') no-repeat center center; background-size: contain; }
 
-/* Speech Bubble Styles */
-/* .speech-bubble {
-    position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 250px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
-    font-family: 'pretendard';
-    font-size: 18px;
-    font-weight: 500;
-    pointer-events: none;
-}
-
-.speech-bubble::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 10px;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-} */
-
 /* Photo Background Styles */
 .photo-background {
     background: #fff;
@@ -252,17 +223,6 @@ html, body {
         /* height: auto; */
 
     }
-
-    /* .speech-bubble {
-        width: 200px;
-        padding: 15px;
-        font-size: 16px;
-    }
-    
-    .speech-bubble::after {
-        bottom: -15px;
-        border-width: 8px;
-    } */
 }
 
 #gamestart {
