@@ -99,6 +99,7 @@ html, body {
     margin-top: 50px;
     position: relative;
     z-index: 1;
+    box-sizing: border-box;
 }
 
 /* Photo Box Styles */
@@ -149,7 +150,7 @@ html, body {
     margin-bottom: -40px;
 }
 
-/* Clipper Styles */
+/* Clip Styles */
 .clip {
     position: absolute;
     top: -20px;
@@ -176,3 +177,101 @@ html, body {
     background: rgba(49, 49, 49, 0.25);
 }
 
+/* Media Query */
+@media (max-width: 900px) {
+    .panel {
+        width: 100vw;
+        height: auto;
+    }
+
+    .title {
+        font-size: 30px;
+        letter-spacing: 6px;
+        margin-bottom: 5px;
+    }
+
+    .whiteboard {
+        width: 85%;
+        height: auto;
+        background-size: 100% 110%;
+        display: grid;
+        grid-template-columns: repeat(1, 3fr);
+        gap: 10px;
+        padding: 10px;
+        margin-top: 30px;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .photo-box, .big-photo-box {
+        width: 90%;
+        height: auto;
+    }
+
+    .large-photo-box {
+        width: 80% !important;
+        height: 50%;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .photo-background img {
+        padding: 0;
+    }
+
+    .photo-background {
+        margin: 30px !important;
+    }
+
+    .large-photo-box {
+        padding: 20px !important;
+        margin: 30px !important;
+    }
+
+    .photo-box img, .large-photo-box img {
+        width: 100%;
+        height: auto;
+        margin: 30px 10px 0 10px;
+    }
+
+    .large-photo-box img {
+        margin: 70px 20px 20px 20px;
+    }
+
+    .big-photo-box img {
+        width: 80%;
+        height: auto;
+        padding: 0px 3px 0 3px;
+    }
+
+    .clip {
+        top: -25px;
+        width: 8vw;
+    }
+}
