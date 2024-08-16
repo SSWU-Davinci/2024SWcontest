@@ -1,4 +1,6 @@
-import { chooseCriminal } from './logLoad.js';
+import { inventoryID } from './logLoad.js';
+
+console.log('동물 값', inventoryID);
 
 const animalMapping = {
     1: 'pig',
