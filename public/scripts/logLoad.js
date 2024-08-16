@@ -7,6 +7,9 @@ function criminalData(id) {
   return animal ? animal.criminal : null;
 }
 
+
+let inventoryID = null;
+
 // 범인을 고르면 범죄 여부를 받아온다
 function chooseCriminal() {
   animalClass.forEach(animal => {
@@ -16,7 +19,8 @@ function chooseCriminal() {
       if (criminalValue !== null) {
         console.log(`동물 ID: ${animal.id}, Criminal: ${criminalValue}`);
         setCriminal(criminalValue);
-        return animal.id;
+        inventoryID = animal.id;
+        return inventoryID;
       } else {
         console.log(`동물 ID: ${animal.id}에 해당하는 Criminal 값을 찾을 수 없습니다.`);
       }
@@ -255,4 +259,4 @@ document.addEventListener("DOMContentLoaded", async function () {
   document.head.appendChild(style);
 });
 
-export {chooseCriminal};
+export {chooseCriminal, inventoryID};
