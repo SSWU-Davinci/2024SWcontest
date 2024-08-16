@@ -30,31 +30,44 @@ var swiper = new Swiper(".mySwiper", {
   }
 });
 
-swiper.on('transitionEnd', function () {
-  var currentSlideId = swiper.slides[swiper.activeIndex].id;      // 현재 슬라이드의 id를 넣을 변수 설정하기
-
-  if (currentSlideId === 'slide_08') {        // 현재 슬라이드가 마지막 슬라이드일 경우
-    document.querySelector('.swiper-button-next').addEventListener('click', handleRedirect);
-    document.addEventListener('keydown', handleEnterKey);
-    document.querySelector('.swiper').addEventListener('click', handleRedirect);
-  } else {
-    // 현재 슬라이드가 마지막 슬라이드가 아닐 경우 remove~ 로 바꾸기
-    document.querySelector('.swiper-button-next').removeEventListener('click', handleRedirect);
-    document.removeEventListener('keydown', handleEnterKey);
-    document.querySelector('.swiper').removeEventListener('click', handleRedirect);
-  }
-});
+function handleRedirect() {
+  window.location.href = 'startmain.html';
+}
 
 // 엔터키와 스페이스바 누르면 startmain 화면으로 이동하기
 function handleKeyPress(event) {
   if (event.code === 'Space' || event.code === 'Enter') {
-      window.location.href = '/pages/startmain.html';
+    var currentSlideId = swiper.slides[swiper.activeIndex].id;
+    if (currentSlideId === 'slide_08') {
+      handleRedirect();
+    }
   }
 }
-document.addEventListener('keydown', handleKeyPress);
 
 // 화면을 클릭하면 startmain 화면으로 이동하기
 function handleScreenClick() {
-  window.location.href = '/pages/startmain.html';
+  var currentSlideId = swiper.slides[swiper.activeIndex].id;
+  if (currentSlideId === 'slide_08') {
+    handleRedirect();
+  }
 }
+
+document.addEventListener('keydown', handleKeyPress);
 document.addEventListener('click', handleScreenClick);
+
+swiper.on('transitionEnd', function () {
+  var currentSlideId = swiper.slides[swiper.activeIndex].id;
+
+  if (currentSlideId === 'slide_08') { // 현재 슬라이드가 마지막 슬라이드일 경우
+    document.querySelector('.swiper-button-next').addEventListener('click', handleRedirect);
+    document.querySelector('.swiper-button-prev').addEventListener('click', function() {
+      swiper.slidePrev();
+    });
+    document.addEventListener('keydown', handleKeyPress);
+    document.querySelector('.swiper').addEventListener('click', handleRedirect);
+  } else { 
+    // 현재 슬라이드가 마지막 슬라이드가 아닌 경우
+    document.querySelector('.swiper-button-next').removeEventListener('click', handleRedirect);
+    document.querySelector('.swiper').removeEventListener('click', handleRedirect);
+  }
+});
