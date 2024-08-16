@@ -1,13 +1,38 @@
 import { setCriminal, setFire } from './criminal.js';
 import { getRandomSet, loadData } from './randomSet.js';
 
+// 동물의 범죄 값을 받아온다
+function criminalData(id) {
+  const animal = animalData.find(animal => animal.id === id);
+  return animal ? animal.criminal : null;
+}
+
+// 범인을 고르면 범죄 여부를 받아온다
+function chooseCriminal() {
+  animalClass.forEach(animal => {
+    animal.addEventListener("click", () => {
+      const criminalValue = criminalData(animal.id);
+      console.log('범인 값', criminalValue);
+      if (criminalValue !== null) {
+        console.log(`동물 ID: ${animal.id}, Criminal: ${criminalValue}`);
+        setCriminal(criminalValue);
+        return animal.id;
+      } else {
+        console.log(`동물 ID: ${animal.id}에 해당하는 Criminal 값을 찾을 수 없습니다.`);
+      }
+    });
+  });
+}
+
+// 동물 데이터를 저장할 배열
+const animalData = []; 
+
 document.addEventListener("DOMContentLoaded", async function () {
   const animalClass = document.querySelectorAll(".animal");
   const dialogue = document.getElementById("dialogue");
   const name_text = document.getElementById("name_text");
 
   let logData = []; // 데이터를 저장할 배열
-  const animalData = []; // 동물 데이터 저장할 배열 
 
   let index = 0; // 클릭할 때마다 증가시킬 인덱스
   const animalClicked = new Set(); // 클릭된 동물들을 저장
