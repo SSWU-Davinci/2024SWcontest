@@ -1,5 +1,6 @@
 const { initializeApp } = require("firebase/app");
 import { getAuth, createUserWithEmailAndPassword } from "./node_modules/firebase/auth";
+import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAwswtPvBIt5V6fAy4FcHzOiS2ZaK2dxCg",
@@ -18,4 +19,4 @@ const auth = getAuth(app);
 
 module.exports = app;
 
-export { auth, createUserWithEmailAndPassword };
+export { auth, createUserWithEmailAndPassword,database };
