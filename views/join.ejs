@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Davinci</title>
-    <link rel="stylesheet" href="../public/stylesheets/signupStyle.css">
+    <link rel="stylesheet" href="/stylesheets/signupStyle.css">
 </head>
 <body>
+
     <div class="wrapper">
-        <img src="../public/img/animals4cut.png" alt="Animals" class="animalsImage">
+        <img src="/img/animals4cut.png" alt="Animals" class="animalsImage">
         <div class="container">
             <h2>Join Us!</h2>
             <form id="joinForm" action="/submit" method="post">
@@ -21,10 +22,12 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
                 <button type="submit">Sign Up</button>
+                <a href="/home">Go to log in</a>
             </form>
         </div>
     </div>
 </body>
+
 <script>
     document.getElementById('joinForm').addEventListener('submit', async (event) => {
         event.preventDefault(); // 폼 제출 기본 동작 방지

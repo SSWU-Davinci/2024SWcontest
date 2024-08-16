@@ -24,7 +24,14 @@ exports.joinCheck = async function(name, id, password){
   try{
     const connection = await pool.getConnection(async(conn)=> conn);
 
-    const joinUser = await userDao.userJoin(connection, name, id, password);
+        const idExist = await userDao.idCheck(connection, id);
+
+        if(idExist) {
+            connection.release();
+            return { success: false, message: 'id already exists' }
+        }
+
+        const joinUser = await userDao.userJoin(connection, name, id, password);
 
     connection.release();
 

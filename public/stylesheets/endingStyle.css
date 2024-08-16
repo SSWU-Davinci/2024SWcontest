@@ -39,16 +39,74 @@ h3 {
     color: #ffffff;
 }
 
+
 .scroll-content {
-    position: fixed;
-    top: 100px;
-    width: 100%;
+    position: relative;
+    top: 200px;
     color: #ffffff;
     text-align: center;
     display: none;
+    z-index: 10; /* 다른 요소 위에 표시되도록 */
+    transition: opacity 0.5s ease; /* 부드러운 투명도 전환 */
 }
 
 .scroll-text {
+    position: relative;
     margin: 10px 0;
     color: #ffffff;
+}
+
+.one {
+    color: aqua;
+    font-size: larger;
+}
+
+.two {
+    color: chocolate;
+    font-size: small;
+}
+
+.three {
+    color: chocolate;
+}
+
+.container p {
+    color: #ffffff; /* 하얀색으로 설정 */
+    font-size: 16px; /* 적절한 폰트 크기로 조정 가능 */
+    margin-top: 20px; /* 위쪽 여백 조정 */
+}
+
+/* 모바일 화면에서 스타일 조정 */
+@media only screen and (max-width: 767px) {
+    .scroll-content {
+        position: relative;
+        top: 400px;
+        margin: 20px;
+        color: #ffffff;
+        text-align: center;
+        display: none;
+        z-index: 10; /* 다른 요소 위에 표시되도록 */
+        transition: opacity 0.5s ease; /* 부드러운 투명도 전환 */
+    }
+    
+    .scroll-text {
+        font-size: 12px; /* 모바일에서 글씨체 크기 조정 */
+    }
+
+    .scroll-content img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .one {
+        font-size: 12px;
+    }
+
+    .two {
+        font-size: 8px;
+    }
+
+    .three {
+        font-size: 10px;
+    }
 }

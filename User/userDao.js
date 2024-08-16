@@ -12,12 +12,6 @@ async function userJoin(connection, name, id, password){
   return result;
 }
 
-async function nameCheck(connection, name){
-  const query = 'SELECT COUNT(*) AS count FROM user WHERE user_name = ?';
-  const [rows] = await connection.execute(query, [name]);
-  return rows[0].count > 0;
-}
-
 async function idCheck(connection, id) {
   const query = 'SELECT COUNT(*) AS count FROM user WHERE id = ?';
   const [rows] = await connection.execute(query, [id]);

@@ -4,12 +4,17 @@ const userProvider = require('../User/userProvider');
 exports.login = async (req, res) => {
   const { id, password } = req.body;
 
-  try {
-    const user = await userProvider.loginCheck(id, password);
-    if (user) {
-      res.status(200).json({ message: 'Login successful', user });
-    } else {
-      res.status(401).json({ message: 'Invalid credentials' });
+    try {
+        const user = await userProvider.loginCheck(id, password);
+        if (user) {
+            res.status(200).json({ message: 'Login successful', user });
+            res.redirect('/home/inventory');         // 로그인 성공 시 inventory 페이지로 리다이렉트
+        } else {
+            res.status(401).json({ message: 'Invalid credentials' });
+        }
+    } catch (error) {
+        console.error('Error during login:', error);
+        res.status(500).json({ message: 'Internal server error' });
     }
   } catch (error) {
     console.error('Error during login:', error);
@@ -22,18 +27,25 @@ exports.login = async (req, res) => {
 exports.join = async (req, res) => {
   const {name, id, password} = req.body;
 
+    try {
+        const user = await userProvider.joinCheck(name, id, password);
+        if (user.success) {
+            res.status(200).json({ message: 'Join successful! Go to Log in', user });
+            res.redirect('/home');         // 회원가입 성공 시 home 페이지로 리다이렉트
+        } else if (user.message === 'id already exists') {
+            res.status(409).json({ message: 'ID already exists' });
+        } else {
+            res.status(401).json({ message: 'Invalid credentials' });
+        }
+    } catch (error) {
+        console.error('Error during login:', error);
+        res.status(500).json({ message: 'Internal server error' });
   try {
     const user = await userProvider.joinCheck(name, id, password);
     if (user) {
       res.status(200).json({ message: 'Join successful', user });
     } else {
       res.status(401).json({ message: 'Invalid credentials' });
-    }
-  } catch (error) {
-    console.error('Error during login:', error);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-}
 
 // id 중복 체크 , name 중복 체크
 exports.nameCheck = async (req, res) => {

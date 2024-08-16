@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const music = document.querySelector("audio");
+  const music = document.querySelector("audio");              // 문서 전체에서 <audio> 요소를 선택
 
   // 음악을 재생하려고 시도
   function attemptPlayMusic() {

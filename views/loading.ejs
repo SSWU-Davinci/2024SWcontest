@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davinci</title>
+    <link rel="stylesheet" href="/stylesheets/loadingStyle.css">
+    <script src="/loading.js"></script>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <audio src="/assets/alltime.mp3" autoplay loop></audio>
+    <div class="loading"></div>
+    <h1>직원을 <br> 불러오는 중입니다...</h1>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const music = document.querySelector("audio");
+
+    // 음악을 재생하려고 시도
+    function attemptPlayMusic() {
+        music.play().catch(error => {
+            console.log('자동 재생 실패. 사용자 상호작용 필요:', error);
+        });
+    }
+    // 페이지가 로드될 때 음악 재생 시도
+    attemptPlayMusic();
+});
+
+</script>
+</html>

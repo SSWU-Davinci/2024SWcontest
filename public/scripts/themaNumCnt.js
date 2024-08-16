@@ -8,14 +8,14 @@ function resetThemeNumber() {
 }
 
 // 테마 번호를 증가시키고 저장
-function incrementThemeNumber() {
-  let themeNumber = getThemeNumber();
-  if (themeNumber >= 4) {  // 테마 번호가 4에 도달하면 리셋
-    themeNumber = 1;
-  } else {
-    themeNumber += 1;
-  }
-  localStorage.setItem('themeNumber', themeNumber);
+function increaseThemeNumber() {
+    let themeNumber = getThemeNumber();
+    if (themeNumber >= 4) {  // 테마 번호가 4에 도달하면 리셋
+        themeNumber = 1;
+    } else {
+        themeNumber += 1;
+    }
+    localStorage.setItem('themeNumber', themeNumber);
 }
 
 // 테마 번호를 로컬 스토리지에 저장된 값으로 설정
@@ -24,8 +24,8 @@ function setThemeNumber(number) {
 }
 
 // 테마 번호를 콘솔에 출력하는 함수 (디버깅 용도)
-function logCurrentThemeNumber() {
-  console.log('Current theme number:', getThemeNumber());
+function CurrentThemeNumber() {
+    console.log('Current theme number:', getThemeNumber());
 }
 
 // DOMContentLoaded 이벤트에서 초기화
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('themeNumber', '1');
   }
 
-  // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
-  logCurrentThemeNumber();
+    // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
+    CurrentThemeNumber();
 });
 
 // DOMContentLoaded 이벤트에서 초기화
@@ -46,21 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('themeNumber', '1');
   }
 
-  // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
-  logCurrentThemeNumber();
+    // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
+    CurrentThemeNumber();
 });
 
 // DOMContentLoaded 이벤트에서 초기화
 document.addEventListener('DOMContentLoaded', () => {
-  // 초기화
-  localStorage.removeItem('themesCompleted');  // 이전 데이터 제거
-  if (!localStorage.getItem('themeNumber')) {  // 테마 번호가 없을 경우만 설정
-    localStorage.setItem('themeNumber', '1');  // 처음 테마로 설정
-  }
+    // 초기화
+    localStorage.removeItem('themesCompleted');  // 이전 데이터 제거
+    if (!localStorage.getItem('themeNumber')) {  // 테마 번호가 없을 경우만 설정
+        localStorage.setItem('themeNumber', '1');  // 처음 테마로 설정
+    }
 
-  // 현재 테마 번호를 로그에 출력
-  logCurrentThemeNumber();
+    // 현재 테마 번호를 로그에 출력
+    CurrentThemeNumber();
 });
 
 // 외부에서 사용할 수 있도록 함수들을 export
-export { getThemeNumber, setThemeNumber, incrementThemeNumber, resetThemeNumber, logCurrentThemeNumber };
+export { getThemeNumber, increaseThemeNumber, setThemeNumber, CurrentThemeNumber }
