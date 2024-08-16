@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (!(criminalValue === null)) {
           console.log(`동물 ID: ${animal.id}, Criminal: ${criminalValue}`);
           setCriminal(criminalValue);
+          return animal.id;
         } else {
           console.log(`동물 ID: ${animal.id}에 해당하는 Criminal 값을 찾을 수 없습니다.`);
         }
@@ -228,3 +229,5 @@ document.addEventListener("DOMContentLoaded", async function () {
     `;
   document.head.appendChild(style);
 });
+
+export {chooseCriminal};
