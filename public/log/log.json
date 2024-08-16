@@ -1,95 +1,301 @@
-{
-    "success": true,
-    "data": [
-        [
-            {
-                "theme_number": 1,
-                "set_number": 1,
-                "line": "아무래도 인공지능 개발자인데 환경문제가 생기는 걸 무시할 수는 없을 것 같아. 해결 방법을 찾아보자. 전력분야 연구원들이 탄소 배출을 줄이는 방법을 찾도록 지원하는 건 어때?",
-                "criminal": 0,
-                "exception": "bear"
-            },
-            {
-                "theme_number": 1,
-                "set_number": 1,
-                "line": "다들 힘내보자! 우리가 그 영화 속 세상을 만드는 거야! 진짜 우리 회사에서 엄청난 기술을 개발하면 지구상에서 제일 유명한 회사가 될지도 몰라!!",
-                "criminal": 0,
-                "exception": "bear"
-            },
-            {
-                "theme_number": 1,
-                "set_number": 1,
-                "line": "AI 개발 이대로 계속해도 되는 거 맞아? 찾아보니까 학습시킬 때 전력이 생각보다 많이 들더라고. 그래서 전력 생산에 필요한 탄소 배출도 굉장할 것 같아. 지금도 충분히 인공지능 덕을 보고 있으니까 개발은 여기서 멈추는 게…",
-                "criminal": 1,
-                "exception": ["fish", "pig", "giraffe"]
-            },
-            {
-                "theme_number": 1,
-                "set_number": 1,
-                "line": "AI 기술이 지금보다 더 많이 발전되면 어떨 것 같아? 나는 미래가 너무 기대돼! 다들 SF 영화에서 본 세상을 상상해 본 적 있지 않아? 빨리 그런 세상이 오면 좋겠다~",
-                "criminal": 0,
-                "exception": "bear"
-            }
-        ],
-        [
-            {
-                "theme_number": 2,
-                "set_number": 2,
-                "line": "내 월급은 언제쯤 오르려나~~ 물가는 점점 오르는데 내 월급만 그대로네~",
-                "criminal": 0,
-                "exception": null
-            },
-            {
-                "theme_number": 2,
-                "set_number": 2,
-                "line": "나는 내가 뭘 잘 못했는지 모르겠네??? 아니, 나는 이미 내 일을 끝냈고! 그래서 1시간 그냥 놀았고!! 아무도 나에게 일을 시키지 않았는데 대체 내가 왜 욕을 먹는 건지?? 난 알 수가 없네!? 이놈의 회사에는 다 꼰대들밖에 없나…٩(͡๏̯͡๏)۶",
-                "criminal": 0,
-                "exception": null
-            },
-            {
-                "theme_number": 2,
-                "set_number": 2,
-                "line": "저 기린은 왜 여기에 참여한거야? 혼자 멀대같이 커서 우리랑 잘 어울릴 수 있을 거라고 생각하는건가? 웃기다~ 제대로 화면에 나오지도 못 할 거면 좀 빠져…",
-                "criminal": 1,
-                "exception": "giraffe"
-            },
-            {
-                "theme_number": 2,
-                "set_number": 2,
-                "line": "이번에 새로 들어온 신입… 너무 싸가지가 없어… 퇴근 1시간 전부터 흥얼거리면서 회사 컴퓨터로 글쎄, 유튜브를 보는 거 있지!!? 요즘 신입들은 다 그 모양인가? 나 때는 말이야~!!! 상사 눈도 못 마주쳤어~!!!",
-                "criminal": 0,
-                "exception": null
-            }
-        ],
-        [
-            {
-                "theme_number": 3,
-                "set_number": 1,
-                "line": "그 얘기 들었어? 아침마다 매일 커피 사 오던 직원 일 년 만에 승진했다는데 내가 사 갔을 때는 고맙다는 말도 안 하더니…",
-                "criminal": 0,
-                "exception": null
-            },
-            {
-                "theme_number": 3,
-                "set_number": 1,
-                "line": "어우 피곤해. 우리 회사는 트렌드에 너무 뒤처져있어. 주 6일 출근이라니… 다른 회사 친구가 듣더니 배꼽 빠지게 웃더라… 윽, 분해!",
-                "criminal": 0,
-                "exception": null
-            },
-            {
-                "theme_number": 3,
-                "set_number": 1,
-                "line": "수평적인 회사는 바라지도 않아… 그냥 상사 갑질만이라도 제발 멈춰줬으면!!",
-                "criminal": 0,
-                "exception": null
-            },
-            {
-                "theme_number": 3,
-                "set_number": 1,
-                "line": "이게 몇 번째야 이번에도 승진 명단에 내가 없잖아! 이번에는 성과도 많이 냈는데ㅜㅜ 아무리 열심히 해도 아무 소용 없나 봐… 러브콜 보냈던 옆 회사로 이직해야겠다..!",
-                "criminal": 1,
-                "exception": null
-            }
-        ]
-    ]
-}
+[
+    
+    {
+        "script_number": 1,
+        "script_line": "내 험악하게 생긴 모습 때문에 직원 모두가 날 피해… 하지만 뭐 어때!!! 내 상관이 없는걸~ 내가 가진 이 험악한 모습으로 오히려 아무도 내게 다가오지 못하게 하는 거야! (๑•̀ᗝ•́)૭ 우하하하… 겁쟁이 바보들 같으니라고… ಠ‸ಠ",
+        "criminal_tf": 0,
+        "theme_number": "차별",
+        "set_number": 1,
+        "exception": null
+    },
+    {
+        "script_number": 2,
+        "script_line": "내가 이 회사에 들어와서 모두에게 미안하네~~ (•⚗৺⚗•) 여기서 내가 제일 멋진 것 같은데 다들 날 질투하는 거 아닌지 몰라~~ 직원들이 좀 패션 센스도 없고… 씻지도 않는 것 같고… (´◓Д◔`)",
+        "criminal_tf": 0,
+        "theme_number": "차별",
+        "set_number": 1,
+        "exception": null
+    },
+    {
+        "script_number": 3,
+        "script_line": "나도 험악한 표정을 지으면 모두가 날 함부로 하지 않겠지? 일부러 좀 더 말도 싸가지 없게 하고 회사도 좀 더 대충대충 다녀야겠다~",
+        "criminal_tf": 0,
+        "theme_number": "차별",
+        "set_number": 1,
+        "exception": null
+    },
+    {
+        "script_number": 4,
+        "script_line": "저 멧돼지는 왜 여기에 참여한거야? 가뜩이나 여기 공간 좁아서 불편한데 저 돼지놈 때문에 더 끼잖아…",
+        "criminal_tf": 1,
+        "theme_number": "차별",
+        "set_number": 1,
+        "exception": null
+    },
+
+    {
+        "script_number": 5,
+        "script_line": "우리 회사에는 재밌는 사람들이 없네… 하루하루 즐겁지도 않은 회사생활에서… 무슨 재미로 회사에 다니나~~",
+        "criminal_tf": 0,
+        "theme_number": "차별",
+        "set_number": 2,
+        "exception": null
+    },
+    {
+        "script_number": 6,
+        "script_line": "이 회사에 다니기만 하면 아주 화가 많아져… (⋆ˋ⑉̈ˊ)൭൭⁼³₌₃ 상사 놈은 뭐가 이렇게 시키는 게 많은 건지… 제발 본인이 할 일은 좀 본인이 하시라고요!!!",
+        "criminal_tf": 0,
+        "theme_number": "차별",
+        "set_number": 2,
+        "exception": null
+    },
+    {
+        "script_number": 7,
+        "script_line": "결국 이 회사에서도 못 버티고 나가려고요… 은근히 다들 저를 싫어하는 건지 점심도 나 빼고 먹으러 가고… 왕따 당하는 기분이라 못 버틸 것 같아요…",
+        "criminal_tf": 0,
+        "theme_number": "차별",
+        "set_number": 2,
+        "exception": null
+    },
+    {
+        "script_number": 8,
+        "script_line": "물고기가 바퀴 끌고 다닐 때마다 시끄러워서 일을 못 하겠어! 그냥 집에서만 일하게 재택 근무 업무만 물고기씨에게 맡기면 좋겠어",
+        "criminal_tf": 1,
+        "theme_number": "차별",
+        "set_number": 2,
+        "exception": null
+    },
+
+    {
+        "script_number": 9,
+        "script_line": "나는 내가 뭘 잘 못했는지 모르겠네??? 아니, 나는 이미 내 일을 끝냈고! 그래서 1시간 그냥 놀았고!! 아무도 나에게 일을 시키지 않았는데 대체 내가 왜 욕을 먹는 건지?? 난 알 수가 없네!? 이놈의 회사에는 다 꼰대들밖에 없나…٩(͡๏̯͡๏)۶",
+        "criminal_tf": 0,
+        "theme_number": "차별",
+        "set_number": 3,
+        "exception": null
+    },
+    {
+        "script_number": 10,
+        "script_line": "이번에 새로 들어온 신입… 너무 싸가지가 없어… 퇴근 1시간 전부터 흥얼거리면서 회사 컴퓨터로 글쎄, 유튜브를 보는 거 있지!!? 요즘 신입들은 다 그 모양인가? 나 때는 말이야~!!! 상사 눈도 못 마주쳤어~!!!",
+        "criminal_tf": 0,
+        "theme_number": "차별",
+        "set_number": 3,
+        "exception": null
+    },
+    {
+        "script_number": 11,
+        "script_line": "내 월급은 언제쯤 오르려나~~ 물가는 점점 오르는데 내 월급만 그대로네~",
+        "criminal_tf": 0,
+        "theme_number": "차별",
+        "set_number": 3,
+        "exception": null
+    },
+    {
+        "script_number": 12,
+        "script_line": "저 기린은 왜 여기에 참여한거야? 혼자 멀대같이 커서 우리랑 잘 어울릴 수 있을 거라고 생각하는건가? 웃기다~ 제대로 화면에 나오지도 못 할 거면 좀 빠져…",
+        "criminal_tf": 1,
+        "theme_number": "차별",
+        "set_number": 3,
+        "exception": null
+    },
+
+
+    {
+        "script_number": 13,
+        "script_line": "AI 기술이 지금보다 더 많이 발전되면 어떨 것 같아? 나는 미래가 너무 기대돼! 다들 SF 영화에서 본 세상을 상상해 본 적 있지 않아? 빨리 그런 세상이 오면 좋겠다~",
+        "criminal_tf": 0,
+        "theme_number": "환경",
+        "set_number": 1,
+        "exception": null
+    },
+    {
+        "script_number": 14,
+        "script_line": "다들 힘내보자! 우리가 그 영화 속 세상을 만드는 거야! 진짜 우리 회사에서 엄청난 기술을 개발하면 지구상에서 제일 유명한 회사가 될지도 몰라!!",
+        "criminal_tf": 0,
+        "theme_number": "환경",
+        "set_number": 1,
+        "exception": null
+    },
+    {
+        "script_number": 15,
+        "script_line": "아무래도 인공지능 개발자인데 환경문제가 생기는 걸 무시할 수는 없을 것 같아. 해결 방법을 찾아보자. 전력분야 연구원들이 탄소 배출을 줄이는 방법을 찾도록 지원하는 건 어때?",
+        "criminal_tf": 0,
+        "theme_number": "환경",
+        "set_number": 1,
+        "exception": null
+    },
+    {
+        "script_number": 16,
+        "script_line": "AI 개발 이대로 계속해도 되는 거 맞아? 찾아보니까 학습시킬 때 전력이 생각보다 많이 들더라고. 그래서 전력 생산에 필요한 탄소 배출도 굉장할 것 같아. 지금도 충분히 인공지능 덕을 보고 있으니까 개발은 여기서 멈추는 게…",
+        "criminal_tf": 1,
+        "theme_number": "환경",
+        "set_number": 1,
+        "exception": null
+    },
+
+    {
+        "script_number": 17,
+        "script_line": "우리 회사는 상당히 환경친화적인 것 같아. 회사 안에서 텀블러 쓰는 직원들 많이 보이지 않아? 너희들은 종이컵 쓰는 걸 봤지만 ㅎㅎ;; 다들 나를 보고 좀 배우라고~",
+        "criminal_tf": 0,
+        "theme_number": "환경",
+        "set_number": 2,
+        "exception": null
+    },
+    {
+        "script_number": 18,
+        "script_line": "탕비실에 종이컵 줄어드는 속도가 미쳤어. 텀블러 고작 세명만 쓰던데 너무 과대평가하는 거 아냐? 그리고 ai 회사면 개발에나 집중할 것이지 환경은 왜 신경 써?",
+        "criminal_tf": 0,
+        "theme_number": "환경",
+        "set_number": 2,
+        "exception": null
+    },
+    {
+        "script_number": 19,
+        "script_line": "ai 자체가 환경친화적인 거 아니야? 내 생각엔 인공지능이 인간이 할 일을 대신해주면서 오히려 인간이 환경을 해치는 행동이 줄어들 것 같은데.",
+        "criminal_tf": 0,
+        "theme_number": "환경",
+        "set_number": 2,
+        "exception": null
+    },
+    {
+        "script_number": 20,
+        "script_line": "많은 AI 기술 업체들이 환경적인 영향을 고려하고 있지 않대… 우리 회사하는 꼬락서니를 봐… 심각한 것 같은데 이참에 한 번 갈아엎는 건 어때?",
+        "criminal_tf": 1,
+        "theme_number": "환경",
+        "set_number": 2,
+        "exception": null
+    },
+
+    {
+        "script_number": 21,
+        "script_line": "오염수 버릴 때마다 생각보다 양이 많아서 마음이 아프더라ㅜㅜ 데이터센터에 냉각수에 물 말고 다른 액체를 사용하는 건 어때? 폐수를 재사용한다던가… 아이디어 좀 내봐!",
+        "criminal_tf": 0,
+        "theme_number": "환경",
+        "set_number": 3,
+        "exception": null
+    },
+    {
+        "script_number": 22,
+        "script_line": "나는 저 물고기가 맨날 어항에 물을 갈아엎는 게 제일 쓸데없는 물 낭비라고 생각하는데 다들 동의해? 좀 적당히 할 것이지… 자기가 1급수 물고기인 줄 아나 봐 ㅋㅋㅋ",
+        "criminal_tf": 0,
+        "theme_number": "환경",
+        "set_number": 3,
+        "exception": null
+    },
+    {
+        "script_number": 23,
+        "script_line": "저 이상한 물고기 자식! 본인 생각은 안 하고 회사 탓만 하는 거 봐. 냉각수 사용은 어쩔 수 없는 건데 환경 생각하는 척하는 게 진짜 어이없다;;",
+        "criminal_tf": 0,
+        "theme_number": "환경",
+        "set_number": 3,
+        "exception": null
+    },
+    {
+        "script_number": 24,
+        "script_line": "데이터센터 가봤어? 나는 거기 냉각수에 물이 너무 많이 쓰인다고 생각해. 물 부족 문제를 일으키는 원인이 바로 저거야! 데이터센터를 없애버려야 해!",
+        "criminal_tf": 1,
+        "theme_number": "환경",
+        "set_number": 3,
+        "exception": null
+    },
+
+
+    {
+        "script_number": 25,
+        "script_line": "AI 도입으로 일자리 감소 문제가 많다던데… 우리 회사는 그럴 일 없겠지?",
+        "criminal_tf": 0,
+        "theme_number": "악의",
+        "set_number": 1,
+        "exception": null
+    },
+    {
+        "script_number": 26,
+        "script_line": "아침에 뉴스 봤어? 인공지능이 똑똑해지면 우리를 막 부려먹을 수도 있대! 저런 말도 안 되는 게 뉴스로 나오다니… 말세야 말세…",
+        "criminal_tf": 0,
+        "theme_number": "악의",
+        "set_number": 1,
+        "exception": null
+    },
+    {
+        "script_number": 27,
+        "script_line": "내 동생이 다니는 회사에서 우리 회사가 만든 AI 기술을 도입해서 인원 감축을 한다는 소식을 들었어. 오늘 통보한다고 했던 거 같은데… 지잉.. 지잉.. 동생인가?",
+        "criminal_tf": 0,
+        "theme_number": "악의",
+        "set_number": 1,
+        "exception": null
+    },
+    {
+        "script_number": 28,
+        "script_line": "우리랑 똑같이 생긴 인공지능 로봇 봤어? 영상 찾아봐 엄청 소름 끼쳐 으윽! 비슷하게 생겼는데 어딘가 섬뜩해… 우리 회사에서 저런 로봇을 개발한다고 하면 무조건 결.사.반.대.",
+        "criminal_tf": 1,
+        "theme_number": "악의",
+        "set_number": 1,
+        "exception": null
+    },
+
+    {
+        "script_number": 29,
+        "script_line": "그 얘기 들었어? 아침마다 매일 커피 사 오던 직원 일 년 만에 승진했다는데 내가 사 갔을 때는 고맙다는 말도 안 하더니…",
+        "criminal_tf": 0,
+        "theme_number": "악의",
+        "set_number": 2,
+        "exception": null
+    },
+    {
+        "script_number": 30,
+        "script_line": "어우 피곤해. 우리 회사는 트렌드에 너무 뒤처져있어. 주 6일 출근이라니… 다른 회사 친구가 듣더니 배꼽 빠지게 웃더라… 윽, 분해!",
+        "criminal_tf": 0,
+        "theme_number": "악의",
+        "set_number": 2,
+        "exception": null
+    },
+    {
+        "script_number": 31,
+        "script_line": "수평적인 회사는 바라지도 않아… 그냥 상사 갑질만이라도 제발 멈춰줬으면!!",
+        "criminal_tf": 0,
+        "theme_number": "악의",
+        "set_number": 2,
+        "exception": null
+    },
+    {
+        "script_number": 32,
+        "script_line": "이게 몇 번째야 이번에도 승진 명단에 내가 없잖아! 이번에는 성과도 많이 냈는데ㅜㅜ 아무리 열심히 해도 아무 소용 없나 봐… 러브콜 보냈던 옆 회사로 이직해야겠다..!",
+        "criminal_tf": 1,
+        "theme_number": "악의",
+        "set_number": 2,
+        "exception": null
+    },
+    
+    {
+        "script_number": 33,
+        "script_line": "회식을 왜 이렇게 자주 하지..? 귀찮아죽겠는데 부장님은 자꾸 노래를 시키시질 않나… 돈이 많으면 월급을 올려주세요 제발..! 집에 일찍 가고 싶다고..!",
+        "criminal_tf": 0,
+        "theme_number": "악의",
+        "set_number": 3,
+        "exception": null
+    },
+    {
+        "script_number": 34,
+        "script_line": "회사 복지가 영… 밤새 일해야 되는데 해지면 시원하다고 에어컨 대신 창문 열고 있으라고 하지 않나… 탄소중립 외치면서 에어컨 쓰는 건 막더니 인공지능개발은 계속하는 게 웃겨 ㅋㅋㅋ 인공지능 학습시킬 때 전기가 얼마나 쓰이는데 어휴… 회사가 아주 모순 덩어리야!",
+        "criminal_tf": 0,
+        "theme_number": "악의",
+        "set_number": 3,
+        "exception": null
+    },
+    {
+        "script_number": 35,
+        "script_line": "오늘도 밤샘 야근… 어제도 했던 것 같은데… 어제가 아닌가? 이번 주만 벌써 세 번째 밤샘 작업… 이게 노동착취가 아니면 뭐람..?",
+        "criminal_tf": 0,
+        "theme_number": "악의",
+        "set_number": 3,
+        "exception": null
+    },
+    {
+        "script_number": 36,
+        "script_line": "몇 년째 뼈빠지게 일하고 있는데 월급이 그대로인 게 말이 돼?? 회사가 돈이 없나? 회사가 망하는 것보다 내가 그만두는 게 빠르겠지… 괘씸하니까 기밀문서들 몰래 가져가 볼까? 내가 만든 기술인데 뭐 어때?",
+        "criminal_tf": 1,
+        "theme_number": "악의",
+        "set_number": 3,
+        "exception": null
+    }
+]

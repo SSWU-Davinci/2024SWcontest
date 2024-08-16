@@ -30,21 +30,6 @@ body {
     /* 동물들 애니메이션 적용 */
 }
 
-/* 동물들 애니메이션 정의 */
-@keyframes scaleUpDown {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
 #pig {
     z-index: 1;
     left: 25%;
@@ -72,6 +57,32 @@ body {
     width: 25%;
 }
 
+/* 동물들 애니메이션 정의 */
+@keyframes scaleUpDown {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* press key 안내 문구 */
+h2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    animation: colorBlink 1.5s infinite;    /* 애니메이션 적용 */
+    margin: 0;
+    padding: 0;
+    font-family: 'CookieRunBold', sans-serif;
+}
+
 /* press key 애니메이션 정의 */
 @keyframes colorBlink {
     0% {
@@ -80,17 +91,6 @@ body {
     100% {
         color: rgb(255, 255, 255);
     }
-}
-
-h2 {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    animation: colorBlink 1.5s infinite;
-    /* 애니메이션 적용 */
-    margin: 0;
-    padding: 0;
-    font-family: 'CookieRunBold', sans-serif;
 }
 
 /* 게임 제목 텍스트 */
