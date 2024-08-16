@@ -1,37 +1,49 @@
-// JSON 대사 파일 불러오기
-const log = require('../log/log.json');
+import { fetchData } from './logData.js';
+import { getThemeNumber } from './themaNumCnt.js';
 
-function getRandomSet() {
-    const selectedSet = [];         // 세트 저장 배열 초기화
+export async function getRandomSet() {
+    try {
+        const data = await fetchData(); // fetchData()의 결과를 기다림
+        if (data) {
+            let selectedSet = []; // 세트 저장 배열 초기화
 
-    // 우선 전체 데이터에서 테마별 대사 묶음들 나누기
-    let themaScriptLines = [];          // 테마별 대사들 저장 배열 초기화
-    if (theme_number == "차별") {
-        themaScriptLines = log.filter(scriptLines => scriptLines.theme_number == "차별");
-    }
-    else if (theme_number == "환경") {
-        themaScriptLines = log.filter(scriptLines => scriptLines.theme_number == "환경");
-    }
-    else if (theme_number == "악의") {
-        themaScriptLines = log.filter(scriptLines => scriptLines.theme_number == "악의");
-    }
+            // 각 테마에 대해 랜덤한 세트를 선택
+            data.forEach(theme => {
+                const sets = theme.set_number;
+                const randomIndex = Math.floor(Math.random() * sets.length);
+                const randomSet = sets[randomIndex];
+                selectedSet.push(randomSet);
+            });
 
-    const setNumber = [1, 2, 3];            // set_number 1, 2, 3 배열로 따로 저장
-    const randomSetNumber = setNumber[Math.floor(Math.random() * setNumber.length)];            // 1, 2, 3 중에 랜덤으로 선택하여 저장
-
-    // 해당 테마에서 randomSetNumber에 해당하는 대사들만 selectedSet에 저장하기
-    themaScriptLines.forEach(scriptLines => {
-        if (scriptLines.set_number === randomSetNumber) {
-            selectedSet.push(scriptLines);
+            console.log('뽑아온 대사: ', selectedSet);
+            return selectedSet; // Promise 반환
+        } else {
+            throw new Error('Failed to load data.');
         }
-    });
-
-    return selectedSet;
+    } catch (error) {
+        console.error('Error during initialization:', error);
+        throw error; // 에러를 다시 throw 해서 호출한 쪽에서 처리하게 함
+    }
 }
 
-// getRandomSet 함수 export
-module.exports = getRandomSet;
+  // logData = 스테이지에 맞는 theme_number의 대사 묶음
+ export async function loadData() {
+    try {
+      let themeNumber = getThemeNumber();
+      console.log('스테이지: ', themeNumber);
 
+      //랜덤으로 대사 세트를 뽑아온다
+      let data = await getRandomSet();
 
-// data{ [테마넘버 1인 대사들], [ 테마2], [테마3]}
-// [테마1] 배열은 {[세트1], [세트2], [세트3], [세트4]}
+      if (data && data.length > 0) {
+        // themeNumber에 해당하는 대사 묶음 선택
+        return data[themeNumber - 1];
+      } else {
+        console.log('비어있는 대사 오류');
+      }
+    } catch (error) {
+      console.error('데이터 로드 중 오류', error);
+    }
+  }
+
+  loadData();

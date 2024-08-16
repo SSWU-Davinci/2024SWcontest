@@ -1,15 +1,28 @@
 const functions = require('firebase-functions');
-const express = require('express');
-const cors = require('cors');
+const admin = require('firebase-admin');
+const cors = require('cors')({ origin: true }); // CORS 설정
 
-const app = express();
+admin.initializeApp();
 
-// CORS 설정
-app.use(cors({ origin: true }));
+exports.checkId = functions.https.onRequest((req, res) => {
+  cors(req, res, async () => {
+    const id = req.body.id;
 
-// 라우터 설정
-const userRoutes = require('./routes/user');
-app.use('/api/user', userRoutes);
+    if (!id) {
+      return res.status(400).send({ error: 'ID is required' });
+    }
 
-// Firebase Function으로 export
-exports.api = functions.https.onRequest(app);
+    try {
+      const snapshot = await admin.firestore().collection('users').where('id', '==', id).get();
+
+      if (snapshot.empty) {
+        return res.status(200).send({ exists: false });
+      } else {
+        return res.status(200).send({ exists: true });
+      }
+    } catch (error) {
+      console.error('Error checking ID:', error);
+      return res.status(500).send({ error: 'Internal server error' });
+    }
+  });
+});
