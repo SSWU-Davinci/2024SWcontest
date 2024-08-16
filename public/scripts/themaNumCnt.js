@@ -1,6 +1,10 @@
 // 테마 번호를 가져오거나 초기값을 설정
 function getThemeNumber() {
-    return parseInt(localStorage.getItem('themeNumber')) || 1;
+  return parseInt(localStorage.getItem('themeNumber')) || 1;
+}
+
+function resetThemeNumber() {
+  localStorage.setItem('themeNumber', 1);
 }
 
 // 테마 번호를 증가시키고 저장
@@ -16,7 +20,7 @@ function increaseThemeNumber() {
 
 // 테마 번호를 로컬 스토리지에 저장된 값으로 설정
 function setThemeNumber(number) {
-    localStorage.setItem('themeNumber', number);
+  localStorage.setItem('themeNumber', number);
 }
 
 // 테마 번호를 콘솔에 출력하는 함수 (디버깅 용도)
@@ -26,10 +30,10 @@ function CurrentThemeNumber() {
 
 // DOMContentLoaded 이벤트에서 초기화
 document.addEventListener('DOMContentLoaded', () => {
-    // 페이지가 로드될 때 로컬 스토리지에 테마 번호가 설정되지 않았으면 초기화
-    if (!localStorage.getItem('themeNumber')) {
-        localStorage.setItem('themeNumber', '1');
-    }
+  // 페이지가 로드될 때 로컬 스토리지에 테마 번호가 설정되지 않았으면 초기화
+  if (!localStorage.getItem('themeNumber')) {
+    localStorage.setItem('themeNumber', '1');
+  }
 
     // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
     CurrentThemeNumber();
@@ -37,10 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // DOMContentLoaded 이벤트에서 초기화
 document.addEventListener('DOMContentLoaded', () => {
-    // 페이지가 로드될 때 로컬 스토리지에 테마 번호가 설정되지 않았으면 초기화
-    if (!localStorage.getItem('themeNumber')) {
-        localStorage.setItem('themeNumber', '1');
-    }
+  // 페이지가 로드될 때 로컬 스토리지에 테마 번호가 설정되지 않았으면 초기화
+  if (!localStorage.getItem('themeNumber')) {
+    localStorage.setItem('themeNumber', '1');
+  }
 
     // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
     CurrentThemeNumber();

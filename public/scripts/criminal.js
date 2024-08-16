@@ -33,12 +33,14 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    function handleKeyPress(event) {
-        if (event.code === 'Space' || event.code === 'Enter') {
-            window.location.href = 'ending.html'; // 엔딩 페이지로 이동
-        }
+  function handleKeyPress(event) {
+    if (event.code === 'Space' || event.code === 'Enter') {
+      window.location.href = 'ending.html'; // 엔딩 페이지로 이동
     }
-    document.addEventListener('keydown', handleKeyPress);
+  }
+  document.addEventListener('keydown', handleKeyPress);
+
+    CurrentThemeNumber(); // 페이지 로드 시 현재 테마 번호를 콘솔에 출력
 
     CurrentThemeNumber(); // 페이지 로드 시 현재 테마 번호를 콘솔에 출력
 });
@@ -50,19 +52,19 @@ let criminal = null;
 let fire = null;
 
 function setCriminal(value) {
-    criminal = value;
+  criminal = value;
 }
 
 function getCriminal() {
-    return criminal;
+  return criminal;
 }
 
 function setFire(value) {
-    fire = value;
+  fire = value;
 }
 
 function getFire() {
-    return fire;
+  return fire;
 }
 
 export { setCriminal, getCriminal, setFire, getFire };
