@@ -9,7 +9,7 @@ router.post('/checkName', userController.nameCheck);
 router.post('/checkId', userController.idCheck);
 
 router.get('/join', (req, res) => {
-    res.render('join'); // join.ejs 파일을 렌더링
+  res.render('join'); // join.ejs 파일을 렌더링
 });
 
 module.exports = router;
