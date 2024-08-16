@@ -63,4 +63,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // 외부에서 사용할 수 있도록 함수들을 export
-export { getThemeNumber, increaseThemeNumber, setThemeNumber, CurrentThemeNumber }
+export { getThemeNumber, increaseThemeNumber, setThemeNumber, resetThemeNumber, CurrentThemeNumber }
