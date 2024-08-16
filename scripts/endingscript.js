@@ -1,4 +1,4 @@
-document.addEventListener('scroll', function () {
+document.addEventListener('scroll', function() {
   const scrollContent = document.querySelector('.scroll-content');
   const scrollPosition = window.scrollY;
   const maxScroll = 500;      // 배경을 완전 검정으로

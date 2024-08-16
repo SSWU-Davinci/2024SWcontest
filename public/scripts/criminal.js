@@ -39,10 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   document.addEventListener('keydown', handleKeyPress);
-
-    CurrentThemeNumber(); // 페이지 로드 시 현재 테마 번호를 콘솔에 출력
-
-    CurrentThemeNumber(); // 페이지 로드 시 현재 테마 번호를 콘솔에 출력
+  
+  CurrentThemeNumber(); // 페이지 로드 시 현재 테마 번호를 콘솔에 출력
 });
 
 

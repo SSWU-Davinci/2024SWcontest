@@ -30,11 +30,4 @@ document.getElementById('joinForm').addEventListener('submit', async (event) => 
         console.error('Error:', error);
         document.querySelector('.message').innerHTML = '<p style="color: red;">등록 중 오류가 발생했습니다.</p>';
     }
-    else {
-      messageDiv.innerHTML = `<p style="color: red;">${result.message}</p>`;
-    }
-  } catch (error) {
-    console.error('Error:', error);
-    document.querySelector('.message').innerHTML = '<p style="color: red;">등록 중 오류가 발생했습니다.</p>';
-  }
 });

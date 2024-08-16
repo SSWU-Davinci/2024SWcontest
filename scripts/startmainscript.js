@@ -12,5 +12,5 @@ function handleKeyPress(event) {
 }
 document.addEventListener('keydown', handleKeyPress);
 
-import { incrementThemeNumber } from "./themaNumCnt.js";
-incrementThemeNumber();
+import { resetThemeNumber } from "./themaNumCnt.js";      // 게임 시작 화면에서 테마 1로 리셋
+resetThemeNumber();

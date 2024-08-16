@@ -1,12 +1,13 @@
 import { getThemeNumber } from './themaNumCnt.js';
 import { setCriminal, setFire } from './criminal.js';
+import { fetchData } from './logData.js';
 
 document.addEventListener("DOMContentLoaded", function () {
   const animalClass = document.querySelectorAll(".animal");
   const dialogue = document.getElementById("dialogue");
   const name_text = document.getElementById("name_text");
 
-  let logData = []; // 데이터를 저장할 배
+  let logData = []; // 데이터를 저장할 배열
   const animalData = []; // 동물 데이터 저장할 배열 
 
   let index = 0; // 클릭할 때마다 증가시킬 인덱스

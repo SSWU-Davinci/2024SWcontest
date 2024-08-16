@@ -4,7 +4,7 @@ function getThemeNumber() {
 }
 
 // 테마 번호를 증가시키고 저장
-function incrementThemeNumber() {
+function increaseThemeNumber() {
   let themeNumber = getThemeNumber();
   if (themeNumber >= 4) {  // 테마 번호가 4에 도달하면 리셋
     themeNumber = 1;
@@ -20,7 +20,7 @@ function setThemeNumber(number) {
 }
 
 // 테마 번호를 콘솔에 출력하는 함수 (디버깅 용도)
-function logCurrentThemeNumber() {
+function CurrentThemeNumber() {
   console.log('Current theme number:', getThemeNumber());
 }
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
-  logCurrentThemeNumber();
+  CurrentThemeNumber();
 });
 
 // DOMContentLoaded 이벤트에서 초기화
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 현재 테마 번호를 콘솔에 출력 (디버깅 용도)
-  logCurrentThemeNumber();
+  CurrentThemeNumber();
 });
 
 // DOMContentLoaded 이벤트에서 초기화
@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 현재 테마 번호를 로그에 출력
-  logCurrentThemeNumber();
+  CurrentThemeNumber();
 });
 
 // 외부에서 사용할 수 있도록 함수들을 export
-export { getThemeNumber, incrementThemeNumber, setThemeNumber, logCurrentThemeNumber };
+export { getThemeNumber, increaseThemeNumber, setThemeNumber, CurrentThemeNumber };
