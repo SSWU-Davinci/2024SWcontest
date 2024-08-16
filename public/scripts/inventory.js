@@ -1,3 +1,61 @@
+import { chooseCriminal } from './logLoad.js';
+
+const animalMapping = {
+    1: 'pig',
+    2: 'fish',
+    3: 'giraffe',
+    4: 'bear'
+};
+
+const animalIds = [1, 2, 3, 4]; // 각 동물에 해당하는 ID 목록
+
+function randomAnimals() {
+    let animals = [];
+
+    // 각 동물에 해당하는 ID로 3세트 생성
+    for (let i = 0; i < 3; i++) {
+        animalIds.forEach(id => {
+            animals.push(animalMapping[id]);
+        });
+    }
+
+    // 랜덤하게 섞기
+    animals = animals.sort(() => Math.random() - 0.5);
+    return animals;
+}
+
+function createAnimalElement(animalType) {
+    const animalDiv = document.createElement('div');
+    // animalDiv.classList.add('photo-box');
+
+    switch(animalType) {
+        case 'fish':
+        case 'pig':
+            animalDiv.classList.add('photo-box');
+            break;
+        case 'giraffe':
+            animalDiv.classList.add('big-photo-box');
+            break;
+        case 'bear':
+            animalDiv.classList.add('large-photo-box');
+            break;
+        default:
+            animalDiv.classList.add('photo-box');
+    }
+
+    // 이미지 삽입
+    const img = document.createElement('img');
+    img.src = `../img/${animalType}.png`; // 동물 이미지 경로 설정
+    animalDiv.appendChild(img);
+
+    return animalDiv;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderAnimals(); // 동물 요소를 화면에 렌더링
+    displayAnimalDoc();
+});
+
 // 로컬 스토리지에 데이터 저장하기
 function saveAnimalDataToLocalStorage(animal) {
     const animals = JSON.parse(localStorage.getItem('animalDoc')) || [];
