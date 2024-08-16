@@ -40,6 +40,7 @@ function handleKeyPress(event) {
   }
 }
 
+// 화면을 클릭하면 startmain 화면으로 이동하기
 function handleScreenClick() {
   var currentSlideId = swiper.slides[swiper.activeIndex].id;
   if (currentSlideId === 'slide_08') {
