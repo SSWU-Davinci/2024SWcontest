@@ -6,21 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a927c231-4d80-4212-828b-42ff20e5c422" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/views/criminal.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/ending.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/gameover.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/home.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/inventory.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/loading.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/startmain.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/storyline.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/join.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/join.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/userDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/userDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/dbConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/dbConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase.json" beforeDir="false" afterPath="$PROJECT_DIR$/firebase.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +41,7 @@
     "JavaScript Debug.home.html.executor": "Run",
     "Node.js.bin\\www.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging Yeeun",
+    "git-widget-placeholder": "Hyorim",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/lg/Documents/GitHub/2024SWcontest",
     "node.js.detected.package.eslint": "true",
@@ -65,8 +56,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18968.26" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18968.26" />
       </set>
     </attachedChunks>
   </component>
@@ -82,6 +73,7 @@
       <workItem from="1722931447661" duration="3263000" />
       <workItem from="1723549721656" duration="120000" />
       <workItem from="1723568849429" duration="9000" />
+      <workItem from="1723714135397" duration="1217000" />
     </task>
     <servers />
   </component>

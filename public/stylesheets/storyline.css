@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-  background: #000;
+  background: #000;         /* 전체 배경 black으로 설정 */
   color: #000;
   margin: 0;
   padding: 0;
@@ -33,7 +33,7 @@ body {
   object-fit: cover;
 }
 
-.swiper-button-prev, .swiper-button-next {
+.swiper-button-prev, .swiper-button-next {         /* 전체 버튼 white로 설정 */
   color: #f4f4f4;
 }
 
@@ -41,6 +41,7 @@ body {
     background-color: #fff !important;
 }
 
+/* 모바일 화면 css */
 @media (max-width: 900px) {
     .swiper-slide img {
         display: block;
