@@ -1,8 +1,9 @@
 import { getThemeNumber } from './themaNumCnt.js';
 import { setCriminal, setFire } from './criminal.js';
-import { fetchData } from './logData.js';
+//import { fetchData } from './logData.js';
+import { getRandomSet, loadData } from './randomSet.js';
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   const animalClass = document.querySelectorAll(".animal");
   const dialogue = document.getElementById("dialogue");
   const name_text = document.getElementById("name_text");
@@ -23,38 +24,16 @@ document.addEventListener("DOMContentLoaded", function () {
     bear: '북극곰'
   };
 
-  // 데이터 사용 예제
-  async function useData() {
-    try {
-      const data = await fetchData();
+  try {
+    logData = await loadData();
+    console.log('스테이지 대사 목록: ', logData);
 
-      if (data) {
-        // logData = 스테이지에 맞는 theme_number의 대사 묶음
-        const themeNumber = getThemeNumber();
-        console.log('스테이지: ', themeNumber);
-        logData = data.data[themeNumber - 1];
-        console.log('대사 목록: ', logData);
-      }
-    } catch (error) {
-      console.error('Error using data:', error);
-    }
+    animalClass.forEach(animal => {
+      animal.addEventListener("click", main);
+    });
+  } catch (error) {
+    console.error('데이터 로드 중 오류', error);
   }
-
-  useData();
-
-  /*
-  // JSON 파일을 불러온다
-  fetch(fetchData())
-    .then(response => response.json())
-    .then(data => {
-      // logData = 스테이지에 맞는 theme_number의 대사 묶음
-      const themeNumber = getThemeNumber();
-      console.log('스테이지: ', themeNumber);
-      logData = data[themeNumber - 1];
-      console.log('대사 목록: ', logData);
-    })
-    .catch(error => console.error('json loading error:', error));
-    */
 
   function main(event) {
     const animal = event.currentTarget;
@@ -74,8 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return
     }
 
-    if (logData.length > 0 && index < logData.length) {
-      let currentLog = logData[index]; // 내보낼 대사
+    if (logData.scripts.length > 0 && index < logData.scripts.length) {
+      let currentLog = logData.scripts[index]; // 내보낼 대사
       let criminalValue = currentLog.criminal; // criminal 값은 logData에 있다
       // exception이 배열인 경우 체크해서 저장
       let exception = Array.isArray(currentLog.exception) ? currentLog.exception : [currentLog.exception];
