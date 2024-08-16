@@ -42,13 +42,14 @@ h3 {
 
 .scroll-content {
     position: relative;
-    top: 200px;
+    top: 700px;
     color: #ffffff;
     text-align: center;
-    display: none;
+    opacity: 0; /* 초기 상태에서는 보이지 않음 */
     z-index: 10; /* 다른 요소 위에 표시되도록 */
-    transition: opacity 0.5s ease; /* 부드러운 투명도 전환 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 부드러운 투명도 및 위치 전환 */
 }
+
 
 .scroll-text {
     position: relative;
@@ -80,13 +81,13 @@ h3 {
 @media only screen and (max-width: 767px) {
     .scroll-content {
         position: relative;
-        top: 400px;
+        top: 600px;
         margin: 20px;
         color: #ffffff;
         text-align: center;
-        display: none;
+        opacity: 0; /* 초기 상태에서 보이지 않음 */
         z-index: 10; /* 다른 요소 위에 표시되도록 */
-        transition: opacity 0.5s ease; /* 부드러운 투명도 전환 */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* 부드러운 투명도 전환 및 위치 애니메이션 */
     }
     
     .scroll-text {
@@ -110,3 +111,5 @@ h3 {
         font-size: 10px;
     }
 }
+  
+  
