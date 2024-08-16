@@ -1,4 +1,4 @@
-import { chooseCriminal } from './logLoad.js';
+import { chooseCriminal as fetchCriminal } from './logLoad.js';
 
 const animalMapping = {
     1: 'pig',
@@ -7,28 +7,28 @@ const animalMapping = {
     4: 'bear'
 };
 
-const animalIds = [1, 2, 3, 4]; // 각 동물에 해당하는 ID 목록
+const animalIds = [1, 2, 3, 4];
 
 function randomAnimals() {
     let animals = [];
 
-    // 각 동물에 해당하는 ID로 3세트 생성
     for (let i = 0; i < 3; i++) {
         animalIds.forEach(id => {
             animals.push(animalMapping[id]);
         });
     }
 
-    // 랜덤하게 섞기
     animals = animals.sort(() => Math.random() - 0.5);
     return animals;
 }
 
 function createAnimalElement(animalType) {
     const animalDiv = document.createElement('div');
-    // animalDiv.classList.add('photo-box');
+    const animalId = animalIds[Object.values(animalMapping).indexOf(animalType)];
 
-    switch(animalType) {
+    animalDiv.setAttribute('data-id', animalId);  // ID 설정
+
+    switch (animalType) {
         case 'fish':
         case 'pig':
             animalDiv.classList.add('photo-box');
@@ -43,18 +43,57 @@ function createAnimalElement(animalType) {
             animalDiv.classList.add('photo-box');
     }
 
-    // 이미지 삽입
     const img = document.createElement('img');
-    img.src = `../img/${animalType}.png`; // 동물 이미지 경로 설정
+    img.src = `../img/${animalType}.png`;
     animalDiv.appendChild(img);
 
     return animalDiv;
 }
 
+function renderAnimals() {
+    const animalContainer = document.getElementById('animalContainer');
+    const animals = randomAnimals();
+
+    animals.forEach(animalType => {
+        const animalElement = createAnimalElement(animalType);
+        animalContainer.appendChild(animalElement);
+    });
+}
+
+function chooseCriminal() {
+    const animalElements = document.querySelectorAll('.photo-box, .big-photo-box, .large-photo-box');
+
+    animalElements.forEach(animal => {
+        animal.addEventListener('click', () => {
+            const animalId = parseInt(animal.getAttribute('data-id'));  // 데이터 ID 가져오기
+            const criminalId = fetchCriminal(animalId);  // 범인 정보 가져오기
+            const criminalValue = animalMapping[criminalId];
+
+            console.log('범인 값:', criminalValue);
+
+            if (criminalValue) {
+                console.log(`동물 ID: ${animalId}, Criminal: ${criminalValue}`);
+                setCriminal(criminalValue);
+            } else {
+                console.log(`동물 ID: ${animalId}에 해당하는 Criminal 값을 찾을 수 없습니다.`);
+            }
+        });
+    });
+}
+
+function setCriminal(criminal) {
+    console.log(`설정된 범인: ${criminal}`);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    renderAnimals(); // 동물 요소를 화면에 렌더링
+    renderAnimals();
+    setTimeout(() => {
+        chooseCriminal();
+    }, 100);
     displayAnimalDoc();
 });
+
+//////////////////////////////////////////////////////////////////////////////
 
 // 로컬 스토리지에 데이터 저장하기
 function saveAnimalDataToLocalStorage(animal) {
