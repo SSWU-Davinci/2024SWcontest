@@ -4,6 +4,8 @@ var swiper = new Swiper(".mySwiper", {
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
+    loop: false,
+    freeMode: false,
   },
   pagination: {
     el: ".swiper-pagination",
@@ -13,7 +15,15 @@ var swiper = new Swiper(".mySwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  loop: false,
+  on: {
+    slideChange: function () {
+      var currentSlideId = swiper.slides[swiper.activeIndex].id;
+
+      if (currentSlideId === 'slide_08') {
+        this.autoplay.stop(); // Stop autoplay when reaching the last slide
+      }
+    }
+  }
 });
 
 function handleKeyPress(event) {
