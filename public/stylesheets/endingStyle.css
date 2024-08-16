@@ -42,7 +42,7 @@ h3 {
 
 .scroll-content {
     position: relative;
-    top: 700px;
+    top: 650px;
     color: #ffffff;
     text-align: center;
     opacity: 0; /* 초기 상태에서는 보이지 않음 */
@@ -81,7 +81,7 @@ h3 {
 @media only screen and (max-width: 767px) {
     .scroll-content {
         position: relative;
-        top: 600px;
+        top: 600px; /* 요소를 더 아래로 위치시킴 */
         margin: 20px;
         color: #ffffff;
         text-align: center;
