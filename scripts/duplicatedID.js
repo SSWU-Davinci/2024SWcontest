@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const idValue = idInput.value.trim();
         
         if (idValue === '') {
-            messageDiv.innerHTML = '<p style="color: red;">ID를 입력해주세요.</p>';
+            messageDiv.innerHTML = '<p style="co lor: red;">ID를 입력해주세요.</p>';
             return;
         }
 
