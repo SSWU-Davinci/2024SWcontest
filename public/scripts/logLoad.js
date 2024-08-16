@@ -1,6 +1,4 @@
-import { getThemeNumber } from './themaNumCnt.js';
 import { setCriminal, setFire } from './criminal.js';
-//import { fetchData } from './logData.js';
 import { getRandomSet, loadData } from './randomSet.js';
 
 document.addEventListener("DOMContentLoaded", async function () {
