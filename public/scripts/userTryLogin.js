@@ -1,6 +1,8 @@
+// Import Firebase Auth
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js';
-import { auth } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js'; // Firebase App import
 
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyAwswtPvBIt5V6fAy4FcHzOiS2ZaK2dxCg",
     authDomain: "swcontest-e2cf1.firebaseapp.com",
@@ -11,21 +13,27 @@ const firebaseConfig = {
     measurementId: "G-7H81QEC5S6"
 };
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app); // Initialize Auth
+
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const container = document.querySelector('.container');
 
     onAuthStateChanged(auth, (user) => {
+        console.log(user);
         if (user) {
             // 로그인 상태일 때
+            loginForm.style.display = 'none'; // 로그인 폼 숨기기
             container.addEventListener('click', () => {
                 window.location.href = '../pages/inventory.html';
             });
-            loginForm.style.display = 'none'; // 로그인 폼 숨기기
         } else {
             // 로그아웃 상태일 때
-            container.addEventListener('click', () => {
-                
+            loginForm.style.display = 'block'; // 로그인 폼 보이기
+            container.removeEventListener('click', () => {
+                window.location.href = '../pages/inventory.html';
             });
         }
     });
